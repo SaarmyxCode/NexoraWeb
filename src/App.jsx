@@ -5,6 +5,8 @@ import { ProductsPage } from './pages/ProductsPage'
 import { ServicesPage } from './pages/ServicesPage'
 import { ContactPage } from './pages/ContactPage'
 import { AboutPage } from './pages/AboutPage'
+import { CareersPage } from './pages/CareersPage'
+import { CommercialPage } from './pages/CommercialPage'
 import { LegalPage } from './pages/LegalPage'
 
 function App() {
@@ -17,10 +19,10 @@ function App() {
           <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/contacto" element={<ContactPage />} />
 
-          {/* Rutas para Acerca de Nexora */}
+          {/* Páginas individuales de Acerca de Nexora */}
           <Route path="/nosotros" element={<AboutPage />} />
-          <Route path="/oportunidades-laborales" element={<AboutPage />} />
-          <Route path="/contacto-comercial" element={<AboutPage />} />
+          <Route path="/oportunidades-laborales" element={<CareersPage />} />
+          <Route path="/contacto-comercial" element={<CommercialPage />} />
 
           <Route path="/legal" element={<LegalPage />} />
         </Routes>
