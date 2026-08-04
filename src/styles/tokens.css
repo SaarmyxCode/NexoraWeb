@@ -103,9 +103,11 @@
   --btn-height-lg: 52px;
 
   /* Bordes, Sombras y Transiciones */
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
   --border-width-thin: 0.0625rem; /* 1px */
 
@@ -148,4 +150,17 @@
   --font-size-grid-xl: 6em; /* 72px */
   --grid-card-height: 30rem; /* 480px alto estándar */
   --grid-gap: var(--spacing-lg);
+
+  /* =============== DOWNLOAD PAGE =============== */
+
+  /* Sombras de superficie */
+  --shadow-card-subtle: 0 2px 12px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --shadow-card-active: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+  /* Iconos y Medidas de la App */
+  --app-icon-box-desktop: 180px;
+  --app-icon-box-mobile: 140px;
+  --app-icon-size-desktop: 5.5rem;
+  --app-icon-size-mobile: 4.2rem;
 }

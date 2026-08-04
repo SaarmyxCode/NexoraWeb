@@ -1,0 +1,336 @@
+/*
+   DÓNDE DESCARGAR - CERO VALORES SUELTOS (100% VARIABLES)
+ */
+
+.download-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.download-wrapper {
+  width: 100%;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* 1. HERO CARD CABECERA */
+.download-hero-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--hero-radius);
+  padding: clamp(var(--spacing-xl), 4vw, var(--spacing-2xl));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  box-shadow: var(--shadow-surface);
+  box-sizing: border-box;
+}
+
+.download-hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.download-title {
+  font-family: var(--font-family-base);
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-light-text-heading);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.download-subtitle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  max-width: 22rem;
+  margin: 0;
+  line-height: var(--line-height-base);
+  text-align: right;
+}
+
+/* Tabs Filter */
+.download-tabs-card {
+  background-color: var(--color-bg-app);
+  padding: var(--spacing-2xs);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2xs);
+  width: 100%;
+  box-shadow: var(--shadow-card-subtle);
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.download-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xs);
+  cursor: pointer;
+  min-width: 80px;
+  transition: all var(--transition-fast);
+}
+
+.download-tab-btn:hover {
+  background-color: var(--color-black-05);
+}
+
+.download-tab-btn.is-active {
+  background-color: var(--color-black);
+  box-shadow: var(--shadow-card-active);
+}
+
+.tab-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  transition: color var(--transition-fast);
+}
+
+.download-tab-btn.is-active .tab-icon-box {
+  color: var(--color-white);
+}
+
+.tab-label {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  transition: color var(--transition-fast);
+}
+
+.download-tab-btn.is-active .tab-label {
+  color: var(--color-white);
+}
+
+/* 2. PRODUCT HERO CARD */
+.download-product-hero-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--hero-radius);
+  padding: clamp(var(--spacing-xl), 4vw, var(--spacing-2xl));
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  box-shadow: var(--shadow-surface);
+  box-sizing: border-box;
+}
+
+.product-hero-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-app-icon-wrapper {
+  width: var(--app-icon-box-desktop);
+  height: var(--app-icon-box-desktop);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--app-accent-color, var(--color-black));
+  box-shadow: var(--shadow-card-hover);
+  transition: transform var(--transition-normal);
+}
+
+.download-product-hero-card:hover .product-app-icon-wrapper {
+  transform: scale(1.03);
+}
+
+.product-app-icon {
+  font-size: var(--app-icon-size-desktop);
+}
+
+.product-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.product-hero-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.product-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.product-hero-title {
+  font-family: var(--font-family-base);
+  font-size: clamp(var(--font-size-2xl), 3.5vw, var(--font-size-3xl));
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-light-text-heading);
+  margin: 0;
+
+  line-height: var(--line-height-tight);
+}
+
+.product-version-badge {
+  background-color: var(--color-bg-surface);
+  color: var(--color-light-text-heading);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-3xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+}
+
+.product-hero-description {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body);
+  margin: 0;
+  max-width: 42rem;
+}
+
+.product-platforms-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+}
+
+.platforms-label {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-body);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.platforms-badge-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.platform-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-light-text-heading);
+}
+
+.product-hero-actions {
+  margin-top: var(--spacing-xs);
+}
+
+.product-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+  box-shadow: var(--shadow-card-active);
+}
+
+.product-download-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.92;
+}
+
+.btn-icon {
+  font-size: var(--font-size-lg);
+}
+
+/* ADAPTABILIDAD CON VARIABLES */
+@media (max-width: 62rem) {
+  .download-product-hero-card {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .product-hero-media {
+    justify-content: center;
+  }
+
+  .product-app-icon-wrapper {
+    width: var(--app-icon-box-mobile);
+    height: var(--app-icon-box-mobile);
+    border-radius: var(--radius-xl);
+  }
+
+  .product-app-icon {
+    font-size: var(--app-icon-size-mobile);
+  }
+
+  .product-hero-content {
+    align-items: center;
+  }
+
+  .product-title-row,
+  .platforms-badge-list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 48rem) {
+  .download-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .download-hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2xs);
+  }
+
+  .download-subtitle {
+    text-align: left;
+  }
+
+  .download-tabs-card {
+    justify-content: flex-start;
+  }
+
+  .download-tab-btn {
+    flex: 0 0 auto;
+  }
+}

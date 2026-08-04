@@ -12,7 +12,7 @@
   justify-content: center;
   z-index: var(--subheader-z-index);
 
-  /* Totalmente Oculto por Defecto */
+  /* Oculto por defecto */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-15px);
@@ -23,7 +23,6 @@
     visibility var(--transition-normal);
 }
 
-/* Estado Visible: Solo cuando el observador confirma que el Hero ya salió */
 .subheader-wrapper.is-visible {
   opacity: 1;
   visibility: visible;
@@ -84,15 +83,16 @@
   background-color: var(--color-white-10);
 }
 
+/* Botón Primario con Acento Dinámico */
 .subheader-btn.btn-primary {
   color: var(--color-white);
-  background-color: var(--color-primary);
-  border: var(--border-width-thin) solid var(--color-primary);
+  background-color: var(--btn-accent-color, var(--color-primary));
+  border: var(--border-width-thin) solid var(--btn-accent-color, var(--color-primary));
 }
 
 .subheader-btn.btn-primary:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
+  filter: brightness(0.9);
+  transform: scale(1.02);
 }
 
 /* Responsivo */

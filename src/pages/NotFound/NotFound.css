@@ -41,7 +41,7 @@
 .not-found-description {
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
-  color: var(--color-light-text-body);
+  color: var(--color-text-body);
   line-height: var(--line-height-base);
   margin-bottom: var(--spacing-lg);
 }
