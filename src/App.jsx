@@ -10,8 +10,7 @@ import { RenamePage } from './pages/Rename/RenamePage'
 import { FinancePage } from './pages/Finance/FinancePage'
 import { SoportePage } from './pages/Soporte/SoportePage'
 import { NotFound } from './pages/NotFound/NotFound'
-
-import './styles/animations.css'
+import { DownloadPage } from './pages/Download/DownloadPage'
 
 export function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -42,6 +41,7 @@ export function App() {
             <Route path="/rename" element={<RenamePage />} />
             <Route path="/finance" element={<FinancePage />} />
             <Route path="/soporte" element={<SoportePage />} />
+            <Route path="/descargar" element={<DownloadPage />} />
 
             {/* Captura cualquier ruta que no coincida */}
             <Route path="*" element={<NotFound />} />
