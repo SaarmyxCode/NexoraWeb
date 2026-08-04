@@ -1,29 +1,54 @@
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { MainLayout } from './layout/MainLayout'
-import { HeroCard } from './components/HeroCard/HeroCard'
+import { ScrollToTop } from './components/ScrollToTop'
+
+import { Home } from './pages/Home'
+import { ThemePage } from './pages/Theme/ThemePage'
+import { SongsPage } from './pages/Songs/SongsPage'
+import { RenamePage } from './pages/Rename/RenamePage'
+import { FinancePage } from './pages/Finance/FinancePage'
+import { SoportePage } from './pages/Soporte/SoportePage'
+import { NotFound } from './pages/NotFound/NotFound'
+
+import './styles/animations.css'
 
 export function App() {
-  return (
-    <MainLayout>
-      {/* 1. Theme con título Rojo y enlace a /theme */}
-      <HeroCard
-        id="theme"
-        title="THEME"
-        href="/theme"
-        titleColor="#E11F2F"
-        imageSrc="/IphonesMockup.png"
-        imageAlt="Nexora Theme"
-      />
+  const [isLoading, setIsLoading] = useState(true)
 
-      {/* 2. Finance con título Verde y enlace a /finance */}
-      <HeroCard
-        id="finance"
-        title="FINANCE"
-        href="/finance"
-        titleColor="#28C864"
-        imageSrc="/IphonesMockup.png"
-        imageAlt="Nexora Finance"
-      />
-    </MainLayout>
+  useEffect(() => {
+    // Simula el tiempo de carga inicial de la app
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 600)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <>
+      {/* Loader General */}
+      <div className={`app-loader ${!isLoading ? 'is-hidden' : ''}`}>
+        <div className="loader-spinner" />
+      </div>
+
+      <Router>
+        <ScrollToTop />
+        <MainLayout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/theme" element={<ThemePage />} />
+            <Route path="/songs" element={<SongsPage />} />
+            <Route path="/rename" element={<RenamePage />} />
+            <Route path="/finance" element={<FinancePage />} />
+            <Route path="/soporte" element={<SoportePage />} />
+
+            {/* Captura cualquier ruta que no coincida */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </MainLayout>
+      </Router>
+    </>
   )
 }
 
