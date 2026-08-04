@@ -1,33 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Layout } from './components/layout/Layout'
-import { Home } from './pages/Home'
-import { ProductsPage } from './pages/ProductsPage'
-import { ServicesPage } from './pages/ServicesPage'
-import { ContactPage } from './pages/ContactPage'
-import { AboutPage } from './pages/AboutPage'
-import { CareersPage } from './pages/CareersPage'
-import { CommercialPage } from './pages/CommercialPage'
-import { LegalPage } from './pages/LegalPage'
+import { MainLayout } from './layout/MainLayout'
+import { HeroCard } from './components/HeroCard/HeroCard'
 
-function App() {
+export function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/productos" element={<ProductsPage />} />
-          <Route path="/servicios" element={<ServicesPage />} />
-          <Route path="/contacto" element={<ContactPage />} />
+    <MainLayout>
+      {/* 1. Theme con título Rojo y enlace a /theme */}
+      <HeroCard
+        id="theme"
+        title="THEME"
+        href="/theme"
+        titleColor="#E11F2F"
+        imageSrc="/IphonesMockup.png"
+        imageAlt="Nexora Theme"
+      />
 
-          {/* Páginas individuales de Acerca de Nexora */}
-          <Route path="/nosotros" element={<AboutPage />} />
-          <Route path="/oportunidades-laborales" element={<CareersPage />} />
-          <Route path="/contacto-comercial" element={<CommercialPage />} />
-
-          <Route path="/legal" element={<LegalPage />} />
-        </Routes>
-      </Layout>
-    </Router>
+      {/* 2. Finance con título Verde y enlace a /finance */}
+      <HeroCard
+        id="finance"
+        title="FINANCE"
+        href="/finance"
+        titleColor="#28C864"
+        imageSrc="/IphonesMockup.png"
+        imageAlt="Nexora Finance"
+      />
+    </MainLayout>
   )
 }
 
