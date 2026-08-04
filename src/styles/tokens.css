@@ -120,6 +120,12 @@
   /* =============== NAVBAR =============== */
   --color-navbar-link: var(--color-black-80);
 
+  /* =============== SUBHEADER =============== */
+  /* SubHeader Tokens */
+  --subheader-height: 52px;
+  --subheader-z-index: 990; /* Justo debajo del Header principal (1000) */
+  --subheader-bg: #111113; /* Fondo oscuro elegante idéntico a la imagen */
+
   /* =============== HERO =============== */
   /* Hero Specific Colors */
   --color-hero-bg: var(--color-bg-surface);
@@ -133,5 +139,13 @@
   /* Hero Dimensions & Radii */
   --hero-radius: var(--radius-lg);
   --hero-padding-y: var(--spacing-2xl);
+
   --hero-padding-x: var(--spacing-xl);
+
+  /* =============== GRIDCARD =============== */
+  --font-size-grid-mobile: 2.75rem; /* 32px */
+  --font-size-grid-desktop: 4.5em; /* 48px */
+  --font-size-grid-xl: 6em; /* 72px */
+  --grid-card-height: 30rem; /* 480px alto estándar */
+  --grid-gap: var(--spacing-lg);
 }

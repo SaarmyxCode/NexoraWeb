@@ -1,0 +1,184 @@
+/* ==========================================================================
+   NEXORA WEB - ADAPTABILIDAD RESPONSIVA GENERAL
+   ========================================================================== */
+
+/* ==========================================================================
+   1. TABLETAS Y PANTALLAS MEDIANAS (Max Width: 768px / 48rem)
+   ========================================================================== */
+@media (max-width: 48rem) {
+  /* Layout Base */
+  :root {
+    --container-padding-x: var(--spacing-md);
+  }
+
+  /* Header Navbar */
+  .header-wrapper {
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .header-nav {
+    gap: var(--spacing-sm);
+  }
+
+  .header-nav-link {
+    font-size: var(--font-size-xs);
+  }
+
+  /* Hero Main Card */
+  .hero-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-card {
+    min-height: 28rem;
+    padding: var(--spacing-xl) var(--spacing-md) 0;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+    max-width: 90%;
+  }
+
+  /* Grid 2x2 Contenedor */
+  .grid-container-wrapper {
+    padding: 0 var(--spacing-md) var(--spacing-lg);
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 columna en tabletas vertical */
+    gap: var(--spacing-md);
+  }
+
+  .grid-card {
+    min-height: 22rem;
+    padding: var(--spacing-lg) var(--spacing-md) 0;
+  }
+
+  .grid-card-title {
+    font-size: var(--font-size-grid-mobile);
+  }
+
+  /* Highlight Section & Slider */
+  .highlights-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .highlight-main-card {
+    padding: var(--spacing-lg) var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+
+  .highlights-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .highlight-item-card {
+    flex: 0 0 85%; /* Muestra la tarjeta principal y un asomo de la siguiente */
+    min-width: 16rem;
+    padding: var(--spacing-lg);
+  }
+
+  .highlight-item-title {
+    font-size: var(--font-size-lg);
+  }
+
+  /* SubHeader Flotante */
+  .subheader-wrapper {
+    top: calc(var(--header-height-mobile) + var(--spacing-xs));
+    padding: 0 var(--spacing-md);
+  }
+
+  .subheader-navbar {
+    padding: 0 var(--spacing-md);
+    height: 44px;
+  }
+
+  .subheader-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .subheader-btn {
+    height: 28px;
+    padding: 0 var(--spacing-sm);
+    font-size: var(--font-size-2xs);
+  }
+}
+
+/* ==========================================================================
+   2. TELÉFONOS MÓVILES (Max Width: 480px / 30rem)
+   ========================================================================== */
+@media (max-width: 30rem) {
+  /* Layout Base */
+  :root {
+    --container-padding-x: var(--spacing-sm);
+  }
+
+  /* Header Navbar */
+  .header-nav {
+    display: none; /* Oculta navegación horizontal estándar para menú móvil */
+  }
+
+  /* Hero Main Card */
+  .hero-card {
+    min-height: 24rem;
+    padding: var(--spacing-lg) var(--spacing-sm) 0;
+    border-radius: var(--radius-xl);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-base);
+  }
+
+  .hero-image {
+    max-height: 14rem;
+  }
+
+  /* Grid Card Individual */
+  .grid-card {
+    min-height: 18rem;
+    padding: var(--spacing-md) var(--spacing-sm) 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .grid-card-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .grid-card-image {
+    max-height: 12rem;
+  }
+
+  /* Highlight Section */
+  .highlights-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .highlight-item-card {
+    flex: 0 0 92%;
+    padding: var(--spacing-md);
+  }
+
+  .highlight-item-image {
+    max-height: 10rem;
+  }
+
+  /* SubHeader */
+  .subheader-navbar {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .subheader-actions {
+    gap: var(--spacing-2xs);
+  }
+}
