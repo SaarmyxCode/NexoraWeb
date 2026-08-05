@@ -1,28 +1,27 @@
-/* 
-   SECCIÓN HIGHLIGHTS - CARD PRINCIPAL CONTENEDORA
-    */
+/* Seccion de destacados - Slider horizontal */
+
 .highlights-wrapper {
   width: 100%;
   padding: 0 var(--spacing-lg) var(--spacing-xl);
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
-/* Card Principal Gran Formato que contiene todo */
 .highlight-main-card {
   width: 100%;
   max-width: var(--container-max-width);
-  background-color: var(--color-hero-bg); /* #f5f5f7 */
+  background-color: var(--color-bg-surface);
   border-radius: var(--hero-radius);
-  padding: var(--hero-padding-y) var(--hero-padding-x);
+  padding: clamp(var(--spacing-lg), 4vw, var(--spacing-2xl));
   box-shadow: var(--shadow-surface);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Cabecera Interna */
 .highlights-header {
   width: 100%;
   display: flex;
@@ -32,17 +31,18 @@
 
 .highlights-title {
   font-family: var(--font-family-base);
-  font-size: var(--font-size-3xl);
+  font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading);
   letter-spacing: -0.02em;
+  margin: 0;
 }
 
 .highlights-action-btn {
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-link);
+  color: var(--color-blue, var(--color-primary));
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
@@ -52,7 +52,6 @@
   text-decoration: underline;
 }
 
-/* Track y Tarjetas Internas */
 .highlights-slider-track {
   display: flex;
   gap: var(--spacing-lg);
@@ -60,8 +59,6 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding-bottom: var(--spacing-xs);
-
-  /* Ocultar barra de desplazamiento nativa */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -73,13 +70,15 @@
 .highlight-item-card {
   flex: 0 0 calc(70% - var(--spacing-3xl));
   min-width: 18rem;
-  background-color: var(--color-bg-app); /* Blanco / Superficie clara */
-  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
   padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   scroll-snap-align: start;
+  box-shadow: var(--shadow-card-subtle);
+  box-sizing: border-box;
 }
 
 .highlight-item-header {
@@ -96,6 +95,7 @@
   font-weight: var(--font-weight-extrabold);
   color: var(--color-primary);
   text-transform: uppercase;
+  margin: 0;
 }
 
 .highlight-item-media {
@@ -112,7 +112,6 @@
   object-fit: contain;
 }
 
-/* Barra de Controles Interna */
 .highlights-controls-bar {
   display: flex;
   align-items: center;
@@ -125,9 +124,10 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-  background-color: var(--color-bg-app);
-  padding: var(--spacing-sm) var(--spacing-sm);
+  background-color: var(--color-white);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-full);
+  box-shadow: var(--shadow-card-subtle);
 }
 
 .highlight-dot {
@@ -148,21 +148,30 @@
 }
 
 .highlights-play-btn {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-full);
-  background-color: var(--color-light-bg-header);
+  background-color: var(--color-white);
   color: var(--color-text-heading);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   border: none;
   cursor: pointer;
+  box-shadow: var(--shadow-card-subtle);
+  transition: transform var(--transition-fast);
 }
 
-/* Responsivo */
+.highlights-play-btn:hover {
+  transform: scale(1.08);
+}
+
 @media (max-width: 48rem) {
+  .highlights-wrapper {
+    padding: 0 var(--spacing-md) var(--spacing-lg);
+  }
+
   .highlight-main-card {
     padding: var(--spacing-lg) var(--spacing-md);
   }
