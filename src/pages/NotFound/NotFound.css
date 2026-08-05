@@ -1,3 +1,7 @@
+/* ==========================================================================
+   NOT FOUND (404) - VISTA DE ERROR
+   ========================================================================== */
+
 .not-found-container {
   width: 100%;
   min-height: 60vh;
@@ -5,12 +9,13 @@
   align-items: center;
   justify-content: center;
   padding: var(--spacing-xl) var(--container-padding-x);
+  box-sizing: border-box;
 }
 
 .not-found-card {
   max-width: 28rem;
   width: 100%;
-  background-color: var(--color-hero-bg);
+  background-color: var(--color-bg-surface);
   border-radius: var(--hero-radius);
   padding: var(--spacing-2xl) var(--spacing-xl);
   text-align: center;
@@ -18,6 +23,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: var(--shadow-surface);
+  box-sizing: border-box;
 }
 
 .not-found-code {
@@ -26,16 +32,15 @@
   font-weight: var(--font-weight-extrabold);
   color: var(--color-primary);
   line-height: 1;
-  margin-bottom: var(--spacing-xs);
+  margin: 0 0 var(--spacing-xs) 0;
 }
 
 .not-found-title {
-  font-family: var(--font-family-body);
+  font-family: var(--font-family-base);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-light-text-heading);
-
-  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-heading);
+  margin: 0 0 var(--spacing-xs) 0;
 }
 
 .not-found-description {
@@ -43,7 +48,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-body);
   line-height: var(--line-height-base);
-  margin-bottom: var(--spacing-lg);
+  margin: 0 0 var(--spacing-lg) 0;
 }
 
 .not-found-btn {

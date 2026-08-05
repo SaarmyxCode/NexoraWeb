@@ -1,6 +1,6 @@
-/*
-   DÓNDE DESCARGAR - CERO VALORES SUELTOS (100% VARIABLES)
- */
+/* ==========================================================================
+   DÓNDE DESCARGAR - HOJA DE ESTILOS DE LA VISTA
+   ========================================================================== */
 
 .download-page {
   width: 100%;
@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-/* 1. HERO CARD CABECERA */
+/* Hero Header */
 .download-hero-card {
   width: 100%;
   max-width: var(--container-max-width);
@@ -44,7 +44,7 @@
   font-family: var(--font-family-base);
   font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
   font-weight: var(--font-weight-extrabold);
-  color: var(--color-light-text-heading);
+  color: var(--color-text-heading);
   line-height: var(--line-height-tight);
   margin: 0;
 }
@@ -124,7 +124,7 @@
   color: var(--color-white);
 }
 
-/* 2. PRODUCT HERO CARD */
+/* Product Hero Card */
 .download-product-hero-card {
   width: 100%;
   max-width: var(--container-max-width);
@@ -189,20 +189,20 @@
   font-family: var(--font-family-base);
   font-size: clamp(var(--font-size-2xl), 3.5vw, var(--font-size-3xl));
   font-weight: var(--font-weight-extrabold);
-  color: var(--color-light-text-heading);
+  color: var(--color-text-heading);
   margin: 0;
-
   line-height: var(--line-height-tight);
 }
 
 .product-version-badge {
-  background-color: var(--color-bg-surface);
-  color: var(--color-light-text-heading);
+  background-color: var(--color-white);
+  color: var(--color-text-heading);
   font-family: var(--font-family-base);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   padding: var(--spacing-3xs) var(--spacing-sm);
   border-radius: var(--radius-full);
+  box-shadow: var(--shadow-card-subtle);
 }
 
 .product-hero-description {
@@ -245,7 +245,7 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-light-text-heading);
+  color: var(--color-text-heading);
 }
 
 .product-hero-actions {
@@ -279,7 +279,7 @@
   font-size: var(--font-size-lg);
 }
 
-/* ADAPTABILIDAD CON VARIABLES */
+/* RESPONSIVO */
 @media (max-width: 62rem) {
   .download-product-hero-card {
     grid-template-columns: 1fr;

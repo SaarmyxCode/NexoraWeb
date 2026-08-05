@@ -1,8 +1,13 @@
+/* ==========================================================================
+   FINANCE PAGE - HOJA DE ESTILOS DE LA VISTA
+   ========================================================================== */
+
 .finance-page {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
 }
 
 .finance-section-header {
@@ -11,19 +16,13 @@
   margin: 0 auto;
   padding: var(--spacing-md) var(--spacing-lg) 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .finance-section-title {
   font-family: var(--font-family-heading);
   font-size: var(--font-size-2xl);
   color: var(--color-text-heading);
-  letter-spacing: var(--spacing-3xs);
-}
-
-.finance-page-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
-  padding-bottom: var(--spacing-2xl);
+  letter-spacing: -0.02em;
+  margin: 0;
 }

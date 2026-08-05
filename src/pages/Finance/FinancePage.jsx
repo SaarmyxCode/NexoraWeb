@@ -9,24 +9,25 @@ import './FinancePage.css'
 
 export const FinancePage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  const accentGreen = '#10B981'
 
   const financeHighlights = [
     {
       id: 'highlight-1',
       title: 'CONTROL INTEGRAL DE INGRESOS Y GASTOS',
-      titleColor: '#10B981',
+      titleColor: accentGreen,
       imageSrc: '/IphonesMockup.png',
     },
     {
       id: 'highlight-2',
       title: 'REPORTES Y GRÁFICAS EN TIEMPO REAL',
-      titleColor: '#10B981',
+      titleColor: accentGreen,
       imageSrc: '/IphonesMockup.png',
     },
     {
       id: 'highlight-3',
       title: 'PROYECCIONES Y METAS DE AHORRO',
-      titleColor: '#10B981',
+      titleColor: accentGreen,
       imageSrc: '/IphonesMockup.png',
     },
   ]
@@ -45,25 +46,13 @@ export const FinancePage = () => {
       ],
     },
     {
-      title: 'Privacidad Finaciera Cero-Conocimiento',
+      title: 'Privacidad Financiera Cero-Conocimiento',
       sections: [
         {
-          subtitle: 'Almacenamiento Local Encritado.',
+          subtitle: 'Almacenamiento Local Encriptado.',
           description:
             'Tus cuentas y números no viajan a servidores externos. Todo el cálculo de gráficos ocurre localmente en tu cliente.',
           linkText: 'Leer manifiesto de privacidad',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Exportación e Informes',
-      sections: [
-        {
-          subtitle: 'Formatos estándar.',
-          description:
-            'Genera balances contables listos para auditorías o declaraciones en PDF, Excel o sintaxis JSON.',
-          linkText: 'Descargar plantilla de ejemplo',
           linkHref: '#',
         },
       ],
@@ -83,12 +72,6 @@ export const FinancePage = () => {
       highlight: '100% de tus datos de forma local',
       suffix: 'garantizando la máxima privacidad financiera.',
     },
-    {
-      id: 'stat-3',
-      prefix: 'Generación de',
-      highlight: 'reportes instantáneos',
-      suffix: 'exportables directamente a formatos PDF o CSV.',
-    },
   ]
 
   const handleOpenModal = (_, index) => {
@@ -107,13 +90,13 @@ export const FinancePage = () => {
       <HeroCard
         id="finance-hero"
         title="FINANCE"
-        titleColor="#10B981"
+        titleColor={accentGreen}
         imageSrc="/IphonesMockup.png"
       />
       <SubHeader
         targetHeroId="finance-hero"
         title="FINANCE"
-        titleColor="#10B981"
+        titleColor={accentGreen}
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Descargar"
@@ -129,15 +112,15 @@ export const FinancePage = () => {
         id="finance-detail"
         title="GESTIÓN"
         subtitle="Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos."
-        titleColor="#10B981"
+        titleColor={accentGreen}
         imageSrc="/IphonesMockup.png"
       />
       <FeatureStatsCard
         title="Finance y el control de tus ingresos"
         linkText="Conoce más sobre la privacidad de tus datos >"
         linkHref="#privacidad"
-        linkColor="#10B981"
-        accentColor="#10B981"
+        linkColor={accentGreen}
+        accentColor={accentGreen}
         icon={FiTrendingUp}
         items={financeStatsData}
         onCardClick={handleOpenModal}
@@ -147,8 +130,10 @@ export const FinancePage = () => {
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         title={modalState.title}
         sections={modalState.sections}
-        linkColor="#10B981"
+        linkColor={accentGreen}
       />
     </div>
   )
 }
+
+export default FinancePage
