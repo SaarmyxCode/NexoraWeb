@@ -2,15 +2,20 @@ import { useEffect } from 'react'
 import { FiX } from 'react-icons/fi'
 import './DetailModal.css'
 
-export const DetailModal = ({ isOpen, onClose, title, sections = [], linkColor = '#E11F2F' }) => {
-  // Cierra el modal con la tecla ESC
+export const DetailModal = ({
+  isOpen,
+  onClose,
+  title,
+  sections = [],
+  linkColor = 'var(--color-primary)',
+}) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose?.()
     }
 
     if (isOpen) {
-      document.body.style.overflow = 'hidden' // Evita scroll de fondo
+      document.body.style.overflow = 'hidden'
       window.addEventListener('keydown', handleKeyDown)
     }
 
@@ -23,9 +28,14 @@ export const DetailModal = ({ isOpen, onClose, title, sections = [], linkColor =
   if (!isOpen) return null
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div
+      className="modal-overlay"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={title ? 'modal-title-id' : undefined}
+    >
       <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-        {/* Botón de Cierre (X) */}
         <button
           type="button"
           className="modal-btn-close"
@@ -35,10 +45,12 @@ export const DetailModal = ({ isOpen, onClose, title, sections = [], linkColor =
           <FiX />
         </button>
 
-        {/* Título Principal */}
-        {title && <h2 className="modal-title">{title}</h2>}
+        {title && (
+          <h2 id="modal-title-id" className="modal-title">
+            {title}
+          </h2>
+        )}
 
-        {/* Lista de Secciones de Información */}
         <div className="modal-body">
           {sections.map((sec, idx) => (
             <div key={idx} className="modal-section">

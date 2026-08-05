@@ -5,11 +5,11 @@ import './FeatureStatsCard.css'
 
 export const FeatureStatsCard = ({
   title = 'Theme y todos nuestros cambios',
-  linkText = 'Más información en nuestro informe (PDF en inglés)',
+  linkText = 'Más información en nuestro informe (PDF)',
   linkHref = '#',
-  linkColor = '#E11F2F',
-  accentColor = '#0071E3',
-  icon: Icon = FiLayers, // Permite pasar cualquier ícono de react-icons como prop
+  linkColor = 'var(--color-primary)',
+  accentColor = 'var(--color-blue)',
+  icon: Icon = FiLayers,
   items = [],
   onCardClick,
 }) => {

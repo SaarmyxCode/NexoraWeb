@@ -1,113 +1,107 @@
-/* ==========================================================================
-   DETAIL MODAL - ESTILO APPLE FLOATING CARD
-   ========================================================================== */
+/* Modal - Tarjeta Flotante */
 
-/* Fondo Oscuro / Backdrop */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: var(--color-black-60, rgba(0, 0, 0, 0.45));
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  padding: 1.5rem;
-  animation: modalFadeIn 0.25s ease-out forwards;
+  padding: var(--spacing-lg);
+  animation: modalFadeIn var(--transition-normal) ease-out forwards;
 }
 
-/* Tarjeta Principal */
 .modal-card {
   position: relative;
   width: 100%;
   max-width: 44rem;
-  background-color: #f5f5f7;
-  border-radius: 28px;
-  padding: 3.5rem 3rem 3rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-2xl);
+  padding: clamp(var(--spacing-xl), 4vw, 3.5rem) clamp(var(--spacing-lg), 3vw, 3rem);
+  box-shadow: var(--shadow-card-hover);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   max-height: 85vh;
   overflow-y: auto;
-  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalSlideUp var(--transition-bounce) forwards;
+  box-sizing: border-box;
 }
 
-/* Botón de Cierre Circular Negro (X) */
 .modal-btn-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
   width: 36px;
   height: 36px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--color-black);
+  color: var(--color-white);
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: var(--font-size-lg);
   cursor: pointer;
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
   z-index: 10;
 }
 
 .modal-btn-close:hover {
   transform: scale(1.08);
-  background-color: #2d2d2d;
+  background-color: var(--color-black-80);
 }
 
-/* Título de Entrada */
 .modal-title {
   font-family: var(--font-family-base);
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
-  font-weight: 800;
-  color: #1d1d1f;
-
-  line-height: 1.05;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-heading);
+  line-height: var(--line-height-tight);
   margin: 0;
 }
 
-/* Cuerpo de Secciones */
 .modal-body {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-xl);
 }
 
 .modal-section {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: var(--spacing-2xs);
 }
 
 .modal-subtitle {
   font-family: var(--font-family-base);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #1d1d1f;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-heading);
   margin: 0;
 }
 
 .modal-description {
   font-family: var(--font-family-base);
-  font-size: 1rem;
-  font-weight: 500;
-  color: #1d1d1f;
-  line-height: 1.45;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
   margin: 0;
 }
 
 .modal-link {
   font-family: var(--font-family-base);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
   text-decoration: none;
-  margin-top: 0.25rem;
-  transition: opacity 0.2s ease;
+  margin-top: var(--spacing-3xs);
+  transition: opacity var(--transition-fast);
   width: fit-content;
 }
 
@@ -116,7 +110,6 @@
   text-decoration: underline;
 }
 
-/* Animaciones */
 @keyframes modalFadeIn {
   from {
     opacity: 0;
@@ -137,15 +130,14 @@
   }
 }
 
-/* Adaptabilidad Móvil */
 @media (max-width: 42rem) {
   .modal-card {
-    padding: 2.5rem 1.5rem 2rem;
-    border-radius: 20px;
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-xl);
   }
 
   .modal-btn-close {
-    top: 1rem;
-    right: 1rem;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
   }
 }
