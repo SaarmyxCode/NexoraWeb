@@ -1,6 +1,5 @@
-/* ==========================================================================
-   SUBHEADER FLOTANTE (SUBNAV)
-   ========================================================================== */
+/* SubHeader Flotante - Barra de navegacion dinamica */
+
 .subheader-wrapper {
   position: fixed;
   top: calc(var(--header-height-desktop) + var(--spacing-xs));
@@ -40,7 +39,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--spacing-lg);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-surface);
+  box-sizing: border-box;
 }
 
 .subheader-title {
@@ -50,6 +50,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   user-select: none;
+  margin: 0;
 }
 
 .subheader-actions {
@@ -74,16 +75,15 @@
 }
 
 .subheader-btn.btn-outline {
-  color: var(--color-black);
-  border: var(--border-width-thin) solid var(--color-black-95);
+  color: var(--color-text-heading);
+  border: var(--border-width-thin) solid var(--color-light-border);
   background: transparent;
 }
 
 .subheader-btn.btn-outline:hover {
-  background-color: var(--color-white-10);
+  background-color: var(--color-black-05);
 }
 
-/* Botón Primario con Acento Dinámico */
 .subheader-btn.btn-primary {
   color: var(--color-white);
   background-color: var(--btn-accent-color, var(--color-primary));
@@ -95,7 +95,7 @@
   transform: scale(1.02);
 }
 
-/* Responsivo */
+/* RESPONSIVO */
 @media (max-width: 48rem) {
   .subheader-wrapper {
     top: calc(var(--header-height-mobile) + var(--spacing-xs));

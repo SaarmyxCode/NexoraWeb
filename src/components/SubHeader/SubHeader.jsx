@@ -5,6 +5,7 @@ import './SubHeader.css'
 export const SubHeader = ({
   title = 'THEME',
   titleColor = 'var(--color-primary)',
+  accentColor,
   outlineBtnText = 'Explorar',
   outlineBtnHref = '#explorar',
   primaryBtnText = 'Descargar',
@@ -12,21 +13,19 @@ export const SubHeader = ({
   targetHeroId = 'theme-hero',
 }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const activeAccentColor = accentColor || titleColor
 
   useEffect(() => {
     const handleScroll = () => {
       const heroElement = document.getElementById(targetHeroId)
 
       if (!heroElement) {
-        // Fallback en caso de que no encuentre la tarjeta Hero
         setIsVisible(window.scrollY > 400)
         return
       }
 
-      // Obtener la posición exacta del Hero en la página
       const heroBottom = heroElement.offsetTop + heroElement.offsetHeight
 
-      // Se activa en cuanto la parte inferior del Hero sobrepasa la vista superior
       if (window.scrollY >= heroBottom - 100) {
         setIsVisible(true)
       } else {
@@ -35,7 +34,6 @@ export const SubHeader = ({
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    // Ejecutamos una comprobación inicial al cargar
     handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
@@ -56,7 +54,13 @@ export const SubHeader = ({
           )}
 
           {primaryBtnText && (
-            <Link to={primaryBtnHref} className="subheader-btn btn-primary">
+            <Link
+              to={primaryBtnHref}
+              className="subheader-btn btn-primary"
+              style={{
+                '--btn-accent-color': activeAccentColor,
+              }}
+            >
               {primaryBtnText}
             </Link>
           )}
