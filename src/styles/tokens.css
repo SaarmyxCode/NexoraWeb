@@ -1,4 +1,4 @@
-/* Nexora Tokens */
+/* Nexora - Variables */
 :root {
   /* Colores Principales */
   --color-primary: #e11f2f;
@@ -8,7 +8,12 @@
   --color-primary-alpha-20: rgba(225, 31, 47, 0.2);
   --color-primary-glow: rgba(225, 31, 47, 0.35);
 
-  /* Paleta Blanca + Trasparencias  */
+  /* Colores de Sistema & Acciones (Apple Blue) */
+  --color-blue: #0071e3;
+  --color-blue-hover: #0077ed;
+  --color-blue-light: #e8f2ff;
+
+  /* Paleta Blanca + Transparencias */
   --color-white: #ffffff;
   --color-white-90: rgba(255, 255, 255, 0.9);
   --color-white-75: rgba(255, 255, 255, 0.75);
@@ -17,7 +22,7 @@
   --color-white-10: rgba(255, 255, 255, 0.1);
   --color-white-05: rgba(255, 255, 255, 0.05);
 
-  /* Paleta Negra + Transparecias */
+  /* Paleta Negra + Transparencias */
   --color-black: #000000;
   --color-black-95: rgba(0, 0, 0, 0.95);
   --color-black-80: rgba(0, 0, 0, 0.8);
@@ -27,22 +32,20 @@
   --color-black-10: rgba(0, 0, 0, 0.1);
   --color-black-05: rgba(0, 0, 0, 0.05);
 
-  /* Roles Semanticos */
+  /* Roles Semánticos */
   --color-bg-app: var(--color-white);
   --color-bg-surface: #f5f5f7;
+  --color-light-bg-footer: #f5f5f7;
   --color-light-border: #d2d2d7;
-  /* --color-bg-surface-hover: var(--color-white-25); */
-  /* --color-border-subtle: var(--color-white-10);
-  --color-border-strong: var(--color-white-25); */
 
   --color-text-primary: var(--color-black);
-  --color-text-secondary: var(--color-black-95);
+  --color-text-secondary: var(--color-black-80);
   --color-text-heading: #1d1d1f;
   --color-text-body: #424245;
   --color-text-muted: #6e6e73;
   --color-text-link: var(--color-primary);
 
-  /* Tipografia, Fuentes e Interlineado */
+  /* Tipografía, Fuentes e Interlineado */
   --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
   --font-family-heading: 'Gliker', sans-serif;
   --font-family-mono: 'Cascadia Code', monospace;
@@ -55,7 +58,7 @@
   --font-size-xl: 1.25rem; /* 20px */
   --font-size-2xl: 1.5rem; /* 24px */
   --font-size-3xl: 2rem; /* 32px */
-  --font-size-4xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -63,11 +66,11 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
 
-  --line-height-tight: 1.2;
-  --line-height-compact: 1.4;
+  --line-height-tight: 1.15;
+  --line-height-compact: 1.35;
   --line-height-base: 1.5;
 
-  /* Espaciado y Separaciones */
+  /* Espaciado */
   --spacing-3xs: 0.125rem; /* 2px */
   --spacing-2xs: 0.25rem; /* 4px */
   --spacing-xs: 0.5rem; /* 8px */
@@ -78,29 +81,16 @@
   --spacing-2xl: 3rem; /* 48px */
   --spacing-3xl: 4rem; /* 64px */
 
-  /* Componentes especificos y reusbales */
-  /* Header */
+  /* Dimensiones de Componentes */
   --header-height-mobile: 60px;
   --header-height-desktop: 72px;
-  --header-padding-x: var(--spacing-lg);
   --header-z-index: 1000;
 
-  /* Footer */
-  --footer-padding-y: var(--spacing-2xl);
-  --footer-padding-x: var(--spacing-lg);
+  --subheader-height: 52px;
+  --subheader-z-index: 990;
 
-  /* Contenedores */
   --container-max-width: 1440px;
   --container-padding-x: var(--spacing-lg);
-  --sidebar-width: 260px;
-
-  /* Tamaño de componentes */
-  --logo-height-mobile: 24px;
-  --logo-height-desktop: 32px;
-  --logo-g-height-desktop: 40px;
-  --btn-height-sm: 36px;
-  --btn-height-md: 44px;
-  --btn-height-lg: 52px;
 
   /* Bordes, Sombras y Transiciones */
   --radius-sm: 8px;
@@ -113,54 +103,18 @@
 
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s ease;
+  --transition-bounce: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 
-  --shadow-sm: 0 2px 4px var(--color-black-40);
-  --shadow-md: 0 4px 12px var(--color-black-60);
-  --shadow-primary-glow: 0 0 20px var(--color-primary-glow);
-  --shadow-surface: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.13);
-
-  /* =============== NAVBAR =============== */
-  --color-navbar-link: var(--color-black-80);
-
-  /* =============== SUBHEADER =============== */
-  /* SubHeader Tokens */
-  --subheader-height: 52px;
-  --subheader-z-index: 990; /* Justo debajo del Header principal (1000) */
-  --subheader-bg: #111113; /* Fondo oscuro elegante idéntico a la imagen */
-
-  /* =============== HERO =============== */
-  /* Hero Specific Colors */
-  --color-hero-bg: var(--color-bg-surface);
-  --color-hero-title: var(--color-primary); /* #E11F2F */
-
-  /* Mega Typography para banners Hero */
-  --font-size-hero-mobile: 2.75rem; /* ~44px */
-  --font-size-hero-desktop: 4.5rem; /* ~72px */
-  --font-size-hero-xl: 6rem; /* ~96px */
-
-  /* Hero Dimensions & Radii */
-  --hero-radius: var(--radius-lg);
-  --hero-padding-y: var(--spacing-2xl);
-
-  --hero-padding-x: var(--spacing-xl);
-
-  /* =============== GRIDCARD =============== */
-  --font-size-grid-mobile: 2.75rem; /* 32px */
-  --font-size-grid-desktop: 4.5em; /* 48px */
-  --font-size-grid-xl: 6em; /* 72px */
-  --grid-card-height: 30rem; /* 480px alto estándar */
-  --grid-gap: var(--spacing-lg);
-
-  /* =============== DOWNLOAD PAGE =============== */
-
-  /* Sombras de superficie */
   --shadow-card-subtle: 0 2px 12px rgba(0, 0, 0, 0.03);
   --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
   --shadow-card-active: 0 4px 14px rgba(0, 0, 0, 0.15);
+  --shadow-surface: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.13);
 
-  /* Iconos y Medidas de la App */
+  /* App Icons */
   --app-icon-box-desktop: 180px;
   --app-icon-box-mobile: 140px;
   --app-icon-size-desktop: 5.5rem;
   --app-icon-size-mobile: 4.2rem;
+
+  --hero-radius: var(--radius-2xl);
 }

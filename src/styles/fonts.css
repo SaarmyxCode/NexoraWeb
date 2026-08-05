@@ -1,6 +1,4 @@
-/* 
-   NEXORA LABS - LOCAL FONTS (@font-face)
-    */
+/* Nexora - Fuentes locales (@font-face) */
 
 @font-face {
   font-family: 'Gliker';
@@ -10,7 +8,7 @@
     url('/fonts/Gliker-Bold.ttf') format('truetype');
   font-weight: 700 800;
   font-style: normal;
-  font-display: swap; /* Previene parpadeos de texto invisible (FOIT) */
+  font-display: swap;
 }
 
 @font-face {

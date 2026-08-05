@@ -1,15 +1,12 @@
-/* 
-   NEXORA LABS - BASE & UTILITIES
-    */
+/* Nexora - Base y utilidades */
 body {
   background-color: var(--color-bg-app);
   color: var(--color-text-primary);
   font-family: var(--font-family-base);
   font-size: var(--font-size-md);
-  line-height: 1.5;
+  line-height: var(--line-height-base);
 }
 
-/* Layout Wrapper */
 .layout-app {
   display: flex;
   flex-direction: column;
@@ -21,7 +18,6 @@ body {
   width: 100%;
 }
 
-/* Container Reutilizable */
 .container {
   width: 100%;
   max-width: var(--container-max-width);

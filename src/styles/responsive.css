@@ -1,17 +1,11 @@
-/* ==========================================================================
-   NEXORA WEB - ADAPTABILIDAD RESPONSIVA GENERAL
-   ========================================================================== */
+/* Nexora - Adaptabilidad global */
 
-/* ==========================================================================
-   1. TABLETAS Y PANTALLAS MEDIANAS (Max Width: 768px / 48rem)
-   ========================================================================== */
+/* Tabletas (Max Width: 768px / 48rem) */
 @media (max-width: 48rem) {
-  /* Layout Base */
   :root {
     --container-padding-x: var(--spacing-md);
   }
 
-  /* Header Navbar */
   .header-wrapper {
     padding: var(--spacing-xs) var(--spacing-md);
   }
@@ -24,7 +18,6 @@
     font-size: var(--font-size-xs);
   }
 
-  /* Hero Main Card */
   .hero-wrapper {
     padding: 0 var(--spacing-md);
   }
@@ -43,13 +36,12 @@
     max-width: 90%;
   }
 
-  /* Grid 2x2 Contenedor */
   .grid-container-wrapper {
     padding: 0 var(--spacing-md) var(--spacing-lg);
   }
 
   .grid-container {
-    grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 columna en tabletas vertical */
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
 
@@ -58,11 +50,6 @@
     padding: var(--spacing-lg) var(--spacing-md) 0;
   }
 
-  .grid-card-title {
-    font-size: var(--font-size-grid-mobile);
-  }
-
-  /* Highlight Section & Slider */
   .highlights-wrapper {
     padding: 0 var(--spacing-md);
   }
@@ -77,16 +64,11 @@
   }
 
   .highlight-item-card {
-    flex: 0 0 85%; /* Muestra la tarjeta principal y un asomo de la siguiente */
+    flex: 0 0 85%;
     min-width: 16rem;
     padding: var(--spacing-lg);
   }
 
-  .highlight-item-title {
-    font-size: var(--font-size-lg);
-  }
-
-  /* SubHeader Flotante */
   .subheader-wrapper {
     top: calc(var(--header-height-mobile) + var(--spacing-xs));
     padding: 0 var(--spacing-md);
@@ -108,21 +90,16 @@
   }
 }
 
-/* ==========================================================================
-   2. TELÉFONOS MÓVILES (Max Width: 480px / 30rem)
-   ========================================================================== */
+/* Móviles (Max Width: 480px / 30rem) */
 @media (max-width: 30rem) {
-  /* Layout Base */
   :root {
     --container-padding-x: var(--spacing-sm);
   }
 
-  /* Header Navbar */
   .header-nav {
-    display: none; /* Oculta navegación horizontal estándar para menú móvil */
+    display: none;
   }
 
-  /* Hero Main Card */
   .hero-card {
     min-height: 24rem;
     padding: var(--spacing-lg) var(--spacing-sm) 0;
@@ -138,26 +115,12 @@
     line-height: var(--line-height-base);
   }
 
-  .hero-image {
-    max-height: 14rem;
-  }
-
-  /* Grid Card Individual */
   .grid-card {
     min-height: 18rem;
     padding: var(--spacing-md) var(--spacing-sm) 0;
     border-radius: var(--radius-lg);
   }
 
-  .grid-card-title {
-    font-size: var(--font-size-xl);
-  }
-
-  .grid-card-image {
-    max-height: 12rem;
-  }
-
-  /* Highlight Section */
   .highlights-header {
     flex-direction: column;
     align-items: flex-start;
@@ -169,11 +132,6 @@
     padding: var(--spacing-md);
   }
 
-  .highlight-item-image {
-    max-height: 10rem;
-  }
-
-  /* SubHeader */
   .subheader-navbar {
     padding: 0 var(--spacing-sm);
   }
