@@ -9,14 +9,14 @@ import { SongsPage } from './pages/Songs/SongsPage'
 import { RenamePage } from './pages/Rename/RenamePage'
 import { FinancePage } from './pages/Finance/FinancePage'
 import { SoportePage } from './pages/Soporte/SoportePage'
-import { NotFound } from './pages/NotFound/NotFound'
 import { DownloadPage } from './pages/Download/DownloadPage'
+import { PrivacyPage } from './pages/Privacy/PrivacyPage'
+import { NotFound } from './pages/NotFound/NotFound'
 
 export function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simula el tiempo de carga inicial de la app
     const timer = setTimeout(() => {
       setIsLoading(false)
     }, 600)
@@ -26,8 +26,12 @@ export function App() {
 
   return (
     <>
-      {/* Loader General */}
-      <div className={`app-loader ${!isLoading ? 'is-hidden' : ''}`}>
+      {/* Loader General con soporte para accesibilidad */}
+      <div
+        className={`app-loader ${!isLoading ? 'is-hidden' : ''}`}
+        aria-hidden={!isLoading}
+        aria-busy={isLoading}
+      >
         <div className="loader-spinner" />
       </div>
 
@@ -42,8 +46,9 @@ export function App() {
             <Route path="/finance" element={<FinancePage />} />
             <Route path="/soporte" element={<SoportePage />} />
             <Route path="/descargar" element={<DownloadPage />} />
+            <Route path="/privacidad" element={<PrivacyPage />} />
 
-            {/* Captura cualquier ruta que no coincida */}
+            {/* Captura de rutas no encontradas (404) */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
