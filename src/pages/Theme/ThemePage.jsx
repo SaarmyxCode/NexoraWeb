@@ -14,27 +14,26 @@ export const ThemePage = () => {
     {
       id: 'highlight-1',
       title: 'MODO OSCURO Y MODO CLARO PURO',
-      titleColor: '#E11F2F',
+      titleColor: 'var(--color-primary)',
       imageSrc: '/IphonesMockup.png',
       imageAlt: 'Demostración de temas claros y oscuros',
     },
     {
       id: 'highlight-2',
       title: 'VARIABLES INSTITUCIONALES NEXORA',
-      titleColor: '#E11F2F',
+      titleColor: 'var(--color-primary)',
       imageSrc: '/IphonesMockup.png',
       imageAlt: 'Tokens visuales de Nexora',
     },
     {
       id: 'highlight-3',
       title: 'GLIKER + INTER EN SINTONÍA',
-      titleColor: '#E11F2F',
+      titleColor: 'var(--color-primary)',
       imageSrc: '/IphonesMockup.png',
       imageAlt: 'Demostración tipográfica Nexora',
     },
   ]
 
-  // Contenido específico de cada modal para Theme
   const themeModalsData = [
     {
       title: 'Contraste y Salud Visual',
@@ -43,7 +42,7 @@ export const ThemePage = () => {
           subtitle: 'Optimización de color.',
           description:
             'Cada paleta de Nexora Theme cumple estrictamente con el nivel AAA de las pautas WCAG. Los fondos negros puros en pantallas OLED garantizan un consumo energético mínimo y cero fatiga visual.',
-          linkText: 'Ver especificaciones de contraste (PDF en español)',
+          linkText: 'Ver especificaciones de contraste (PDF)',
           linkHref: '#',
         },
         {
@@ -61,34 +60,8 @@ export const ThemePage = () => {
         {
           subtitle: 'Arquitectura escalable.',
           description:
-            'Centraliza colores, bordes, sombras y tipografías en un solo archivo de tokens dinámicos. Modificar el tono institucional toma un segundo y se propaga en toda la aplicación.',
+            'Centraliza colores, bordes, sombras y tipografías en un solo archivo de tokens dinámicos.',
           linkText: 'Documentación de tokens de diseño',
-          linkHref: '#',
-        },
-        {
-          subtitle: 'Compatibilidad con React.',
-          description:
-            'Variables totalmente exportables como módulos CSS, Styled Components o Tailwind CSS.',
-          linkText: 'Descargar paquete de tokens (npm)',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Render sin Latencia',
-      sections: [
-        {
-          subtitle: 'Transición instantánea.',
-          description:
-            'El cambio de estado entre temas no fuerza un reflow del DOM. Las variables se actualizan directamente en la memoria del navegador ofreciendo 60 FPS garantizados.',
-          linkText: 'Informe de pruebas de rendimiento (PDF)',
-          linkHref: '#',
-        },
-        {
-          subtitle: 'Estrategia de caché.',
-          description:
-            'La preferencia del usuario se almacena en el almacenamiento local sin requerir llamadas al servidor.',
-          linkText: 'Más sobre rendimiento visual',
           linkHref: '#',
         },
       ],
@@ -129,11 +102,16 @@ export const ThemePage = () => {
 
   return (
     <div className="theme-page">
-      <HeroCard id="theme-hero" title="THEME" titleColor="#E11F2F" imageSrc="/IphonesMockup.png" />
+      <HeroCard
+        id="theme-hero"
+        title="THEME"
+        titleColor="var(--color-primary)"
+        imageSrc="/IphonesMockup.png"
+      />
       <SubHeader
         targetHeroId="theme-hero"
         title="THEME"
-        titleColor="#E11F2F"
+        titleColor="var(--color-primary)"
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Descargar"
@@ -149,15 +127,15 @@ export const ThemePage = () => {
         id="theme-detail"
         title="SISTEMA VISUAL"
         subtitle="Presentamos el lenguaje de diseño unificado de Nexora. Diseñado desde cero para ofrecer una experiencia consistente, fluida y con alto contraste en todas nuestras herramientas."
-        titleColor="#E11F2F"
+        titleColor="var(--color-primary)"
         imageSrc="/IphonesMockup.png"
       />
       <FeatureStatsCard
         title="Theme y la eficiencia en la interfaz"
-        linkText="Más información en la guía de diseño (PDF en español)"
+        linkText="Más información en la guía de diseño (PDF)"
         linkHref="#guia-diseno"
-        linkColor="#E11F2F"
-        accentColor="#E11F2F"
+        linkColor="var(--color-primary)"
+        accentColor="var(--color-primary)"
         icon={FiLayers}
         items={themeStatsData}
         onCardClick={handleOpenModal}
@@ -167,8 +145,10 @@ export const ThemePage = () => {
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         title={modalState.title}
         sections={modalState.sections}
-        linkColor="#E11F2F"
+        linkColor="var(--color-primary)"
       />
     </div>
   )
 }
+
+export default ThemePage

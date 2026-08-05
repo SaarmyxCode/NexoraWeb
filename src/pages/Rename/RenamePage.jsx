@@ -9,24 +9,25 @@ import './RenamePage.css'
 
 export const RenamePage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  const accentYellow = '#EAB308'
 
   const renameHighlights = [
     {
       id: 'highlight-1',
       title: 'RENOMBRADO MASIVO EN SEGUNDOS',
-      titleColor: '#EAB308',
+      titleColor: accentYellow,
       imageSrc: '/IphonesMockup.png',
     },
     {
       id: 'highlight-2',
       title: 'REGLAS Y PATRONES PERSONALIZADOS',
-      titleColor: '#EAB308',
+      titleColor: accentYellow,
       imageSrc: '/IphonesMockup.png',
     },
     {
       id: 'highlight-3',
       title: 'PREVISUALIZACIÓN EN TIEMPO REAL',
-      titleColor: '#EAB308',
+      titleColor: accentYellow,
       imageSrc: '/IphonesMockup.png',
     },
   ]
@@ -38,32 +39,8 @@ export const RenamePage = () => {
         {
           subtitle: 'Motor multi-hilo.',
           description:
-            'Arovecha los núcleos de tu procesador para renombrar miles de archivos en un solo paso, eliminando cuellos de botella.',
+            'Aprovecha los núcleos de tu procesador para renombrar miles de archivos en un solo paso.',
           linkText: 'Guía de optimización en lote',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Ahorro de Tiempo',
-      sections: [
-        {
-          subtitle: 'Plantillas reutilizables.',
-          description:
-            'Guarda reglas complejas (fechas, contadores, prefijos, reemplazo de caracteres) y aplícalas con un solo clic.',
-          linkText: 'Ver biblioteca de reglas',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Soporte Universal',
-      sections: [
-        {
-          subtitle: 'Formatos soportados.',
-          description:
-            'Lee metadatos EXIF en fotografías, etiquetas ID3 en audio y metadatos de documentos PDF de forma nativa.',
-          linkText: 'Lista completa de formatos',
           linkHref: '#',
         },
       ],
@@ -83,12 +60,6 @@ export const RenamePage = () => {
       highlight: '95% del tiempo',
       suffix: 'invertido en la organización manual de carpetas.',
     },
-    {
-      id: 'stat-3',
-      prefix: 'Soporte completo para',
-      highlight: 'más de 50 formatos',
-      suffix: 'de documentos, imágenes y ejecutables.',
-    },
   ]
 
   const handleOpenModal = (_, index) => {
@@ -107,13 +78,13 @@ export const RenamePage = () => {
       <HeroCard
         id="rename-hero"
         title="RENAME"
-        titleColor="#EAB308"
+        titleColor={accentYellow}
         imageSrc="/IphonesMockup.png"
       />
       <SubHeader
         targetHeroId="rename-hero"
         title="RENAME"
-        titleColor="#EAB308"
+        titleColor={accentYellow}
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Descargar"
@@ -129,15 +100,15 @@ export const RenamePage = () => {
         id="rename-detail"
         title="AUTOMATIZACIÓN"
         subtitle="Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas."
-        titleColor="#EAB308"
+        titleColor={accentYellow}
         imageSrc="/IphonesMockup.png"
       />
       <FeatureStatsCard
         title="Rename y la eficiencia de tus archivos"
         linkText="Ver guía de patrones y reglas >"
         linkHref="#patrones"
-        linkColor="#EAB308"
-        accentColor="#EAB308"
+        linkColor={accentYellow}
+        accentColor={accentYellow}
         icon={FiFolderPlus}
         items={renameStatsData}
         onCardClick={handleOpenModal}
@@ -147,8 +118,10 @@ export const RenamePage = () => {
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         title={modalState.title}
         sections={modalState.sections}
-        linkColor="#EAB308"
+        linkColor={accentYellow}
       />
     </div>
   )
 }
+
+export default RenamePage

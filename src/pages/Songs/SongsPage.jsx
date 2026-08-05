@@ -9,24 +9,25 @@ import './SongsPage.css'
 
 export const SongsPage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  const accentBlue = '#2563EB'
 
   const songsHighlights = [
     {
       id: 'highlight-1',
       title: 'PLAYLISTS CURADAS A MEDIDA',
-      titleColor: '#2563EB',
+      titleColor: accentBlue,
       imageSrc: '/IphonesMockup.png',
     },
     {
       id: 'highlight-2',
       title: 'ORGANIZACIÓN POR GÉNERO Y MOOD',
-      titleColor: '#2563EB',
+      titleColor: accentBlue,
       imageSrc: '/IphonesMockup.png',
     },
     {
       id: 'highlight-3',
       title: 'SINCRONIZACIÓN MULTIPLATAFORMA',
-      titleColor: '#2563EB',
+      titleColor: accentBlue,
       imageSrc: '/IphonesMockup.png',
     },
   ]
@@ -40,37 +41,6 @@ export const SongsPage = () => {
           description:
             'Cada lista es filtrada manualmente evaluando BPM, rango dinámico e instrumentos para asegurar la atmósfera perfecta en cada actividad.',
           linkText: 'Explorar catálogo completo',
-          linkHref: '#',
-        },
-        {
-          subtitle: 'Actualizaciones semanales.',
-          description:
-            'Añadimos nuevas producciones independientes todos los viernes de forma automática.',
-          linkText: 'Ver criterios de selección',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Sincronización Inmediata',
-      sections: [
-        {
-          subtitle: 'Reproducción sin pausar.',
-          description:
-            'Cambia de la aplicación móvil a la versión web o de escritorio en tiempo real sin perder la posición actual del track.',
-          linkText: 'Cómo funciona la sincronización',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Enfoque y Productividad',
-      sections: [
-        {
-          subtitle: 'Música para Deep Work.',
-          description:
-            'Frecuencias de sonido optimizadas sin saltos bruscos de volumen para maximizar la retención y la velocidad de trabajo.',
-          linkText: 'Estudio sobre música y concentración (PDF)',
           linkHref: '#',
         },
       ],
@@ -90,12 +60,6 @@ export const SongsPage = () => {
       highlight: 'menos de 1 segundo entre equipos',
       suffix: 'manteniendo el formato original de alta fidelidad.',
     },
-    {
-      id: 'stat-3',
-      prefix: 'Listas diseñadas para',
-      highlight: '100% de concentración',
-      suffix: 'en tus sesiones de trabajo y entrenamiento.',
-    },
   ]
 
   const handleOpenModal = (_, index) => {
@@ -111,11 +75,16 @@ export const SongsPage = () => {
 
   return (
     <div className="songs-page">
-      <HeroCard id="songs-hero" title="SONGS" titleColor="#2563EB" imageSrc="/IphonesMockup.png" />
+      <HeroCard
+        id="songs-hero"
+        title="SONGS"
+        titleColor={accentBlue}
+        imageSrc="/IphonesMockup.png"
+      />
       <SubHeader
         targetHeroId="songs-hero"
         title="SONGS"
-        titleColor="#2563EB"
+        titleColor={accentBlue}
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Descargar"
@@ -131,15 +100,15 @@ export const SongsPage = () => {
         id="songs-detail"
         title="CATÁLOGO"
         subtitle="Explora nuestra colección curada de música y listas organizadas por atmósfera, tempo y estética."
-        titleColor="#2563EB"
+        titleColor={accentBlue}
         imageSrc="/IphonesMockup.png"
       />
       <FeatureStatsCard
         title="Songs y nuestro impacto musical"
         linkText="Más información sobre la curaduría >"
         linkHref="#curaduria"
-        linkColor="#2563EB"
-        accentColor="#2563EB"
+        linkColor={accentBlue}
+        accentColor={accentBlue}
         icon={FiMusic}
         items={songsStatsData}
         onCardClick={handleOpenModal}
@@ -149,8 +118,10 @@ export const SongsPage = () => {
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         title={modalState.title}
         sections={modalState.sections}
-        linkColor="#2563EB"
+        linkColor={accentBlue}
       />
     </div>
   )
 }
+
+export default SongsPage
