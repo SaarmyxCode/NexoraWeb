@@ -52,23 +52,8 @@ export const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/vault" className="footer-link">
+                  <Link to="/descargar" className="footer-link">
                     NexoraVault
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/autocleaner" className="footer-link">
-                    AutoCleaner
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-group">
-              <h4 className="footer-title">Nexora Account</h4>
-              <ul className="footer-list">
-                <li>
-                  <Link to="/account" className="footer-link">
-                    Gestionar Cuenta
                   </Link>
                 </li>
               </ul>
@@ -81,28 +66,13 @@ export const Footer = () => {
               <h4 className="footer-title">Cuenta</h4>
               <ul className="footer-list">
                 <li>
-                  <Link to="/account" className="footer-link">
-                    Administra tu Cuenta de Nexora
+                  <Link to="/soporte" className="footer-link">
+                    Administra tu Cuenta
                   </Link>
                 </li>
                 <li>
-                  <Link to="/cloud" className="footer-link">
+                  <Link to="/soporte" className="footer-link">
                     Nexora Cloud
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-group">
-              <h4 className="footer-title">Entretenimiento</h4>
-              <ul className="footer-list">
-                <li>
-                  <Link to="/songs" className="footer-link">
-                    Nexora One
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/songs" className="footer-link">
-                    Nexora Music
                   </Link>
                 </li>
               </ul>
@@ -119,11 +89,6 @@ export const Footer = () => {
                     Nexora y la empresa
                   </Link>
                 </li>
-              </ul>
-            </div>
-            <div className="footer-group">
-              <h4 className="footer-title">Para la educación</h4>
-              <ul className="footer-list">
                 <li>
                   <Link to="/soporte" className="footer-link">
                     Nexora y la educación
@@ -139,28 +104,13 @@ export const Footer = () => {
               <h4 className="footer-title">Valores de Nexora</h4>
               <ul className="footer-list">
                 <li>
-                  <Link to="/soporte#accesibilidad" className="footer-link">
+                  <Link to="/soporte" className="footer-link">
                     Accesibilidad
                   </Link>
                 </li>
                 <li>
-                  <Link to="/soporte#privacidad" className="footer-link">
+                  <Link to="/privacidad" className="footer-link">
                     Privacidad
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-group">
-              <h4 className="footer-title">Acerca de Nexora</h4>
-              <ul className="footer-list">
-                <li>
-                  <Link to="/soporte#newsroom" className="footer-link">
-                    Newsroom
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/soporte#empleo" className="footer-link">
-                    Oportunidades laborales
                   </Link>
                 </li>
               </ul>
@@ -168,7 +118,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Localizador / Enlace a soporte o ventas */}
+        {/* Localizador / Enlace a soporte */}
         <div className="footer-store-locator">
           <Link to="/soporte">Busca asistencia o servicios de instalación</Link> cerca de ti.
         </div>
@@ -178,11 +128,11 @@ export const Footer = () => {
           <span>Copyright © {currentYear} Nexora Labs. Todos los derechos reservados.</span>
 
           <div className="footer-legal-links">
-            <Link to="/soporte#privacidad">Política de privacidad</Link>
+            <Link to="/privacidad">Política de privacidad</Link>
             <span className="footer-legal-divider">|</span>
-            <Link to="/soporte#aviso">Aviso legal</Link>
+            <Link to="/soporte">Aviso legal</Link>
             <span className="footer-legal-divider">|</span>
-            <Link to="/soporte#sitemap">Mapa del sitio</Link>
+            <Link to="/soporte">Mapa del sitio</Link>
           </div>
 
           <span className="footer-country">Colombia</span>

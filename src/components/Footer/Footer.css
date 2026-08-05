@@ -1,9 +1,12 @@
+/* Footer - Pie de pagina flotante */
+
 .footer-wrapper {
   width: 100%;
   padding: 0 var(--spacing-lg) var(--spacing-lg);
   display: flex;
   justify-content: center;
   margin-top: auto;
+  box-sizing: border-box;
 }
 
 .footer-container {
@@ -17,9 +20,10 @@
   font-size: var(--font-size-xs);
   line-height: var(--line-height-base);
   box-shadow: var(--shadow-surface);
+  box-sizing: border-box;
 }
 
-/* Disclaimer / Notas superiores */
+/* Disclaimer */
 .footer-disclaimer {
   padding-bottom: var(--spacing-md);
   border-bottom: var(--border-width-thin) solid var(--color-light-border);
@@ -32,6 +36,7 @@
   color: var(--color-text-muted);
   font-size: var(--font-size-2xs);
   line-height: var(--line-height-compact);
+  margin: 0;
 }
 
 .footer-disclaimer a {
@@ -39,7 +44,7 @@
   text-decoration: underline;
 }
 
-/* Grid de Enlaces */
+/* Grid de Navegación */
 .footer-nav-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -63,19 +68,23 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-heading);
-  margin-bottom: var(--spacing-4xs);
+  margin: 0 0 var(--spacing-3xs) 0;
 }
 
 .footer-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xs);
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .footer-link {
   color: var(--color-text-body);
   font-size: var(--font-size-xs);
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
 .footer-link:hover {
@@ -83,7 +92,7 @@
   text-decoration: underline;
 }
 
-/* Distribuidor / Tiendas */
+/* Localizador */
 .footer-store-locator {
   padding-bottom: var(--spacing-md);
   border-bottom: var(--border-width-thin) solid var(--color-light-border);
@@ -92,11 +101,11 @@
 }
 
 .footer-store-locator a {
-  color: var(--color-text-link);
+  color: var(--color-blue);
   text-decoration: underline;
 }
 
-/* Barra Legal Inferior */
+/* Barra Inferior */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -114,6 +123,11 @@
   gap: var(--spacing-xs);
 }
 
+.footer-legal-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
 .footer-legal-links a:hover {
   color: var(--color-black);
   text-decoration: underline;
@@ -127,7 +141,7 @@
   color: var(--color-text-body);
 }
 
-/* Adaptación Responsiva */
+/* RESPONSIVO */
 @media (max-width: 48rem) {
   .footer-container {
     padding: var(--spacing-lg);

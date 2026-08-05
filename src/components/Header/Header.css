@@ -1,3 +1,6 @@
+/* Header - Barra de navegacion principal flotante
+  */
+
 .header-wrapper {
   width: 100%;
   padding: var(--spacing-md) var(--spacing-lg);
@@ -23,12 +26,11 @@
   transition:
     max-width var(--transition-normal),
     border-radius var(--transition-normal),
-    box-shadow var(--transition-normal);
+    box-shadow var(--transition-normal),
+    background-color var(--transition-normal);
 }
 
-/* 
-   ESTADO EN SCROLL (Ancho completo y pegado al borde superior)
-    */
+/* Estado al hacer Scroll */
 .header-wrapper.is-scrolled {
   padding: 0;
 }
@@ -36,41 +38,39 @@
 .header-wrapper.is-scrolled .header-navbar {
   max-width: 100%;
   border-radius: 0;
-  box-shadow: var(--shadow-surface);
+  box-shadow: var(--shadow-card-subtle);
+  background-color: var(--color-white-90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-/* 
-   LOGO (Soporte PNG + Versión Texto Intocable)
-    */
+/* Logo */
 .header-logo-container {
   display: flex;
   align-items: center;
-  user-select: none; /* Hace el elemento intocable / no seleccionable */
+  user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
 
 .header-logo-img {
-  height: var(--logo-g-height-desktop);
+  height: var(--logo-g-height-desktop, 40px);
   width: auto;
   object-fit: contain;
-  pointer-events: none; /* Previene interacciones/arrastres de la imagen */
+  pointer-events: none;
 }
 
 .header-logo {
   font-family: var(--font-family-heading);
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-extrabold);
-  color: var(--color-navbar-link);
-  letter-spacing: var(--spacing-4xs);
+  color: var(--color-text-heading);
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   user-select: none;
-  -webkit-user-select: none;
 }
 
-/* 
-   NAVEGACIÓN
-    */
+/* Navegación */
 .header-nav {
   display: flex;
   align-items: center;
@@ -81,18 +81,18 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-navbar-link);
+  color: var(--color-text-muted);
   transition: color var(--transition-fast);
   white-space: nowrap;
 }
 
-.header-nav-link:hover {
-  color: var(--color-black);
+.header-nav-link:hover,
+.header-nav-link.is-active {
+  color: var(--color-text-heading);
+  font-weight: var(--font-weight-semibold);
 }
 
-/* 
-   RESPONSIVO
-    */
+/* RESPONSIVO */
 @media (max-width: 48rem) {
   .header-navbar {
     height: var(--header-height-mobile);
@@ -100,7 +100,7 @@
   }
 
   .header-logo-img {
-    height: var(--logo-height-mobile);
+    height: var(--logo-height-mobile, 24px);
   }
 
   .header-logo {
