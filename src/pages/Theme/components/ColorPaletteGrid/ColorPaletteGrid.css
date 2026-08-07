@@ -1,0 +1,258 @@
+/* Tarjeta de Inspector de Paleta de Colores Minimalista */
+
+.palette-release-wrapper {
+  --palette-accent: var(--color-primary);
+  --palette-accent-bg: var(--color-black-05);
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.palette-release-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  padding: clamp(var(--spacing-xl), 4vw, 3.5rem) clamp(var(--spacing-lg), 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-surface);
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+/* Badge Superior */
+.palette-release-badge {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Título y Subtítulo */
+.palette-release-title {
+  font-family: var(--font-family-base);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-heading);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--spacing-3xs) 0;
+}
+
+.palette-release-subtitle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Descripción */
+.palette-release-description {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
+  max-width: 46rem;
+  margin: 0 0 var(--spacing-xl) 0;
+}
+
+/* Icono Circular Central */
+.palette-icon-circle {
+  width: auto;
+  height: 48px;
+  padding: 0 var(--spacing-md);
+  border-radius: var(--radius-full);
+  background-color: var(--palette-accent-bg);
+  color: var(--palette-accent);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  margin-bottom: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.palette-circle-icon {
+  font-size: 1.15rem;
+}
+
+.palette-circle-divider {
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* Subnota */
+.palette-release-subnote {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 36rem;
+}
+
+/* Tarjeta Interior de Detalles */
+.palette-details-box {
+  width: 100%;
+  max-width: 52rem;
+  background-color: var(--color-bg-app);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: left;
+  box-sizing: border-box;
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.palette-details-label {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Grilla de Swatches */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Ficha Individual */
+.palette-swatch-card {
+  position: relative;
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  user-select: none;
+}
+
+.palette-swatch-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--palette-accent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.palette-swatch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.palette-swatch-color-preview {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  border: var(--border-width-thin) solid var(--color-light-border);
+}
+
+.palette-swatch-badge {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  background-color: var(--color-black-05);
+  padding: 2px var(--spacing-2xs);
+  border-radius: var(--radius-sm);
+}
+
+.palette-swatch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.palette-swatch-name {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+}
+
+.palette-swatch-code {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-2xs);
+  color: var(--palette-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.palette-swatch-desc {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-2xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-compact);
+  margin: 4px 0 0 0;
+}
+
+/* Botón de Copiado Circular */
+.palette-copy-btn {
+  position: absolute;
+  bottom: var(--spacing-sm);
+  right: var(--spacing-sm);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-heading);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.palette-swatch-card:hover .palette-copy-btn {
+  transform: scale(1.1);
+  background-color: var(--palette-accent);
+  color: var(--color-white);
+  border-color: var(--palette-accent);
+}
+
+.palette-copy-btn.is-copied {
+  background-color: #10b981 !important;
+  color: var(--color-white) !important;
+  border-color: #10b981 !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 48rem) {
+  .palette-release-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .palette-release-card {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .palette-details-box {
+    padding: var(--spacing-md);
+  }
+
+  .palette-grid {
+    grid-template-columns: 1fr;
+  }
+}
