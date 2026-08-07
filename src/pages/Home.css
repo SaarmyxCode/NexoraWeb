@@ -1,4 +1,4 @@
-/* Pagina Principal */
+/* Página Principal */
 
 .home-container {
   width: 100%;
@@ -31,6 +31,9 @@
   justify-content: center;
   gap: var(--spacing-sm);
   box-shadow: var(--shadow-card-subtle);
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal);
 }
 
 .info-card-title {
