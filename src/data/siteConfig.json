@@ -1,0 +1,17 @@
+{
+  "siteName": "Nexora Labs",
+  "searchPlaceholder": "Buscar aplicaciones, características, descargas...",
+  "navLinks": [
+    { "label": "Theme", "to": "/theme" },
+    { "label": "Songs", "to": "/songs" },
+    { "label": "Rename", "to": "/rename" },
+    { "label": "Finance", "to": "/finance" },
+    { "label": "Novedades", "to": "/changelog" },
+    { "label": "Soporte", "to": "/soporte" },
+    { "label": "Dónde descargar", "to": "/descargar" }
+  ],
+  "footer": {
+    "disclaimer": "Pruebas realizadas por Nexora Labs en 2026. Algunas funcionalidades requieren licencias activas.",
+    "country": "Colombia"
+  }
+}

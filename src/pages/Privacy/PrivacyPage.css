@@ -19,14 +19,15 @@
 .privacy-hero-card {
   width: 100%;
   max-width: var(--container-max-width);
-  background-color: var(--color-white);
-  border-radius: var(--hero-radius);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--hero-radius, var(--radius-2xl));
+  border: var(--border-width-thin) solid var(--color-light-border);
   padding: clamp(var(--spacing-xl), 5vw, 4.5rem) clamp(var(--spacing-md), 4vw, 3rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: var(--shadow-card-subtle);
+  box-shadow: var(--shadow-surface);
   box-sizing: border-box;
 }
 
@@ -44,7 +45,7 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-heading);
+  color: var(--color-text-muted);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -58,9 +59,9 @@
 
 .privacy-hero-text {
   font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-md);
   line-height: var(--line-height-base);
-  color: var(--color-text-heading);
+  color: var(--color-text-body);
   margin: 0;
 }
 
@@ -74,12 +75,12 @@
 .privacy-icon-badge {
   width: 56px;
   height: 56px;
-  background-color: var(--color-blue-light, #e8f2ff);
+  background-color: var(--color-primary-light, #e8f2ff);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-blue, #0071e3);
+  color: var(--color-primary);
 }
 
 .privacy-icon {
@@ -87,11 +88,11 @@
 }
 
 .privacy-action-link {
-  color: var(--color-blue, #0071e3);
+  color: var(--color-primary);
   text-decoration: none;
   font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
   transition: opacity var(--transition-fast);
 }
 
@@ -105,6 +106,22 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+}
+
+/* Animación al cambiar de pestaña */
+.animate-tab-change {
+  animation: tabFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 48rem) {

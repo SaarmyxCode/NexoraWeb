@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FiHelpCircle } from 'react-icons/fi'
+import productsData from '../../data/products.json'
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
@@ -9,28 +10,17 @@ import './SoportePage.css'
 
 export const SoportePage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
-  const accentPurple = '#8B5CF6'
 
-  const soporteHighlights = [
-    {
-      id: 'highlight-1',
-      title: 'CENTRO DE AYUDA Y GUÍAS RÁPIDAS',
-      titleColor: accentPurple,
-      imageSrc: '/MacBookMockup.png',
-    },
-    {
-      id: 'highlight-2',
-      title: 'ATENCIÓN DIRECTA Y TICKET DE CONSULTAS',
-      titleColor: accentPurple,
-      imageSrc: '/MacBookMockup.png',
-    },
-    {
-      id: 'highlight-3',
-      title: 'ESTADO DE SERVICIOS EN TIEMPO REAL',
-      titleColor: accentPurple,
-      imageSrc: '/MacBookMockup.png',
-    },
-  ]
+  const soporteData = productsData.soporte || {
+    shortName: 'SOPORTE',
+    accentColor: '#8B5CF6',
+    downloadUrl: '#contactar',
+    description:
+      'Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones.',
+    mockup: '/MacBookMockup.png',
+    highlights: [],
+    stats: [],
+  }
 
   const soporteModalsData = [
     {
@@ -44,21 +34,6 @@ export const SoportePage = () => {
           linkHref: '#',
         },
       ],
-    },
-  ]
-
-  const soporteStatsData = [
-    {
-      id: 'stat-1',
-      prefix: 'Respuesta en',
-      highlight: 'menos de 15 minutos',
-      suffix: 'para tickets prioritarios de soporte técnico.',
-    },
-    {
-      id: 'stat-2',
-      prefix: 'Disponibilidad del',
-      highlight: '99.9% de los servicios',
-      suffix: 'con monitoreo continuo en tiempo real.',
     },
   ]
 
@@ -77,40 +52,42 @@ export const SoportePage = () => {
     <div className="soporte-page">
       <HeroCard
         id="soporte-hero"
-        title="SOPORTE"
-        titleColor={accentPurple}
-        imageSrc="/MacBookMockup.png"
+        title={soporteData.shortName}
+        titleColor={soporteData.accentColor}
+        imageSrc={soporteData.mockup}
+        imageAlt={`Mockup de ${soporteData.shortName}`}
       />
       <SubHeader
         targetHeroId="soporte-hero"
-        title="SOPORTE"
-        titleColor={accentPurple}
+        title={soporteData.shortName}
+        titleColor={soporteData.accentColor}
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Contactar"
-        primaryBtnHref="#contactar"
+        primaryBtnHref={soporteData.downloadUrl}
       />
       <HighlightSection
         title="Mira lo más destacado."
         actionText="Ver Preguntas Frecuentes >"
         actionHref="#faq"
-        items={soporteHighlights}
+        items={soporteData.highlights}
       />
       <HeroCard
         id="soporte-detail"
         title="ASISTENCIA"
-        subtitle="Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones."
-        titleColor={accentPurple}
-        imageSrc="/MacBookMockup.png"
+        subtitle={soporteData.description}
+        titleColor={soporteData.accentColor}
+        imageSrc={soporteData.mockup}
+        imageAlt="Asistencia técnica Nexora"
       />
       <FeatureStatsCard
         title="Soporte y el compromiso con nuestros usuarios"
         linkText="Consulta el estado de los servicios en vivo >"
         linkHref="#status"
-        linkColor={accentPurple}
-        accentColor={accentPurple}
+        linkColor={soporteData.accentColor}
+        accentColor={soporteData.accentColor}
         icon={FiHelpCircle}
-        items={soporteStatsData}
+        items={soporteData.stats}
         onCardClick={handleOpenModal}
       />
       <DetailModal
@@ -118,7 +95,7 @@ export const SoportePage = () => {
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         title={modalState.title}
         sections={modalState.sections}
-        linkColor={accentPurple}
+        linkColor={soporteData.accentColor}
       />
     </div>
   )

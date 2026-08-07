@@ -5,7 +5,6 @@ import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
 import { FeatureStatsCard } from '../../components/FeatureStatsCard/FeatureStatsCard'
 import { DetailModal } from '../../components/DetailModal/DetailModal'
-import { Changelog } from '../../components/Changelog/Changelog'
 import './RenamePage.css'
 
 export const RenamePage = () => {
@@ -63,32 +62,6 @@ export const RenamePage = () => {
     },
   ]
 
-  const renameReleases = [
-    {
-      version: '1.0.0',
-      date: 'Agosto 2026',
-      isLatest: true,
-      description: 'Lanzamiento oficial del motor de renombrado masivo para Nexora.',
-      changes: [
-        {
-          type: 'Añadido',
-          items: [
-            'Procesamiento en lote mediante motor multihilo local.',
-            'Generador de reglas compuestas con variables (fecha, índice, metadatos).',
-            'Soporte completo para Drag & Drop de carpetas completas.',
-          ],
-        },
-        {
-          type: 'Mejora',
-          items: [
-            'Previsualización en tiempo real del resultado antes de aplicar el cambio.',
-            'Integración con la paleta de tokens globales de Nexora.',
-          ],
-        },
-      ],
-    },
-  ]
-
   const handleOpenModal = (_, index) => {
     const selectedModal = renameModalsData[index]
     if (selectedModal) {
@@ -140,13 +113,6 @@ export const RenamePage = () => {
         items={renameStatsData}
         onCardClick={handleOpenModal}
       />
-
-      <section className="rename-changelog-section" id="changelog">
-        <div className="rename-section-header">
-          <h2 className="rename-section-title">Historial de Actualizaciones</h2>
-        </div>
-        <Changelog releases={renameReleases} />
-      </section>
 
       <DetailModal
         isOpen={modalState.isOpen}

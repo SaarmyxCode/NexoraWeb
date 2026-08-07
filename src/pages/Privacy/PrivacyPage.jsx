@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { FiUsers, FiShield, FiFileText, FiSliders, FiEye, FiLock } from 'react-icons/fi'
 import { SecondaryNav } from '../../components/SecondaryNav/SecondaryNav'
 import { useReveal } from '../../hooks/useReveal'
@@ -71,8 +71,9 @@ export const PrivacyPage = () => {
     <div className="privacy-page">
       <SecondaryNav
         title="Privacidad"
-        titleColor="var(--color-light-text-heading)"
+        titleColor="var(--color-text-heading)"
         links={privacyNavLinks}
+        isSticky={true}
       />
 
       {/* HERO ÚNICO CON ANIMACIÓN DE ENTRADA POR CLAVE */}
@@ -80,7 +81,7 @@ export const PrivacyPage = () => {
         <div key={currentSection.id} className="privacy-hero-card animate-tab-change">
           <h1 className="privacy-hero-title">{currentSection.title}</h1>
 
-          <span className="privacy-updated-date">Actualizado el 4 de agosto de 2026</span>
+          <span className="privacy-updated-date">Actualizado el 7 de agosto de 2026</span>
 
           <div className="privacy-hero-body">
             <p className="privacy-hero-text">{currentSection.text}</p>
