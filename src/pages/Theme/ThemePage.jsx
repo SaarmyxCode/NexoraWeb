@@ -6,7 +6,8 @@ import { FeatureStatsCard } from '../../components/FeatureStatsCard/FeatureStats
 
 // 🧩 Componentes Exclusivos de ThemePage
 import changelogData from '../../data/changelog.json'
-import { ChangelogCard } from './components/ChangelogCard/ChangelogCard'
+FeatureStatsCard / FeatureStatsCard
+import { ChangelogCard } from '../../components/pages/ChangelogCard/ChangelogCard'
 import { ColorPaletteGrid } from './components/ColorPaletteGrid/ColorPaletteGrid'
 
 import './ThemePage.css'
