@@ -1,8 +1,8 @@
 {
   "theme": {
     "title": "Nexora Theme",
-    "version": "v0.9.0",
-    "date": "Actualizado el 5 de agosto de 2026",
+    "version": "v1.0.1",
+    "date": "Actualizado el 6 de agosto de 2026",
     "badgeColor": "#E11F2F",
     "icon": "FiLayers",
     "text": "Lanzamiento de la nueva paleta de Design Tokens unificada. Se redujo a cero la latencia de renderizado en componentes con alto contraste y se añadió integración directa con fuentes tipográficas Gliker e Inter.",

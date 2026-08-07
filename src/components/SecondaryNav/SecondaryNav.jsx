@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import siteConfig from '../../data/siteConfig.json'
 import './SecondaryNav.css'
 
 export const SecondaryNav = ({
@@ -9,14 +10,19 @@ export const SecondaryNav = ({
   actionBtn, // { label: string, to?: string, href?: string, onClick?: fn, color?: string }
   isSticky = false,
   className = '',
+  accentColor,
 }) => {
+  // Permite sobreescribir o usar por defecto desde siteConfig
+  const navTitle = title || siteConfig.siteName
+  const activeAccentColor = accentColor || titleColor
+
   return (
     <div className={`secondary-nav-wrapper ${isSticky ? 'is-sticky' : ''} ${className}`}>
       <div className="secondary-nav-container">
         {/* Título de la vista / sección */}
-        {title && (
-          <h2 className="secondary-nav-title" style={{ color: titleColor }}>
-            {title}
+        {navTitle && (
+          <h2 className="secondary-nav-title" style={{ color: activeAccentColor }}>
+            {navTitle}
           </h2>
         )}
 
@@ -28,14 +34,23 @@ export const SecondaryNav = ({
                 const isRouterLink = link.to && !link.href
                 const Tag = isRouterLink ? Link : 'a'
                 const linkProps = isRouterLink ? { to: link.to } : { href: link.href || '#' }
+                const isLinkActive = link.isActive
 
                 return (
                   <Tag
                     key={link.id || index}
                     {...linkProps}
                     onClick={link.onClick}
-                    className={`secondary-nav-link ${link.isActive ? 'is-active' : ''}`}
-                    aria-current={link.isActive ? 'page' : undefined}
+                    className={`secondary-nav-link ${isLinkActive ? 'is-active' : ''}`}
+                    style={
+                      isLinkActive && activeAccentColor
+                        ? {
+                            '--nav-link-accent': activeAccentColor,
+                            color: activeAccentColor,
+                          }
+                        : undefined
+                    }
+                    aria-current={isLinkActive ? 'page' : undefined}
                   >
                     {link.label}
                   </Tag>
@@ -51,7 +66,9 @@ export const SecondaryNav = ({
                 <Link
                   to={actionBtn.to}
                   className="secondary-nav-action-btn"
-                  style={actionBtn.color ? { backgroundColor: actionBtn.color } : undefined}
+                  style={{
+                    backgroundColor: actionBtn.color || activeAccentColor,
+                  }}
                   onClick={actionBtn.onClick}
                 >
                   {actionBtn.label}
@@ -60,7 +77,9 @@ export const SecondaryNav = ({
                 <a
                   href={actionBtn.href || '#'}
                   className="secondary-nav-action-btn"
-                  style={actionBtn.color ? { backgroundColor: actionBtn.color } : undefined}
+                  style={{
+                    backgroundColor: actionBtn.color || activeAccentColor,
+                  }}
                   onClick={actionBtn.onClick}
                 >
                   {actionBtn.label}

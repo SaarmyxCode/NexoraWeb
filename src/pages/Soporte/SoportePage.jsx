@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FiHelpCircle } from 'react-icons/fi'
 import { getProduct } from '../../utils/getProduct'
+import { usePageTheme } from '../../hooks/usePageTheme'
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
@@ -9,8 +10,10 @@ import { DetailModal } from '../../components/DetailModal/DetailModal'
 import './SoportePage.css'
 
 export const SoportePage = () => {
-  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  // Aplica el modo (dark/light) definido en products.json para Soporte a TODA la web
+  usePageTheme('soporte')
 
+  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
   const soporteData = getProduct('soporte')
 
   const soporteModalsData = [
@@ -26,17 +29,50 @@ export const SoportePage = () => {
         },
       ],
     },
+    {
+      title: 'Monitoreo e Infraestructura',
+      sections: [
+        {
+          subtitle: 'Estado de los servidores.',
+          description:
+            'Sistemas redundantes con uptime verificado del 99.9% para garantizar la disponibilidad continua de todas tus herramientas.',
+          linkText: 'Ver informe de estado',
+          linkHref: '#',
+        },
+      ],
+    },
+    {
+      title: 'Asistencia Especializada',
+      sections: [
+        {
+          subtitle: 'Atención multiidioma.',
+          description:
+            'Soporte técnico personalizado disponible las 24 horas para guiarte en el despliegue de las aplicaciones.',
+          linkText: 'Contactar a un especialista',
+          linkHref: '#',
+        },
+      ],
+    },
   ]
 
-  const handleOpenModal = (_, index) => {
-    const selectedModal = soporteModalsData[index]
-    if (selectedModal) {
-      setModalState({
-        isOpen: true,
-        title: selectedModal.title,
-        sections: selectedModal.sections,
-      })
+  const handleOpenModal = (item, index) => {
+    const selectedModal = soporteModalsData[index] || {
+      title: item.highlight || 'Asistencia Técnica',
+      sections: [
+        {
+          subtitle: `${item.prefix || ''} ${item.highlight || ''}`,
+          description: `${item.prefix || ''} ${item.highlight || ''} ${item.suffix || ''}`,
+          linkText: 'Más información',
+          linkHref: '#',
+        },
+      ],
     }
+
+    setModalState({
+      isOpen: true,
+      title: selectedModal.title,
+      sections: selectedModal.sections,
+    })
   }
 
   return (
@@ -59,9 +95,9 @@ export const SoportePage = () => {
       />
       <HighlightSection
         title="Mira lo más destacado."
-        actionText="Ver planes >"
-        actionHref="#planes"
-        actionColor={soporteData.accentColor} // <-- Hereda el verde de Finance, azul de Songs, amarillo de Rename, etc.
+        actionText="Ver Preguntas Frecuentes >"
+        actionHref="#faq"
+        actionColor={soporteData.accentColor}
         items={soporteData.highlights}
       />
       <HeroCard

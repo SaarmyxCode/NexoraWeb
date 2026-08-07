@@ -13,8 +13,9 @@ export const Header = ({ logoSrc }) => {
 
   const location = useLocation()
 
-  // Leemos la lista de enlaces directamente del JSON centralizado
+  // Conexión dinámica con siteConfig.json con fallback seguro
   const navLinks = siteConfig.header?.navLinks || []
+  const activeLogo = logoSrc || siteConfig.logoSrc
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,7 @@ export const Header = ({ logoSrc }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Cierra menús modales al cambiar de ruta
   useEffect(() => {
     setIsMobileMenuOpen(false)
     setIsSearchOpen(false)
@@ -34,18 +36,34 @@ export const Header = ({ logoSrc }) => {
     <>
       <header className={`header-wrapper ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-navbar">
-          {/* IZQUIERDA: Logo Minimalista */}
+          {/* IZQUIERDA: Logo Principal Cliqueable */}
           <div className="header-left">
             <Link
               to="/"
               className="header-logo-container"
               aria-label={`Ir al inicio de ${siteConfig.siteName || 'Nexora'}`}
             >
-              {logoSrc ? (
-                <img src={logoSrc} alt="Nexora" className="header-logo-img" draggable="false" />
-              ) : (
-                <span className="header-logo-minimal">N</span>
-              )}
+              {activeLogo ? (
+                <img
+                  src={activeLogo}
+                  alt={siteConfig.siteName || 'Nexora'}
+                  className="header-logo-img"
+                  draggable="false"
+                  onError={(e) => {
+                    // Fallback visual si la imagen de logo no existe en /public
+                    e.currentTarget.style.display = 'none'
+                    if (e.currentTarget.nextSibling) {
+                      e.currentTarget.nextSibling.style.display = 'inline-block'
+                    }
+                  }}
+                />
+              ) : null}
+              <span
+                className="header-logo-minimal"
+                style={{ display: activeLogo ? 'none' : 'inline-block' }}
+              >
+                N
+              </span>
             </Link>
           </div>
 
@@ -72,7 +90,7 @@ export const Header = ({ logoSrc }) => {
             })}
           </nav>
 
-          {/* DERECHA: Lupa + Menú Hamburguesa */}
+          {/* DERECHA: Buscador + Menú Hamburguesa */}
           <div className="header-right">
             <button
               type="button"
@@ -126,7 +144,7 @@ export const Header = ({ logoSrc }) => {
         )}
       </header>
 
-      {/* Componente Modular de Búsqueda */}
+      {/* Modal de Búsqueda Global */}
       <SearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}

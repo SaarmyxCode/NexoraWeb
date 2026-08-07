@@ -60,6 +60,13 @@
   align-items: center;
   text-decoration: none;
   user-select: none;
+  outline: none;
+  transition: opacity var(--transition-fast);
+}
+
+.header-logo-container:hover,
+.header-logo-container:focus-visible {
+  opacity: 0.8;
 }
 
 .header-logo-img {
@@ -69,7 +76,7 @@
 }
 
 .header-logo-minimal {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-family-heading, var(--font-family-base));
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading);
@@ -91,9 +98,11 @@
   text-decoration: none;
   transition: color var(--transition-fast);
   white-space: nowrap;
+  outline: none;
 }
 
 .header-nav-link:hover,
+.header-nav-link:focus-visible,
 .header-nav-link.is-active {
   color: var(--color-text-heading);
 }
@@ -173,12 +182,31 @@
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast);
+  outline: none;
 }
 
 .header-mobile-link:hover,
+.header-mobile-link:focus-visible,
 .header-mobile-link.is-active {
   color: var(--color-text-heading);
   background-color: var(--color-black-05);
+}
+
+/* Estado al hacer Scroll (Adaptable a Dark / Light) */
+.header-wrapper.is-scrolled .header-navbar {
+  max-width: 100%;
+  border-radius: 0;
+  border-bottom-color: var(--color-light-border);
+  box-shadow: var(--shadow-card-subtle);
+  background-color: var(--color-bg-surface); /* Usa el fondo de superficie dinámico */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Específico para cuando la tarjeta móvil esté desplegada con scroll */
+body[data-theme='dark'] .header-wrapper.is-scrolled .header-navbar,
+body[data-theme='dark'] .header-wrapper.is-scrolled .header-mobile-card-wrapper {
+  background-color: rgba(18, 18, 18, 0.85); /* Fondo oscuro semitransparente con blur */
 }
 
 /* RESPONSIVO MÓVIL (< 768px) */

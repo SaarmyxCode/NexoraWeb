@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FiFolderPlus } from 'react-icons/fi'
 import { getProduct } from '../../utils/getProduct'
+import { usePageTheme } from '../../hooks/usePageTheme'
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
@@ -9,11 +10,12 @@ import { DetailModal } from '../../components/DetailModal/DetailModal'
 import './RenamePage.css'
 
 export const RenamePage = () => {
-  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  // Aplica el modo (dark/light) definido en products.json para Rename a TODA la web
+  usePageTheme('rename')
 
+  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
   const renameData = getProduct('rename')
 
-  // Array de modales específicos mapeados para cada stat (0, 1, 2)
   const renameModalsData = [
     {
       title: 'Velocidad de Procesamiento',
@@ -53,11 +55,9 @@ export const RenamePage = () => {
     },
   ]
 
-  // Handler seguro anti-fallos
   const handleOpenModal = (item, index) => {
-    // Si existe una configuración específica para ese índice, úsala
     const selectedModal = renameModalsData[index] || {
-      title: item.highlight || 'Información de la característica',
+      title: item.highlight || 'Detalles de la característica',
       sections: [
         {
           subtitle: `${item.prefix || ''} ${item.highlight || ''}`,
@@ -82,6 +82,7 @@ export const RenamePage = () => {
         title={renameData.shortName}
         titleColor={renameData.accentColor}
         imageSrc={renameData.mockup}
+        imageAlt={`Mockup de ${renameData.name}`}
       />
       <SubHeader
         targetHeroId="rename-hero"
@@ -94,9 +95,9 @@ export const RenamePage = () => {
       />
       <HighlightSection
         title="Mira lo más destacado."
-        actionText="Ver planes >"
-        actionHref="#planes"
-        actionColor={renameData.accentColor} // <-- Hereda el verde de Finance, azul de Songs, amarillo de Rename, etc.
+        actionText="Ver documentación >"
+        actionHref="#docs"
+        actionColor={renameData.accentColor}
         items={renameData.highlights}
       />
       <HeroCard
@@ -105,6 +106,7 @@ export const RenamePage = () => {
         subtitle={renameData.description}
         titleColor={renameData.accentColor}
         imageSrc={renameData.mockup}
+        imageAlt={`Demostración de automatización de ${renameData.name}`}
       />
       <FeatureStatsCard
         title="Rename y la eficiencia de tus archivos"

@@ -113,3 +113,33 @@
 
   --hero-radius: var(--radius-2xl);
 }
+/* Estado por defecto (Modo Claro Global) */
+body,
+body[data-theme='light'] {
+  --color-bg-app: #f5f5f7;
+  --color-bg-surface: #ffffff;
+  --color-text-heading: #1d1d1f;
+  --color-text-body: #515154;
+  --color-text-muted: #86868b;
+  --color-light-border: rgba(0, 0, 0, 0.08);
+  --color-black-05: rgba(0, 0, 0, 0.05);
+  --shadow-surface: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-body);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Modo Oscuro Total (Afecta body, header, footer, etc.) */
+body[data-theme='dark'] {
+  --color-bg-app: #0a0a0c;
+  --color-bg-surface: #141417;
+  --color-text-heading: #ffffff;
+  --color-text-body: #a1a1a6;
+  --color-text-muted: #6e6e73;
+  --color-light-border: rgba(255, 255, 255, 0.1);
+  --color-black-05: rgba(255, 255, 255, 0.08);
+  --shadow-surface: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-card-subtle: 0 2px 10px rgba(0, 0, 0, 0.4);
+}

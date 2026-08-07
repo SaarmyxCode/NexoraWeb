@@ -152,6 +152,68 @@
   margin-top: var(--spacing-md);
 }
 
+/* Tarjeta Principal */
+.stats-main-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  background-color: var(--color-bg-surface); /* Dinámico */
+  border-radius: var(--hero-radius, var(--radius-2xl));
+  padding: clamp(var(--spacing-xl), 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  box-sizing: border-box;
+  box-shadow: var(--shadow-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
+}
+
+/* Tarjetas Internas de cada Stat (Se adaptan al fondo de la app o superficie) */
+.stat-item-card {
+  background-color: var(--color-bg-app); /* En modo oscuro pasará a #000000 o superficie */
+  border-radius: var(--radius-xl);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 18rem;
+  position: relative;
+  box-shadow: var(--shadow-card-subtle);
+  cursor: pointer;
+  outline: none;
+  transition:
+    transform var(--transition-bounce),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+  box-sizing: border-box;
+}
+
+/* Botón de Agregar (+) dentro de la Stat Card */
+.stat-btn-add {
+  align-self: flex-end;
+  width: 34px;
+  height: 34px;
+  background-color: var(--color-text-heading); /* En modo oscuro pasa a blanco / claro */
+  color: var(--color-bg-surface); /* El ícono (+) toma el fondo del contraste */
+  border: none;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+  margin-top: var(--spacing-md);
+}
+
+.stat-item-card:hover .stat-btn-add {
+  transform: scale(1.1);
+  background-color: var(--color-text-heading);
+}
+
 @media (max-width: 62rem) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);

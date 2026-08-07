@@ -1,23 +1,33 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { getProduct } from '../../utils/getProduct'
 import './SubHeader.css'
 
 export const SubHeader = ({
-  title = 'THEME',
-  titleColor = 'var(--color-primary)',
+  productId, // Permite cargar datos automáticamente si se pasa el ID (p. ej., "theme", "songs", "rename")
+  title,
+  titleColor,
   accentColor,
   outlineBtnText = 'Explorar',
   outlineBtnHref = '#explorar',
   primaryBtnText = 'Descargar',
-  primaryBtnHref = '#descargar',
-  targetHeroId = 'theme-hero',
+  primaryBtnHref,
+  targetHeroId,
 }) => {
   const [isVisible, setIsVisible] = useState(false)
-  const activeAccentColor = accentColor || titleColor
+
+  // Carga automática desde JSON si existe productId
+  const product = productId ? getProduct(productId) : null
+
+  const displayTitle = title || product?.shortName || 'NEXORA'
+  const displayAccentColor =
+    accentColor || titleColor || product?.accentColor || 'var(--color-primary)'
+  const displayPrimaryHref = primaryBtnHref || product?.downloadUrl || '/descargar'
+  const heroId = targetHeroId || `${productId || 'theme'}-hero`
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroElement = document.getElementById(targetHeroId)
+      const heroElement = document.getElementById(heroId)
 
       if (!heroElement) {
         setIsVisible(window.scrollY > 350)
@@ -32,15 +42,24 @@ export const SubHeader = ({
     handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [targetHeroId])
+  }, [heroId])
 
-  // Helper para decidir si usar <Link> o <a>
+  // Helper dinámico para renderizar <a> (anclas) o <Link> (rutas)
   const renderButton = (text, href, isPrimary = false) => {
-    if (!text) return null
+    if (!text || !href) return null
 
     const isAnchor = href.startsWith('#')
     const className = `subheader-btn ${isPrimary ? 'btn-primary' : 'btn-outline'}`
-    const style = isPrimary ? { '--btn-accent-color': activeAccentColor } : undefined
+    const style = isPrimary
+      ? {
+          backgroundColor: displayAccentColor,
+          borderColor: displayAccentColor,
+          color: 'var(--color-white)',
+        }
+      : {
+          color: displayAccentColor,
+          borderColor: `${displayAccentColor}40`,
+        }
 
     if (isAnchor) {
       return (
@@ -60,13 +79,13 @@ export const SubHeader = ({
   return (
     <div className={`subheader-wrapper ${isVisible ? 'is-visible' : ''}`}>
       <div className="subheader-navbar">
-        <h2 className="subheader-title" style={{ color: titleColor }}>
-          {title}
+        <h2 className="subheader-title" style={{ color: displayAccentColor }}>
+          {displayTitle}
         </h2>
 
         <div className="subheader-actions">
           {renderButton(outlineBtnText, outlineBtnHref, false)}
-          {renderButton(primaryBtnText, primaryBtnHref, true)}
+          {renderButton(primaryBtnText, displayPrimaryHref, true)}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-/* Footer - Pie de pagina flotante */
+/* Footer - Pie de página flotante */
 
 .footer-wrapper {
   width: 100%;
@@ -81,9 +81,11 @@
   font-size: var(--font-size-xs);
   transition: color var(--transition-fast);
   text-decoration: none;
+  outline: none;
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-link:focus-visible {
   color: var(--color-text-heading);
   text-decoration: underline;
 }
@@ -120,13 +122,15 @@
   flex-wrap: wrap;
 }
 
-.footer-legal-links a {
+.footer-legal-item {
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition-fast);
+  outline: none;
 }
 
-.footer-legal-links a:hover {
+.footer-legal-item:hover,
+.footer-legal-item:focus-visible {
   color: var(--color-text-heading);
   text-decoration: underline;
 }
