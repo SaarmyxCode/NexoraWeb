@@ -50,6 +50,56 @@
       }
     ]
   },
+  "finance": {
+    "id": "finance",
+    "name": "Nexora Finance",
+    "shortName": "FINANCE",
+    "route": "/finance",
+    "accentColor": "#10B981",
+    "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos.",
+    "mockup": "/MacBookMockup.png",
+    "downloadUrl": "/descargar#finance",
+    "highlights": [
+      {
+        "id": "finance-hl-1",
+        "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
+        "titleColor": "#10B981",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "finance-hl-2",
+        "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
+        "titleColor": "#10B981",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "finance-hl-3",
+        "title": "PROYECCIONES Y METAS DE AHORRO",
+        "titleColor": "#10B981",
+        "imageSrc": "/MacBookMockup.png"
+      }
+    ],
+    "stats": [
+      {
+        "id": "finance-stat-1",
+        "prefix": "Optimización de",
+        "highlight": "hasta un 40% en tus gastos",
+        "suffix": "mensuales con nuestras herramientas de proyección."
+      },
+      {
+        "id": "finance-stat-2",
+        "prefix": "Procesamiento de",
+        "highlight": "100% de tus datos de forma local",
+        "suffix": "garantizando la máxima privacidad financiera."
+      },
+      {
+        "id": "finance-stat-3",
+        "prefix": "Arquitectura segura",
+        "highlight": "Zero-Knowledge local",
+        "suffix": "donde tus números jamás salen de tu dispositivo."
+      }
+    ]
+  },
 
   "rename": {
     "id": "rename",
