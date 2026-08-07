@@ -50,57 +50,6 @@
       }
     ]
   },
-  "finance": {
-    "id": "finance",
-    "name": "Nexora Finance",
-    "shortName": "FINANCE",
-    "route": "/finance",
-    "accentColor": "#10B981",
-    "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos.",
-    "mockup": "/MacBookMockup.png",
-    "downloadUrl": "/descargar#finance",
-    "highlights": [
-      {
-        "id": "finance-hl-1",
-        "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
-        "titleColor": "#10B981",
-        "imageSrc": "/MacBookMockup.png"
-      },
-      {
-        "id": "finance-hl-2",
-        "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
-        "titleColor": "#10B981",
-        "imageSrc": "/MacBookMockup.png"
-      },
-      {
-        "id": "finance-hl-3",
-        "title": "PROYECCIONES Y METAS DE AHORRO",
-        "titleColor": "#10B981",
-        "imageSrc": "/MacBookMockup.png"
-      }
-    ],
-    "stats": [
-      {
-        "id": "finance-stat-1",
-        "prefix": "Optimización de",
-        "highlight": "hasta un 40% en tus gastos",
-        "suffix": "mensuales con nuestras herramientas de proyección."
-      },
-      {
-        "id": "finance-stat-2",
-        "prefix": "Procesamiento de",
-        "highlight": "100% de tus datos de forma local",
-        "suffix": "garantizando la máxima privacidad financiera."
-      },
-      {
-        "id": "finance-stat-3",
-        "prefix": "Arquitectura segura",
-        "highlight": "Zero-Knowledge local",
-        "suffix": "donde tus números jamás salen de tu dispositivo."
-      }
-    ]
-  },
-
   "rename": {
     "id": "rename",
     "name": "Nexora Rename",
@@ -108,7 +57,7 @@
     "route": "/rename",
     "accentColor": "#EAB308",
     "mode": "dark",
-    "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas.",
+    "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas y motor multihilo.",
     "mockup": "/mockups/NexoraRename.png",
     "downloadUrl": "/descargar#rename",
     "highlights": [
@@ -152,7 +101,108 @@
       }
     ]
   },
-
+  "songs": {
+    "id": "songs",
+    "name": "Nexora Songs",
+    "shortName": "SONGS",
+    "route": "/theme#songs",
+    "accentColor": "#EC4899",
+    "mode": "light",
+    "description": "Gestión, etiquetado ID3 y organización avanzada de librerías de audio y listas de reproducción.",
+    "mockup": "/mockups/NexoraSongs.png",
+    "downloadUrl": "/descargar#songs",
+    "highlights": [
+      {
+        "id": "songs-hl-1",
+        "title": "REPRODUCCIÓN Y MOTOR AUDIO LOSSLESS",
+        "titleColor": "#EC4899",
+        "imageSrc": "/mockups/NexoraSongs.png"
+      },
+      {
+        "id": "songs-hl-2",
+        "title": "ORGANIZACIÓN DE METADATOS ID3 V2.4",
+        "titleColor": "#EC4899",
+        "imageSrc": "/mockups/NexoraSongs.png"
+      },
+      {
+        "id": "songs-hl-3",
+        "title": "CATÁLOGOS Y PLAYLISTS DINÁMICAS",
+        "titleColor": "#EC4899",
+        "imageSrc": "/mockups/NexoraSongs.png"
+      }
+    ],
+    "stats": [
+      {
+        "id": "songs-stat-1",
+        "prefix": "Soporte completo para",
+        "highlight": "formatos FLAC, WAV y MP3 320kbps",
+        "suffix": "garantizando máxima fidelidad auditiva."
+      },
+      {
+        "id": "songs-stat-2",
+        "prefix": "Análisis y normalización de",
+        "highlight": "decibeles en lote",
+        "suffix": "para un volumen uniforme entre todas tus canciones."
+      },
+      {
+        "id": "songs-stat-3",
+        "prefix": "Edición instantánea de",
+        "highlight": "portadas y metadatos",
+        "suffix": "directamente sobre el archivo físico."
+      }
+    ]
+  },
+  "finance": {
+    "id": "finance",
+    "name": "Nexora Finance",
+    "shortName": "FINANCE",
+    "route": "/finance",
+    "accentColor": "#10B981",
+    "mode": "dark",
+    "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos y proyecciones.",
+    "mockup": "/mockups/NexoraFinance.png",
+    "downloadUrl": "/descargar#finance",
+    "highlights": [
+      {
+        "id": "finance-hl-1",
+        "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
+        "titleColor": "#10B981",
+        "imageSrc": "/mockups/NexoraFinance.png"
+      },
+      {
+        "id": "finance-hl-2",
+        "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
+        "titleColor": "#10B981",
+        "imageSrc": "/mockups/NexoraFinance.png"
+      },
+      {
+        "id": "finance-hl-3",
+        "title": "PROYECCIONES Y METAS DE AHORRO",
+        "titleColor": "#10B981",
+        "imageSrc": "/mockups/NexoraFinance.png"
+      }
+    ],
+    "stats": [
+      {
+        "id": "finance-stat-1",
+        "prefix": "Optimización de",
+        "highlight": "hasta un 40% en tus gastos",
+        "suffix": "mensuales con nuestras herramientas de proyección."
+      },
+      {
+        "id": "finance-stat-2",
+        "prefix": "Procesamiento de",
+        "highlight": "100% de tus datos de forma local",
+        "suffix": "garantizando la máxima privacidad financiera."
+      },
+      {
+        "id": "finance-stat-3",
+        "prefix": "Arquitectura segura",
+        "highlight": "Zero-Knowledge local",
+        "suffix": "donde tus números jamás salen de tu dispositivo."
+      }
+    ]
+  },
   "soporte": {
     "id": "soporte",
     "name": "Nexora Soporte",
@@ -161,26 +211,26 @@
     "accentColor": "#8B5CF6",
     "mode": "light",
     "description": "Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones.",
-    "mockup": "/MacBookMockup.png",
+    "mockup": "/mockups/NexoraSoporte.png",
     "downloadUrl": "/soporte#contactar",
     "highlights": [
       {
         "id": "soporte-hl-1",
         "title": "CENTRO DE AYUDA Y GUÍAS RÁPIDAS",
         "titleColor": "#8B5CF6",
-        "imageSrc": "/MacBookMockup.png"
+        "imageSrc": "/mockups/NexoraSoporte.png"
       },
       {
         "id": "soporte-hl-2",
         "title": "ATENCIÓN DIRECTA Y TICKET DE CONSULTAS",
         "titleColor": "#8B5CF6",
-        "imageSrc": "/MacBookMockup.png"
+        "imageSrc": "/mockups/NexoraSoporte.png"
       },
       {
         "id": "soporte-hl-3",
         "title": "ESTADO DE SERVICIOS EN TIEMPO REAL",
         "titleColor": "#8B5CF6",
-        "imageSrc": "/MacBookMockup.png"
+        "imageSrc": "/mockups/NexoraSoporte.png"
       }
     ],
     "stats": [

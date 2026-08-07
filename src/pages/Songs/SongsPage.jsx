@@ -1,46 +1,73 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { FiMusic } from 'react-icons/fi'
 import { getProduct } from '../../utils/getProduct'
+import { usePageTheme } from '../../hooks/usePageTheme'
+import changelogData from '../../data/changelog.json'
+
+// Componentes Generales
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
 import { FeatureStatsCard } from '../../components/FeatureStatsCard/FeatureStatsCard'
 import { DetailModal } from '../../components/DetailModal/DetailModal'
+import { ChangelogCard } from '../../components/pages/ChangelogCard/ChangelogCard'
+
+// Componente Exclusivo de Songs
+import { InteractiveAudioPlayer } from './components/InteractiveAudioPlayer/InteractiveAudioPlayer'
+
 import './SongsPage.css'
 
 export const SongsPage = () => {
-  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  usePageTheme('songs')
 
-  const songsData = getProduct('songs')
+  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  const songsData = getProduct('songs') || {
+    name: 'Nexora Songs',
+    shortName: 'Songs',
+    accentColor: '#EC4899',
+    description: 'Gestor y organizador inteligente de colecciones musicales.',
+    mockup: '/assets/mockups/songs-mockup.png',
+    highlights: [],
+    stats: [],
+  }
 
   const songsModalsData = [
     {
-      title: 'Catálogo y Curaduría',
+      title: 'Organización Inteligente',
       sections: [
         {
-          subtitle: 'Proceso de selección.',
-          description:
-            'Cada lista es filtrada manualmente evaluando BPM, rango dinámico e instrumentos para asegurar la atmósfera perfecta en cada actividad.',
-          linkText: 'Explorar catálogo completo',
+          subtitle: 'Etiquetado ID3 automático.',
+          description: 'Sincroniza y completa metadatos de artistas, álbumes y géneros en un clic.',
+          linkText: 'Guía de metadatos',
           linkHref: '#',
         },
       ],
     },
   ]
 
-  const handleOpenModal = (_, index) => {
-    const selectedModal = songsModalsData[index]
-    if (selectedModal) {
-      setModalState({
-        isOpen: true,
-        title: selectedModal.title,
-        sections: selectedModal.sections,
-      })
+  const handleOpenModal = (item, index) => {
+    const selectedModal = songsModalsData[index] || {
+      title: item.highlight || 'Detalles de la característica',
+      sections: [
+        {
+          subtitle: `${item.prefix || ''} ${item.highlight || ''}`,
+          description: `${item.prefix || ''} ${item.highlight || ''} ${item.suffix || ''}`,
+          linkText: 'Más información',
+          linkHref: '#',
+        },
+      ],
     }
+
+    setModalState({
+      isOpen: true,
+      title: selectedModal.title,
+      sections: selectedModal.sections,
+    })
   }
 
   return (
     <div className="songs-page">
+      {/* 1. Hero Principal */}
       <HeroCard
         id="songs-hero"
         title={songsData.shortName}
@@ -48,6 +75,8 @@ export const SongsPage = () => {
         imageSrc={songsData.mockup}
         imageAlt={`Mockup de ${songsData.name}`}
       />
+
+      {/* 2. SubHeader Flotante */}
       <SubHeader
         targetHeroId="songs-hero"
         title={songsData.shortName}
@@ -55,33 +84,53 @@ export const SongsPage = () => {
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Descargar"
-        primaryBtnHref={songsData.downloadUrl}
+        primaryBtnHref={songsData.downloadUrl || '/descargar'}
       />
-      <HighlightSection
-        title="Mira lo más destacado."
-        actionText="Ver planes >"
-        actionHref="#planes"
-        actionColor={songsData.accentColor} // <-- Hereda el verde de Finance, azul de Songs, amarillo de Rename, etc.
-        items={songsData.highlights}
-      />
+
+      {/* 3. Registro de la Última Versión */}
+      {changelogData.songs && <ChangelogCard changelogData={changelogData.songs} />}
+
+      {/* 4. Reproductor y Simulador Interactivo (Exclusivo) */}
+      <div id="explorar">
+        <InteractiveAudioPlayer accentColor={songsData.accentColor} />
+      </div>
+
+      {/* 5. Secciones Destacadas */}
+      {songsData.highlights && songsData.highlights.length > 0 && (
+        <HighlightSection
+          title="Mira lo más destacado."
+          actionText="Ver documentación >"
+          actionHref="#docs"
+          actionColor={songsData.accentColor}
+          items={songsData.highlights}
+        />
+      )}
+
+      {/* 6. Detalle del Producto */}
       <HeroCard
         id="songs-detail"
-        title="CATÁLOGO"
+        title="GESTOR MUSICAL"
         subtitle={songsData.description}
         titleColor={songsData.accentColor}
         imageSrc={songsData.mockup}
-        imageAlt={`Demostración del catálogo de ${songsData.name}`}
+        imageAlt={`Demostración de ${songsData.name}`}
       />
-      <FeatureStatsCard
-        title="Songs y nuestro impacto musical"
-        linkText="Más información sobre la curaduría >"
-        linkHref="#curaduria"
-        linkColor={songsData.accentColor}
-        accentColor={songsData.accentColor}
-        icon={FiMusic}
-        items={songsData.stats}
-        onCardClick={handleOpenModal}
-      />
+
+      {/* 7. Estadísticas e Impacto */}
+      {songsData.stats && songsData.stats.length > 0 && (
+        <FeatureStatsCard
+          title="Songs y la experiencia auditiva"
+          linkText="Ver guía de ecualización y formatos >"
+          linkHref="#formatos"
+          linkColor={songsData.accentColor}
+          accentColor={songsData.accentColor}
+          icon={FiMusic}
+          items={songsData.stats}
+          onCardClick={handleOpenModal}
+        />
+      )}
+
+      {/* Modal de Detalle */}
       <DetailModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}

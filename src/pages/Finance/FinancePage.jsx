@@ -1,58 +1,66 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { FiTrendingUp } from 'react-icons/fi'
 import { getProduct } from '../../utils/getProduct'
+import { usePageTheme } from '../../hooks/usePageTheme'
+import changelogData from '../../data/changelog.json'
+
+// Componentes Generales
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
 import { FeatureStatsCard } from '../../components/FeatureStatsCard/FeatureStatsCard'
 import { DetailModal } from '../../components/DetailModal/DetailModal'
+import { ChangelogCard } from '../../components/pages/ChangelogCard/ChangelogCard'
+
+// Componente Exclusivo
+import { BudgetDashboard } from './components/BudgetDashboard/BudgetDashboard'
+
 import './FinancePage.css'
 
 export const FinancePage = () => {
-  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+  usePageTheme('finance')
 
+  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
   const financeData = getProduct('finance')
 
   const financeModalsData = [
     {
-      title: 'Optimización del Presupuesto',
+      title: 'Optimización de Gastos',
       sections: [
         {
-          subtitle: 'Detección de fuga de capital.',
+          subtitle: 'Análisis presupuestario local.',
           description:
-            'Categorización automática de consumos recurrentes para señalar suscripciones duplicadas e innecesarias.',
-          linkText: 'Calculadora de ahorro estimada',
-          linkHref: '#',
-        },
-      ],
-    },
-    {
-      title: 'Privacidad Financiera Cero-Conocimiento',
-      sections: [
-        {
-          subtitle: 'Almacenamiento Local Encriptado.',
-          description:
-            'Tus cuentas y números no viajan a servidores externos. Todo el cálculo de gráficos ocurre localmente en tu cliente.',
-          linkText: 'Leer manifiesto de privacidad',
+            'Categorización automática de transacciones y cálculo de capacidad de ahorro mensual.',
+          linkText: 'Guía de finanzas personales',
           linkHref: '#',
         },
       ],
     },
   ]
 
-  const handleOpenModal = (_, index) => {
-    const selectedModal = financeModalsData[index]
-    if (selectedModal) {
-      setModalState({
-        isOpen: true,
-        title: selectedModal.title,
-        sections: selectedModal.sections,
-      })
+  const handleOpenModal = (item, index) => {
+    const selectedModal = financeModalsData[index] || {
+      title: item.highlight || 'Detalles de la característica',
+      sections: [
+        {
+          subtitle: `${item.prefix || ''} ${item.highlight || ''}`,
+          description: `${item.prefix || ''} ${item.highlight || ''} ${item.suffix || ''}`,
+          linkText: 'Más información',
+          linkHref: '#',
+        },
+      ],
     }
+
+    setModalState({
+      isOpen: true,
+      title: selectedModal.title,
+      sections: selectedModal.sections,
+    })
   }
 
   return (
     <div className="finance-page">
+      {/* 1. Hero Principal */}
       <HeroCard
         id="finance-hero"
         title={financeData.shortName}
@@ -60,6 +68,8 @@ export const FinancePage = () => {
         imageSrc={financeData.mockup}
         imageAlt={`Mockup de ${financeData.name}`}
       />
+
+      {/* 2. SubHeader Flotante */}
       <SubHeader
         targetHeroId="finance-hero"
         title={financeData.shortName}
@@ -69,31 +79,47 @@ export const FinancePage = () => {
         primaryBtnText="Descargar"
         primaryBtnHref={financeData.downloadUrl}
       />
+
+      {/* 3. Registro de la Última Versión */}
+      {changelogData.finance && <ChangelogCard changelogData={changelogData.finance} />}
+
+      {/* 4. Dashboard Interactivo de Presupuestos (Exclusivo) */}
+      <div id="explorar">
+        <BudgetDashboard accentColor={financeData.accentColor} />
+      </div>
+
+      {/* 5. Secciones Destacadas */}
       <HighlightSection
         title="Mira lo más destacado."
-        actionText="Ver planes >"
-        actionHref="#planes"
-        actionColor={financeData.accentColor} // <-- Hereda el verde de Finance, azul de Songs, amarillo de Rename, etc.
+        actionText="Ver documentación >"
+        actionHref="#docs"
+        actionColor={financeData.accentColor}
         items={financeData.highlights}
       />
+
+      {/* 6. Detalle del Producto */}
       <HeroCard
         id="finance-detail"
-        title="GESTIÓN"
+        title="CONTROL FINANCIERO"
         subtitle={financeData.description}
         titleColor={financeData.accentColor}
         imageSrc={financeData.mockup}
-        imageAlt={`Demostración de gestión de ${financeData.name}`}
+        imageAlt={`Demostración de ${financeData.name}`}
       />
+
+      {/* 7. Estadísticas e Impacto */}
       <FeatureStatsCard
-        title="Finance y el control de tus ingresos"
-        linkText="Conoce más sobre la privacidad de tus datos >"
-        linkHref="#privacidad"
+        title="Finance y la claridad de tu economía"
+        linkText="Ver reporte de privacidad Zero-Knowledge >"
+        linkHref="/privacidad#seguridad"
         linkColor={financeData.accentColor}
         accentColor={financeData.accentColor}
         icon={FiTrendingUp}
         items={financeData.stats}
         onCardClick={handleOpenModal}
       />
+
+      {/* Modal de Detalle */}
       <DetailModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}

@@ -17,17 +17,14 @@ export const Home = () => {
       {theme && <HeroCard productId="theme" isClickable />}
 
       {/* Banner Secundario FINANCE (Opcional) */}
-      {/* {finance && <HeroCard productId="finance" isClickable />} */}
+      {finance && <HeroCard productId="finance" isClickable />}
 
       {/* Cuadrícula Bento */}
       <GridContainer>
-        {/* {songs && <GridCard productId="songs" isClickable />} */}
-
         {rename && <GridCard productId="rename" isClickable />}
+        {songs && <GridCard productId="songs" isClickable />}
 
         {/* {finance && <GridCard productId="finance" isClickable />} */}
-
-        {/* {soporte && <GridCard productId="soporte" isClickable />} */}
       </GridContainer>
     </div>
   )

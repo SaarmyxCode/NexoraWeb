@@ -4,6 +4,9 @@
     "navLinks": [
       { "id": "theme", "label": "Theme", "to": "/theme", "accentColor": "#E11F2F" },
       { "id": "rename", "label": "Rename", "to": "/rename", "accentColor": "#EAB308" },
+      { "id": "songs", "label": "Songs", "to": "/songs", "accentColor": "#EC4899" },
+      { "id": "finance", "label": "Finance", "to": "/finance", "accentColor": "#10B981" },
+
       { "id": "changelog", "label": "Novedades", "to": "/changelog", "accentColor": "#E11F2F" },
       { "id": "soporte", "label": "Soporte", "to": "/soporte", "accentColor": "#8B5CF6" },
       {
@@ -15,12 +18,41 @@
     ]
   },
   "footer": {
-    "disclaimer": [
-      "1. Pruebas de rendimiento realizadas por Nexora Labs en agosto de 2026 utilizando entornos de pruebas aislados sobre arquitecturas React y Web Assembly. La latencia y consumo de memoria reales pueden variar según la configuración del hardware, sistema operativo y volumen de datos en procesamiento.",
-      "2. El motor multi-hilo de Nexora Rename opera de forma 100% local en el dispositivo del usuario sin transmitir metadatos a servidores remotos.",
-      "Las funcionalidades descritas están sujetas a actualización continua. Algunas características, sincronizaciones y servicios de integración podrían requerir configuraciones adicionales o estar restringidas en determinadas regiones.",
-      "Nexora Vault y los catálogos de integración de Nexora Songs requieren licencias oficiales activas o claves de producto válidas emitidas por Nexora Labs."
-    ],
+    "disclaimer": {
+      "default": [
+        "1. Pruebas de rendimiento realizadas por Nexora Labs en agosto de 2026 sobre entornos aislados. El consumo de memoria y la velocidad de respuesta reales pueden variar según la arquitectura del dispositivo y el sistema operativo.",
+        "Las funcionalidades están sujetas a actualización continua. Algunas características o servicios podrían no estar disponibles en todas las regiones.",
+        "Nexora Vault y los catálogos de integración de Nexora Songs requieren licencias oficiales activas o claves emitidas por Nexora Labs."
+      ],
+      "theme": [
+        "1. Mediciones de rendering calculadas sobre componentes de interfaz con re-renders optimizados en React 19 y Design Tokens en CSS puro.",
+        "2. El cambio entre tema claro y oscuro opera mediante atributos de datos (data-theme) locales sin latencia de red.",
+        "La paleta de colores y variables CSS están diseñadas para cumplir con los estándares de accesibilidad WCAG AAA en contraste."
+      ],
+      "rename": [
+        "1. Pruebas de procesamiento masivo realizadas sobre lotes de 1,000 a 50,000 archivos en unidades SSD NVMe de alta velocidad.",
+        "2. El motor multi-hilo de Nexora Rename opera de forma 100% local en el dispositivo del usuario sin transmitir nombres de archivo ni metadatos a servidores remotos.",
+        "La lectura de metadatos EXIF e ID3 depende de la integridad de los encabezados originales de los archivos seleccionados."
+      ],
+      "songs": [
+        "1. La reproducción de audio y el análisis de la forma de onda (waveform) se procesan directamente en la memoria local mediante Web Audio API.",
+        "2. La modificación de etiquetas ID3 v2.4 y portadas de álbumes reescribe directamente el archivo local sin generar copias duplicadas no autorizadas.",
+        "Nexora Songs no distribuye ni aloja archivos de audio protegidos por derechos de autor; funciona únicamente como gestor de colecciones locales."
+      ],
+      "finance": [
+        "1. La proyección de presupuestos y categorización de gastos se ejecutan mediante algoritmos locales de cómputo en el dispositivo.",
+        "2. Arquitectura de seguridad Zero-Knowledge: Nexora Labs no recopila, almacena ni sincroniza credenciales bancarias ni saldos financieros en la nube.",
+        "Las herramientas de estimación financiera son de carácter informativo y no constituyen asesoría contable o legal formal."
+      ],
+      "soporte": [
+        "1. Los tiempos de respuesta de 15 minutos aplican exclusivamente a tickets prioritarios reportados en días hábiles dentro del horario de atención técnica.",
+        "2. El estado de disponibilidad de los servicios (99.9%) se calcula semanalmente a partir de la métrica de monitoreo de nuestros nodos de distribución."
+      ],
+      "privacidad": [
+        "1. Política estricta de cero registros (no-logs): Nexora Labs no conserva historiales de navegación, direcciones IP ni metadatos de uso.",
+        "2. Todas las consultas de validación de licencias utilizan conexiones seguras HTTPS cifradas mediante TLS 1.3."
+      ]
+    },
     "columns": [
       {
         "title": "Explorar Productos",
@@ -57,21 +89,12 @@
           { "label": "Accesibilidad Universal", "to": "/soporte#accesibilidad" },
           { "label": "Transparencia Cero-Logs", "to": "/privacidad#no-logs" }
         ]
-      },
-      {
-        "title": "Acerca de Nexora",
-        "links": [
-          { "label": "Arquitectura de Diseño", "to": "/theme#design-system" },
-          { "label": "Prensa & Logotipos", "to": "/soporte#media" },
-          { "label": "Contacto Directo", "to": "/soporte#contacto" }
-        ]
       }
     ],
     "legalLinks": [
       { "label": "Política de privacidad", "to": "/privacidad" },
       { "label": "Aviso legal y términos", "to": "/soporte" },
-      { "label": "Mapa del sitio", "to": "/soporte" },
-      { "label": "Uso de cookies", "to": "/privacidad#cookies" }
+      { "label": "Mapa del sitio", "to": "/soporte" }
     ],
     "copyright": "Copyright © 2026 Nexora Labs. Todos los derechos reservados.",
     "country": "Colombia"

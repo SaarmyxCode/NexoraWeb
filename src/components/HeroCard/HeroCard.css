@@ -57,7 +57,6 @@
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-body);
-  margin: 0 0 var(--spacing-lg);
   line-height: var(--line-height-base);
 }
 
