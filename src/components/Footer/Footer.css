@@ -102,7 +102,7 @@
 }
 
 .footer-store-locator a {
-  color: var(--color-blue);
+  color: var(--color-primary);
   text-decoration: underline;
 }
 

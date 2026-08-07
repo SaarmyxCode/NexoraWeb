@@ -9,7 +9,7 @@ export const FeatureStatsCard = ({
   linkText = 'Más información en nuestro informe (PDF)',
   linkHref = '#',
   linkColor = 'var(--color-primary)',
-  accentColor = 'var(--color-blue)',
+  accentColor = 'var(--color-primary)',
   icon: Icon = FiLayers,
   items = [],
   onCardClick,
