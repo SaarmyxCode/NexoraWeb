@@ -1,10 +1,15 @@
 /* Nexora - Base y utilidades */
 body {
   background-color: var(--color-bg-app);
-  color: var(--color-text-primary);
+  color: var(--color-text-body);
   font-family: var(--font-family-base);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-base);
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .layout-app {

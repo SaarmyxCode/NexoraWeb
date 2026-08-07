@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FiSearch, FiMenu, FiX } from 'react-icons/fi'
 import siteConfig from '../../data/siteConfig.json'
+import { Button } from '../../atoms/Button/Button'
 import { SearchModal } from '../SearchModal/SearchModal'
 import './Header.css'
 
@@ -13,7 +14,6 @@ export const Header = ({ logoSrc }) => {
 
   const location = useLocation()
 
-  // Conexión dinámica con siteConfig.json con fallback seguro
   const navLinks = siteConfig.header?.navLinks || []
   const activeLogo = logoSrc || siteConfig.logoSrc
 
@@ -26,48 +26,36 @@ export const Header = ({ logoSrc }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Cierra menús modales al cambiar de ruta
   useEffect(() => {
     setIsMobileMenuOpen(false)
     setIsSearchOpen(false)
   }, [location.pathname])
 
+  // Buscamos si la ruta actual tiene un color de acento asignado en siteConfig
+  const activeNavLink = navLinks.find((link) => link.to === location.pathname)
+  const logoAccentColor = activeNavLink?.accentColor
+
   return (
     <>
       <header className={`header-wrapper ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-navbar">
-          {/* IZQUIERDA: Logo Principal Cliqueable */}
+          {/* IZQUIERDA: Logo Principal en Texto con Color Dinámico */}
           <div className="header-left">
             <Link
               to="/"
               className="header-logo-container"
               aria-label={`Ir al inicio de ${siteConfig.siteName || 'Nexora'}`}
             >
-              {activeLogo ? (
-                <img
-                  src={activeLogo}
-                  alt={siteConfig.siteName || 'Nexora'}
-                  className="header-logo-img"
-                  draggable="false"
-                  onError={(e) => {
-                    // Fallback visual si la imagen de logo no existe en /public
-                    e.currentTarget.style.display = 'none'
-                    if (e.currentTarget.nextSibling) {
-                      e.currentTarget.nextSibling.style.display = 'inline-block'
-                    }
-                  }}
-                />
-              ) : null}
               <span
-                className="header-logo-minimal"
-                style={{ display: activeLogo ? 'none' : 'inline-block' }}
+                className="header-logo-text"
+                style={logoAccentColor ? { color: logoAccentColor } : undefined}
               >
-                N
+                {siteConfig.siteName || 'Nexora'}
               </span>
             </Link>
           </div>
 
-          {/* CENTRO: Menú Desktop Dinámico */}
+          {/* CENTRO: Menú Desktop */}
           <nav className="header-nav-desktop" aria-label="Navegación principal">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.to
@@ -90,20 +78,21 @@ export const Header = ({ logoSrc }) => {
             })}
           </nav>
 
-          {/* DERECHA: Buscador + Menú Hamburguesa */}
+          {/* DERECHA: Buscador + Menú Hamburguesa usando Átomo Button */}
           <div className="header-right">
-            <button
-              type="button"
-              className="header-icon-btn"
+            <Button
+              variant="icon"
+              size="sm"
               aria-label="Abrir buscador"
               onClick={() => setIsSearchOpen(true)}
             >
               <FiSearch className="header-icon" />
-            </button>
+            </Button>
 
-            <button
-              type="button"
-              className="header-icon-btn mobile-toggle-btn"
+            <Button
+              variant="icon"
+              size="sm"
+              className="mobile-toggle-btn"
               aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -112,7 +101,7 @@ export const Header = ({ logoSrc }) => {
               ) : (
                 <FiMenu className="header-icon" />
               )}
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -144,7 +133,6 @@ export const Header = ({ logoSrc }) => {
         )}
       </header>
 
-      {/* Modal de Búsqueda Global */}
       <SearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}

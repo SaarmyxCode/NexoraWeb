@@ -1,4 +1,4 @@
-/* Header - Barra de navegacion flotante */
+/* Header - Barra de navegación flotante */
 
 .header-wrapper {
   width: 100%;
@@ -44,9 +44,9 @@
   border-radius: 0;
   border-bottom-color: var(--color-light-border);
   box-shadow: var(--shadow-card-subtle);
-  background-color: var(--color-white-90, rgba(255, 255, 255, 0.9));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--color-bg-surface-translucent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 /* IZQUIERDA: Logo */
@@ -61,26 +61,23 @@
   text-decoration: none;
   user-select: none;
   outline: none;
-  transition: opacity var(--transition-fast);
 }
 
-.header-logo-container:hover,
-.header-logo-container:focus-visible {
-  opacity: 0.8;
-}
-
-.header-logo-img {
-  height: 28px;
-  width: auto;
-  object-fit: contain;
-}
-
-.header-logo-minimal {
-  font-family: var(--font-family-heading, var(--font-family-base));
+.header-logo-text {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-text-heading);
-  line-height: 1;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted); /* Fallback si no hay accentColor activo */
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition:
+    color var(--transition-normal),
+    opacity var(--transition-fast);
+}
+
+.header-logo-container:hover .header-logo-text,
+.header-logo-container:focus-visible .header-logo-text {
+  opacity: 0.8;
 }
 
 /* CENTRO: Menú Desktop */
@@ -114,28 +111,6 @@
   gap: var(--spacing-xs);
 }
 
-.header-icon-btn {
-  background: transparent;
-  border: none;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-xs);
-  border-radius: var(--radius-sm);
-  transition:
-    color var(--transition-fast),
-    background-color var(--transition-fast);
-  outline: none;
-}
-
-.header-icon-btn:hover,
-.header-icon-btn:focus-visible {
-  color: var(--color-text-heading);
-  background-color: var(--color-black-05);
-}
-
 .header-icon {
   font-size: 1.2rem;
 }
@@ -144,7 +119,7 @@
   display: none;
 }
 
-/* TARJETA FLOTANTE MÓVIL (SEPARADA) */
+/* TARJETA FLOTANTE MÓVIL */
 .header-mobile-card-wrapper {
   width: 100%;
   max-width: var(--container-max-width);
@@ -160,9 +135,9 @@
 
 .header-wrapper.is-scrolled .header-mobile-card-wrapper {
   max-width: calc(100% - (var(--spacing-md) * 2));
-  background-color: var(--color-white-90, rgba(255, 255, 255, 0.9));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--color-bg-surface-translucent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .header-mobile-nav {
@@ -190,23 +165,6 @@
 .header-mobile-link.is-active {
   color: var(--color-text-heading);
   background-color: var(--color-black-05);
-}
-
-/* Estado al hacer Scroll (Adaptable a Dark / Light) */
-.header-wrapper.is-scrolled .header-navbar {
-  max-width: 100%;
-  border-radius: 0;
-  border-bottom-color: var(--color-light-border);
-  box-shadow: var(--shadow-card-subtle);
-  background-color: var(--color-bg-surface); /* Usa el fondo de superficie dinámico */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Específico para cuando la tarjeta móvil esté desplegada con scroll */
-body[data-theme='dark'] .header-wrapper.is-scrolled .header-navbar,
-body[data-theme='dark'] .header-wrapper.is-scrolled .header-mobile-card-wrapper {
-  background-color: rgba(18, 18, 18, 0.85); /* Fondo oscuro semitransparente con blur */
 }
 
 /* RESPONSIVO MÓVIL (< 768px) */
