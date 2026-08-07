@@ -21,7 +21,8 @@
   width: 100%;
   max-width: var(--container-max-width);
   background-color: var(--color-bg-surface);
-  border-radius: var(--hero-radius);
+  border-radius: var(--hero-radius, var(--radius-2xl));
+  border: var(--border-width-thin) solid var(--color-light-border);
   padding: clamp(var(--spacing-xl), 4vw, var(--spacing-2xl));
   display: flex;
   flex-direction: column;
@@ -61,6 +62,7 @@
 /* Tabs Filter */
 .download-tabs-card {
   background-color: var(--color-bg-app);
+  border: var(--border-width-thin) solid var(--color-light-border);
   padding: var(--spacing-2xs);
   border-radius: var(--radius-xl);
   display: flex;
@@ -127,7 +129,8 @@
   width: 100%;
   max-width: var(--container-max-width);
   background-color: var(--color-bg-surface);
-  border-radius: var(--hero-radius);
+  border-radius: var(--hero-radius, var(--radius-2xl));
+  border: var(--border-width-thin) solid var(--color-light-border);
   padding: clamp(var(--spacing-xl), 4vw, var(--spacing-2xl));
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -145,10 +148,11 @@
 }
 
 .product-app-icon-wrapper {
-  width: var(--app-icon-box-desktop);
-  height: var(--app-icon-box-desktop);
+  width: var(--app-icon-box-desktop, 180px);
+  height: var(--app-icon-box-desktop, 180px);
   background-color: var(--color-bg-surface);
   border-radius: var(--radius-2xl);
+  border: var(--border-width-thin) solid var(--color-light-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +166,7 @@
 }
 
 .product-app-icon {
-  font-size: var(--app-icon-size-desktop);
+  font-size: var(--app-icon-size-desktop, 5.5rem);
 }
 
 .product-hero-content {
@@ -194,6 +198,7 @@
 
 .product-version-badge {
   background-color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-light-border);
   color: var(--color-text-heading);
   font-family: var(--font-family-base);
   font-size: var(--font-size-xs);
@@ -290,13 +295,13 @@
   }
 
   .product-app-icon-wrapper {
-    width: var(--app-icon-box-mobile);
-    height: var(--app-icon-box-mobile);
+    width: var(--app-icon-box-mobile, 140px);
+    height: var(--app-icon-box-mobile, 140px);
     border-radius: var(--radius-xl);
   }
 
   .product-app-icon {
-    font-size: var(--app-icon-size-mobile);
+    font-size: var(--app-icon-size-mobile, 4.2rem);
   }
 
   .product-hero-content {

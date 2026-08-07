@@ -1,4 +1,4 @@
-/* Pagina SONGS */
+/* Pagina SONGS - Vista Principal */
 
 .songs-page {
   width: 100%;
@@ -23,4 +23,19 @@
   color: var(--color-text-heading);
   letter-spacing: -0.02em;
   margin: 0;
+}
+
+@media (max-width: 48rem) {
+  .songs-page {
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .songs-section-header {
+    padding: var(--spacing-xs) var(--spacing-md) 0;
+  }
+
+  .songs-section-title {
+    font-size: var(--font-size-xl);
+  }
 }

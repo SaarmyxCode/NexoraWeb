@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FiMusic } from 'react-icons/fi'
+import { getProduct } from '../../utils/getProduct'
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
@@ -9,28 +10,8 @@ import './SongsPage.css'
 
 export const SongsPage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
-  const accentBlue = '#2563EB'
 
-  const songsHighlights = [
-    {
-      id: 'highlight-1',
-      title: 'PLAYLISTS CURADAS A MEDIDA',
-      titleColor: accentBlue,
-      imageSrc: '/MacBookMockup.png',
-    },
-    {
-      id: 'highlight-2',
-      title: 'ORGANIZACIÓN POR GÉNERO Y MOOD',
-      titleColor: accentBlue,
-      imageSrc: '/MacBookMockup.png',
-    },
-    {
-      id: 'highlight-3',
-      title: 'SINCRONIZACIÓN MULTIPLATAFORMA',
-      titleColor: accentBlue,
-      imageSrc: '/MacBookMockup.png',
-    },
-  ]
+  const songsData = getProduct('songs')
 
   const songsModalsData = [
     {
@@ -44,21 +25,6 @@ export const SongsPage = () => {
           linkHref: '#',
         },
       ],
-    },
-  ]
-
-  const songsStatsData = [
-    {
-      id: 'stat-1',
-      prefix: 'Catálogo con más de',
-      highlight: '50,000 canciones curadas',
-      suffix: 'clasificadas por atmósfera, tempo y género.',
-    },
-    {
-      id: 'stat-2',
-      prefix: 'Sincronización en',
-      highlight: 'menos de 1 segundo entre equipos',
-      suffix: 'manteniendo el formato original de alta fidelidad.',
     },
   ]
 
@@ -77,40 +43,43 @@ export const SongsPage = () => {
     <div className="songs-page">
       <HeroCard
         id="songs-hero"
-        title="SONGS"
-        titleColor={accentBlue}
-        imageSrc="/MacBookMockup.png"
+        title={songsData.shortName}
+        titleColor={songsData.accentColor}
+        imageSrc={songsData.mockup}
+        imageAlt={`Mockup de ${songsData.name}`}
       />
       <SubHeader
         targetHeroId="songs-hero"
-        title="SONGS"
-        titleColor={accentBlue}
+        title={songsData.shortName}
+        titleColor={songsData.accentColor}
         outlineBtnText="Explorar"
         outlineBtnHref="#explorar"
         primaryBtnText="Descargar"
-        primaryBtnHref="#descargar"
+        primaryBtnHref={songsData.downloadUrl}
       />
       <HighlightSection
         title="Mira lo más destacado."
-        actionText="Ver catálogo >"
-        actionHref="#catalogo"
-        items={songsHighlights}
+        actionText="Ver planes >"
+        actionHref="#planes"
+        actionColor={songsData.accentColor} // <-- Hereda el verde de Finance, azul de Songs, amarillo de Rename, etc.
+        items={songsData.highlights}
       />
       <HeroCard
         id="songs-detail"
         title="CATÁLOGO"
-        subtitle="Explora nuestra colección curada de música y listas organizadas por atmósfera, tempo y estética."
-        titleColor={accentBlue}
-        imageSrc="/MacBookMockup.png"
+        subtitle={songsData.description}
+        titleColor={songsData.accentColor}
+        imageSrc={songsData.mockup}
+        imageAlt={`Demostración del catálogo de ${songsData.name}`}
       />
       <FeatureStatsCard
         title="Songs y nuestro impacto musical"
         linkText="Más información sobre la curaduría >"
         linkHref="#curaduria"
-        linkColor={accentBlue}
-        accentColor={accentBlue}
+        linkColor={songsData.accentColor}
+        accentColor={songsData.accentColor}
         icon={FiMusic}
-        items={songsStatsData}
+        items={songsData.stats}
         onCardClick={handleOpenModal}
       />
       <DetailModal
@@ -118,7 +87,7 @@ export const SongsPage = () => {
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         title={modalState.title}
         sections={modalState.sections}
-        linkColor={accentBlue}
+        linkColor={songsData.accentColor}
       />
     </div>
   )

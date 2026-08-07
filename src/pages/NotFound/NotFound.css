@@ -14,7 +14,8 @@
   max-width: 28rem;
   width: 100%;
   background-color: var(--color-bg-surface);
-  border-radius: var(--hero-radius);
+  border-radius: var(--hero-radius, var(--radius-2xl));
+  border: var(--border-width-thin) solid var(--color-light-border);
   padding: var(--spacing-2xl) var(--spacing-xl);
   text-align: center;
   display: flex;
@@ -57,7 +58,7 @@
   background-color: var(--color-primary);
   border: none;
   padding: 0 var(--spacing-xl);
-  height: var(--btn-height-md);
+  height: 40px;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition:

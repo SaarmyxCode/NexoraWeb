@@ -1,72 +1,77 @@
+import React from 'react'
+import productsData from '../data/products.json'
 import { HeroCard } from '../components/HeroCard/HeroCard'
-import { GridContainer } from '../components/GridCard/GridContainer'
-import { GridCard } from '../components/GridCard/GridCard'
+import { GridContainer, GridCard } from '../components/GridCard/GridCard'
 import './Home.css'
 
 export const Home = () => {
+  // Extraemos los productos mapeados desde el JSON centralizado
+  const { theme, finance, songs, rename, soporte } = productsData
+
   return (
     <div className="home-container">
       {/* Banner Principal THEME */}
       <HeroCard
         id="hero-theme"
-        title="THEME"
-        to="/theme"
-        titleColor="#E11F2F"
+        title={theme.shortName}
+        to={theme.route}
+        titleColor={theme.accentColor}
         isClickable={true}
-        imageSrc="/MacBookMockup.png"
-        imageAlt="Nexora Theme"
+        imageSrc={theme.mockup}
+        imageAlt={`Banner de ${theme.name}`}
       />
 
+      {/* Banner Secundario FINANCE */}
       <HeroCard
         id="hero-finance"
-        title="FINANCE"
-        to="/finance"
-        titleColor="#28C864"
+        title={finance.shortName}
+        to={finance.route}
+        titleColor={finance.accentColor}
         isClickable={true}
-        imageSrc="/MacBookMockup.png"
-        imageAlt="Nexora Finance"
+        imageSrc={finance.mockup}
+        imageAlt={`Banner de ${finance.name}`}
       />
 
       {/* Cuadrícula Bento 2x2 */}
       <GridContainer>
         <GridCard
           id="grid-songs"
-          title="SONGS"
-          to="/songs"
-          titleColor="#2563EB"
+          title={songs.shortName}
+          to={songs.route}
+          titleColor={songs.accentColor}
           isClickable={true}
-          imageSrc="/MacBookMockup.png"
-          imageAlt="Nexora Songs"
+          imageSrc={songs.mockup}
+          imageAlt={`Grid de ${songs.name}`}
         />
 
         <GridCard
           id="grid-rename"
-          title="RENAME"
-          to="/rename"
-          titleColor="#EAB308"
+          title={rename.shortName}
+          to={rename.route}
+          titleColor={rename.accentColor}
           isClickable={true}
-          imageSrc="/MacBookMockup.png"
-          imageAlt="Nexora Rename"
+          imageSrc={rename.mockup}
+          imageAlt={`Grid de ${rename.name}`}
         />
 
         <GridCard
           id="grid-finance"
-          title="FINANCE"
-          to="/finance"
-          titleColor="#10B981"
+          title={finance.shortName}
+          to={finance.route}
+          titleColor={finance.accentColor}
           isClickable={true}
-          imageSrc="/MacBookMockup.png"
-          imageAlt="Nexora Finance"
+          imageSrc={finance.mockup}
+          imageAlt={`Grid de ${finance.name}`}
         />
 
         <GridCard
           id="grid-soporte"
-          title="SOPORTE"
-          to="/soporte"
-          titleColor="#8B5CF6"
+          title={soporte ? soporte.shortName : 'SOPORTE'}
+          to={soporte ? soporte.route : '/soporte'}
+          titleColor={soporte ? soporte.accentColor : '#8B5CF6'}
           isClickable={true}
-          imageSrc="/MacBookMockup.png"
-          imageAlt="Nexora Soporte"
+          imageSrc={soporte ? soporte.mockup : '/MacBookMockup.png'}
+          imageAlt="Grid de Soporte Técnico"
         />
       </GridContainer>
     </div>

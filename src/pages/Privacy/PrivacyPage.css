@@ -75,7 +75,7 @@
 .privacy-icon-badge {
   width: 56px;
   height: 56px;
-  background-color: var(--color-primary-light, #e8f2ff);
+  background-color: var(--color-primary-alpha-10, rgba(225, 31, 47, 0.1));
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;

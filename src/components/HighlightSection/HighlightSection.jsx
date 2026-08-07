@@ -7,13 +7,13 @@ export const HighlightSection = ({
   title = 'Mira lo más destacado.',
   actionText = 'Ver documentación >',
   actionHref = '#docs',
+  actionColor = 'var(--color-blue, var(--color-primary))',
   items = [],
 }) => {
   const sliderRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
 
-  // Autoplay continuo cuando se activa el botón de reproducción
   useEffect(() => {
     let interval = null
     if (isPlaying && items.length > 0) {
@@ -54,7 +54,7 @@ export const HighlightSection = ({
         <div className="highlights-header">
           <h2 className="highlights-title">{title}</h2>
           {actionText && (
-            <Link to={actionHref} className="highlights-action-btn">
+            <Link to={actionHref} className="highlights-action-btn" style={{ color: actionColor }}>
               {actionText}
             </Link>
           )}

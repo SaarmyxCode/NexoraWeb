@@ -1,0 +1,86 @@
+{
+  "theme": {
+    "title": "Nexora Theme",
+    "version": "v0.9.0",
+    "date": "Actualizado el 5 de agosto de 2026",
+    "badgeColor": "#E11F2F",
+    "icon": "FiLayers",
+    "text": "Lanzamiento de la nueva paleta de Design Tokens unificada. Se redujo a cero la latencia de renderizado en componentes con alto contraste y se añadió integración directa con fuentes tipográficas Gliker e Inter.",
+    "subtext": "Soporte completo para temas oscuros adaptativos y microinteracciones fluidas.",
+    "changes": [
+      "Añadido: Motor dinámico de CSS Custom Properties con cero latencia.",
+      "Mejora: Optimización de accesibilidad en tarjetas Bento Grid.",
+      "Fix: Corrección de contraste en modales flotantes con glassmorphic blur."
+    ]
+  },
+  "songs": {
+    "title": "Nexora Songs",
+    "version": "v0 - Beta",
+    "date": "Actualizado el 2 de agosto de 2026",
+    "badgeColor": "#2563EB",
+    "icon": "FiMusic",
+    "text": "Integración de listas curadas para sesiones de Deep Work y concentración máxima. Se optimizó el reproductor web para minimizar el consumo de memoria en segundo plano.",
+    "subtext": "Transiciones de audio sin interrupciones y reproducción en alta fidelidad.",
+    "changes": [
+      "Añadido: Modo offline para playlists guardadas localmente.",
+      "Mejora: Ecualizador de frecuencia ajustado para trabajo enfocado.",
+      "Fix: Sincronización de metadatos de pistas en navegadores móviles."
+    ]
+  },
+  "rename": {
+    "title": "Nexora Rename",
+    "version": "v1.0.0",
+    "date": "Actualizado el 6 de agosto de 2026",
+    "badgeColor": "#EAB308",
+    "icon": "FiFolderPlus",
+    "text": "Lanzamiento oficial del motor multihilo local para procesamiento y renombrado masivo de archivos. Diseñado para organizar miles de documentos en lote sin sobrecargar el procesador.",
+    "subtext": "Lectura instantánea de metadatos EXIF e ID3 para creación de reglas avanzadas.",
+    "changes": [
+      "Añadido: Generador de reglas compuestas con variables dinámicas.",
+      "Añadido: Previsualización en tiempo real del lote antes de confirmar.",
+      "Mejora: Soporte Drag & Drop para carpetas completas."
+    ]
+  },
+  "finance": {
+    "title": "Nexora Finance",
+    "version": "v0 - Beta",
+    "date": "Actualizado el 28 de julio de 2026",
+    "badgeColor": "#10B981",
+    "icon": "FiTrendingUp",
+    "text": "Implementación del motor contable con cifrado Zero-Knowledge. Todos tus datos financieros, presupuestos y proyecciones permanecen 100% cifrados dentro de tu almacenamiento local.",
+    "subtext": "Control contable profesional con reportes exportables sin intermediarios.",
+    "changes": [
+      "Añadido: Proyecciones automáticas de ahorro mensual.",
+      "Mejora: Cálculo dinámico de presupuestos en múltiples divisas.",
+      "Fix: Corrección en el renderizado de gráficos estadísticos."
+    ]
+  },
+  "vault": {
+    "title": "NexoraVault",
+    "version": "v0 - Beta",
+    "date": "Actualizado el 20 de julio de 2026",
+    "badgeColor": "#8B5CF6",
+    "icon": "FiShield",
+    "text": "Actualización del núcleo de cifrado a estándares de nivel bancario. Bóveda local de credenciales con generación de contraseñas de alta entropía y autenticación biométrica.",
+    "subtext": "Tus claves máster jamás salen de tu dispositivo.",
+    "changes": [
+      "Añadido: Auto-relleno seguro en plataformas web integradas.",
+      "Mejora: Auditoría automática de contraseñas duplicadas o débiles.",
+      "Fix: Bloqueo automático por inactividad optimizado."
+    ]
+  },
+  "core": {
+    "title": "Core Ecosistema",
+    "version": "v0 - Beta",
+    "date": "Actualizado el 15 de julio de 2026",
+    "badgeColor": "#E11F2F",
+    "icon": "FiCpu",
+    "text": "Mejoras globales en el rendimiento del ecosistema Nexora Web. Navegación entre aplicaciones acelerada mediante prefetch inteligente y optimización de dependencias.",
+    "subtext": "Arquitectura unificada para una experiencia de usuario fluida y reactiva.",
+    "changes": [
+      "Añadido: Componente de búsqueda global interactiva (SearchModal).",
+      "Mejora: Soporte de navegación secundaria adhesiva (SecondaryNav).",
+      "Mejora: Tiempos de carga inicial reducidos en un 40%."
+    ]
+  }
+}

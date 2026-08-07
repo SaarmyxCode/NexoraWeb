@@ -9,6 +9,7 @@ import { SongsPage } from './pages/Songs/SongsPage'
 import { RenamePage } from './pages/Rename/RenamePage'
 import { FinancePage } from './pages/Finance/FinancePage'
 import { SoportePage } from './pages/Soporte/SoportePage'
+import { ChangelogPage } from './pages/Changelog/ChangelogPage'
 import { DownloadPage } from './pages/Download/DownloadPage'
 import { PrivacyPage } from './pages/Privacy/PrivacyPage'
 import { NotFound } from './pages/NotFound/NotFound'
@@ -45,6 +46,7 @@ export function App() {
             <Route path="/rename" element={<RenamePage />} />
             <Route path="/finance" element={<FinancePage />} />
             <Route path="/soporte" element={<SoportePage />} />
+            <Route path="/changelog" element={<ChangelogPage />} />
             <Route path="/descargar" element={<DownloadPage />} />
             <Route path="/privacidad" element={<PrivacyPage />} />
 

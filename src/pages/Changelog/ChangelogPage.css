@@ -150,12 +150,14 @@
 }
 
 .changelog-action-link {
-  color: var(--color-primary);
+  color: var(--color-blue, #0071e3);
   text-decoration: none;
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
-  transition: opacity var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .changelog-action-link:hover {

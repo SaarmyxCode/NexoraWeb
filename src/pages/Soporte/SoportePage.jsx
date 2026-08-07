@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FiHelpCircle } from 'react-icons/fi'
-import productsData from '../../data/products.json'
+import { getProduct } from '../../utils/getProduct'
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
@@ -11,16 +11,7 @@ import './SoportePage.css'
 export const SoportePage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
 
-  const soporteData = productsData.soporte || {
-    shortName: 'SOPORTE',
-    accentColor: '#8B5CF6',
-    downloadUrl: '#contactar',
-    description:
-      'Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones.',
-    mockup: '/MacBookMockup.png',
-    highlights: [],
-    stats: [],
-  }
+  const soporteData = getProduct('soporte')
 
   const soporteModalsData = [
     {
@@ -68,8 +59,9 @@ export const SoportePage = () => {
       />
       <HighlightSection
         title="Mira lo más destacado."
-        actionText="Ver Preguntas Frecuentes >"
-        actionHref="#faq"
+        actionText="Ver planes >"
+        actionHref="#planes"
+        actionColor={soporteData.accentColor} // <-- Hereda el verde de Finance, azul de Songs, amarillo de Rename, etc.
         items={soporteData.highlights}
       />
       <HeroCard

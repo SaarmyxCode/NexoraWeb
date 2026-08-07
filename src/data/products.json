@@ -5,34 +5,47 @@
     "shortName": "THEME",
     "route": "/theme",
     "accentColor": "#E11F2F",
-    "tagline": "SISTEMA VISUAL UNIFICADO",
-    "description": "Librería de componentes y tokens dinámicos con alto contraste y cero latencia de renderizado.",
+    "description": "Sistema visual completo, tokens CSS dinámicos y componentes de UI para un diseño unificado y de alto contraste.",
     "mockup": "/MacBookMockup.png",
     "downloadUrl": "/descargar#theme",
     "highlights": [
       {
         "id": "theme-hl-1",
-        "title": "TOKENS DINÁMICOS CON CERO LATENCIA",
+        "title": "MODO OSCURO Y MODO CLARO PURO",
+        "titleColor": "#E11F2F",
         "imageSrc": "/MacBookMockup.png"
       },
       {
         "id": "theme-hl-2",
-        "title": "ALTO CONTRASTE Y ACCESIBILIDAD",
+        "title": "VARIABLES INSTITUCIONALES NEXORA",
+        "titleColor": "#E11F2F",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "theme-hl-3",
+        "title": "GLIKER + INTER EN SINTONÍA",
+        "titleColor": "#E11F2F",
         "imageSrc": "/MacBookMockup.png"
       }
     ],
     "stats": [
       {
-        "id": "stat-theme-1",
-        "prefix": "Más de",
-        "highlight": "50+ Design Tokens",
-        "suffix": "listos para personalizar tu entorno sin latencia."
+        "id": "theme-stat-1",
+        "prefix": "Construido con un",
+        "highlight": "100% de contraste optimizado",
+        "suffix": "para lectura continua y descanso visual."
       },
       {
-        "id": "stat-theme-2",
-        "prefix": "Cumplimiento de",
-        "highlight": "WCAG 2.1 AAA",
-        "suffix": "en contraste tipográfico y elementos de interfaz."
+        "id": "theme-stat-2",
+        "prefix": "Sincronización de",
+        "highlight": "tokens CSS dinámicos",
+        "suffix": "aplicables al instante en todo el ecosistema."
+      },
+      {
+        "id": "theme-stat-3",
+        "prefix": "Reducción de",
+        "highlight": "0ms de latencia en render",
+        "suffix": "al cambiar entre modo claro y oscuro."
       }
     ]
   },
@@ -41,13 +54,50 @@
     "name": "Nexora Songs",
     "shortName": "SONGS",
     "route": "/songs",
-    "accentColor": "#0071E3",
-    "tagline": "PRODUCTIVIDAD & DEEP WORK",
-    "description": "Catálogo y reproductor musical curado para mantener un estado de flujo ininterrumpido.",
+    "accentColor": "#2563EB",
+    "description": "Explora nuestra colección curada de música y listas organizadas por atmósfera, tempo y estética.",
     "mockup": "/MacBookMockup.png",
     "downloadUrl": "/descargar#songs",
-    "highlights": [],
-    "stats": []
+    "highlights": [
+      {
+        "id": "songs-hl-1",
+        "title": "PLAYLISTS CURADAS A MEDIDA",
+        "titleColor": "#2563EB",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "songs-hl-2",
+        "title": "ORGANIZACIÓN POR GÉNERO Y MOOD",
+        "titleColor": "#2563EB",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "songs-hl-3",
+        "title": "SINCRONIZACIÓN MULTIPLATAFORMA",
+        "titleColor": "#2563EB",
+        "imageSrc": "/MacBookMockup.png"
+      }
+    ],
+    "stats": [
+      {
+        "id": "songs-stat-1",
+        "prefix": "Catálogo con más de",
+        "highlight": "50,000 canciones curadas",
+        "suffix": "clasificadas por atmósfera, tempo y género."
+      },
+      {
+        "id": "songs-stat-2",
+        "prefix": "Sincronización en",
+        "highlight": "menos de 1 segundo entre equipos",
+        "suffix": "manteniendo el formato original de alta fidelidad."
+      },
+      {
+        "id": "songs-stat-3",
+        "prefix": "Sesiones continuas de",
+        "highlight": "Deep Work sin pausas",
+        "suffix": "con ecualización binaural enfocada en productividad."
+      }
+    ]
   },
   "rename": {
     "id": "rename",
@@ -55,7 +105,6 @@
     "shortName": "RENAME",
     "route": "/rename",
     "accentColor": "#EAB308",
-    "tagline": "AUTOMATIZACIÓN EN LOTE",
     "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas.",
     "mockup": "/MacBookMockup.png",
     "downloadUrl": "/descargar#rename",
@@ -63,16 +112,19 @@
       {
         "id": "rename-hl-1",
         "title": "RENOMBRADO MASIVO EN SEGUNDOS",
+        "titleColor": "#EAB308",
         "imageSrc": "/MacBookMockup.png"
       },
       {
         "id": "rename-hl-2",
         "title": "REGLAS Y PATRONES PERSONALIZADOS",
+        "titleColor": "#EAB308",
         "imageSrc": "/MacBookMockup.png"
       },
       {
         "id": "rename-hl-3",
         "title": "PREVISUALIZACIÓN EN TIEMPO REAL",
+        "titleColor": "#EAB308",
         "imageSrc": "/MacBookMockup.png"
       }
     ],
@@ -88,6 +140,12 @@
         "prefix": "Reducción de un",
         "highlight": "95% del tiempo",
         "suffix": "invertido en la organización manual de carpetas."
+      },
+      {
+        "id": "rename-stat-3",
+        "prefix": "Soporte para",
+        "highlight": "metadatos EXIF e ID3",
+        "suffix": "para renombrar fotografías y audio automáticamente."
       }
     ]
   },
@@ -97,11 +155,98 @@
     "shortName": "FINANCE",
     "route": "/finance",
     "accentColor": "#10B981",
-    "tagline": "FINANZAS LOCALES Y PRIVADAS",
-    "description": "Gestor de presupuestos y control contable con arquitectura de datos Zero-Knowledge.",
+    "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos.",
     "mockup": "/MacBookMockup.png",
     "downloadUrl": "/descargar#finance",
-    "highlights": [],
-    "stats": []
+    "highlights": [
+      {
+        "id": "finance-hl-1",
+        "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
+        "titleColor": "#10B981",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "finance-hl-2",
+        "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
+        "titleColor": "#10B981",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "finance-hl-3",
+        "title": "PROYECCIONES Y METAS DE AHORRO",
+        "titleColor": "#10B981",
+        "imageSrc": "/MacBookMockup.png"
+      }
+    ],
+    "stats": [
+      {
+        "id": "finance-stat-1",
+        "prefix": "Optimización de",
+        "highlight": "hasta un 40% en tus gastos",
+        "suffix": "mensuales con nuestras herramientas de proyección."
+      },
+      {
+        "id": "finance-stat-2",
+        "prefix": "Procesamiento de",
+        "highlight": "100% de tus datos de forma local",
+        "suffix": "garantizando la máxima privacidad financiera."
+      },
+      {
+        "id": "finance-stat-3",
+        "prefix": "Arquitectura segura",
+        "highlight": "Zero-Knowledge local",
+        "suffix": "donde tus números jamás salen de tu dispositivo."
+      }
+    ]
+  },
+  "soporte": {
+    "id": "soporte",
+    "name": "Nexora Soporte",
+    "shortName": "SOPORTE",
+    "route": "/soporte",
+    "accentColor": "#8B5CF6",
+    "description": "Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones.",
+    "mockup": "/MacBookMockup.png",
+    "downloadUrl": "/soporte#contactar",
+    "highlights": [
+      {
+        "id": "soporte-hl-1",
+        "title": "CENTRO DE AYUDA Y GUÍAS RÁPIDAS",
+        "titleColor": "#8B5CF6",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "soporte-hl-2",
+        "title": "ATENCIÓN DIRECTA Y TICKET DE CONSULTAS",
+        "titleColor": "#8B5CF6",
+        "imageSrc": "/MacBookMockup.png"
+      },
+      {
+        "id": "soporte-hl-3",
+        "title": "ESTADO DE SERVICIOS EN TIEMPO REAL",
+        "titleColor": "#8B5CF6",
+        "imageSrc": "/MacBookMockup.png"
+      }
+    ],
+    "stats": [
+      {
+        "id": "soporte-stat-1",
+        "prefix": "Respuesta en",
+        "highlight": "menos de 15 minutos",
+        "suffix": "para tickets prioritarios de soporte técnico."
+      },
+      {
+        "id": "soporte-stat-2",
+        "prefix": "Disponibilidad del",
+        "highlight": "99.9% de los servicios",
+        "suffix": "con monitoreo continuo en tiempo real."
+      },
+      {
+        "id": "soporte-stat-3",
+        "prefix": "Atención especializada",
+        "highlight": "24/7 en español e inglés",
+        "suffix": "asistida por nuestro equipo de ingenieros."
+      }
+    ]
   }
 }

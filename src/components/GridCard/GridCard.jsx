@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../../hooks/useReveal'
+import './GridCard.css'
 
 export const GridCard = ({
   title,
@@ -41,5 +42,13 @@ export const GridCard = ({
         <div className="grid-card">{content}</div>
       )}
     </article>
+  )
+}
+
+export const GridContainer = ({ children }) => {
+  return (
+    <section className="grid-container-wrapper">
+      <div className="grid-container">{children}</div>
+    </section>
   )
 }

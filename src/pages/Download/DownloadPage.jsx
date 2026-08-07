@@ -8,71 +8,47 @@ import {
   FiDownloadCloud,
   FiCheckCircle,
 } from 'react-icons/fi'
+import { getProduct } from '../../utils/getProduct'
 import { useReveal } from '../../hooks/useReveal'
 import './DownloadPage.css'
 
 export const DownloadPage = () => {
   const heroRevealRef = useReveal()
 
-  const products = [
-    {
-      id: 'theme',
-      label: 'Theme',
-      icon: FiLayers,
-      accentColor: '#E11F2F',
-      version: 'v0.0.0 - Fase Beta',
-      description:
-        'Sistema visual completo, tokens CSS dinámicos y componentes de UI para un diseño unificado y de alto contraste.',
-      platforms: ['React / Vite', 'CSS Tokens', 'Tailwind Config'],
-      downloadUrl: '#download-theme',
-    },
-    {
-      id: 'songs',
-      label: 'Songs',
-      icon: FiMusic,
-      accentColor: '#2563EB',
-      version: 'v0.0.0 - Fase Beta',
-      description:
-        'Listas de reproducción y catálogo musical curado en alta fidelidad para acompañar tus sesiones de trabajo.',
-      platforms: ['Web App', 'Desktop Client', 'Mobile App'],
-      downloadUrl: '#download-songs',
-    },
-    {
-      id: 'rename',
-      label: 'Rename',
-      icon: FiFolderPlus,
-      accentColor: '#EAB308',
-      version: 'v0.0.0 - Fase Beta',
-      description:
-        'Herramienta de renombrado masivo de archivos en lote con soporte para reglas automáticas y metadatos.',
-      platforms: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.AppImage)'],
-      downloadUrl: '#download-rename',
-    },
-    {
-      id: 'finance',
-      label: 'Finance',
-      icon: FiTrendingUp,
-      accentColor: '#10B981',
-      version: 'v0.0.0 - Fase Beta',
-      description:
-        'Gestor de presupuestos, balances contables y proyecciones de gasto con almacenamiento local encriptado.',
-      platforms: ['Windows (.exe)', 'macOS (.dmg)', 'Web Version'],
-      downloadUrl: '#download-finance',
-    },
-    {
-      id: 'vault',
-      label: 'NexoraVault',
-      icon: FiShield,
-      accentColor: '#8B5CF6',
-      version: 'v0.0.0 - Fase Beta',
-      description:
-        'Bóveda de credenciales y claves con cifrado local de cero conocimiento para máxima seguridad.',
-      platforms: ['Windows', 'macOS', 'Linux'],
-      downloadUrl: '#download-vault',
-    },
-  ]
+  const productKeys = ['theme', 'songs', 'rename', 'finance', 'soporte']
 
-  const [activeProduct, setActiveProduct] = useState(products[0])
+  const iconMap = {
+    theme: FiLayers,
+    songs: FiMusic,
+    rename: FiFolderPlus,
+    finance: FiTrendingUp,
+    soporte: FiShield,
+  }
+
+  const platformsMap = {
+    theme: ['React / Vite', 'CSS Tokens', 'Tailwind Config'],
+    songs: ['Web App', 'Desktop Client', 'Mobile App'],
+    rename: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.AppImage)'],
+    finance: ['Windows (.exe)', 'macOS (.dmg)', 'Web Version'],
+    soporte: ['Windows', 'macOS', 'Linux', 'Web'],
+  }
+
+  const productsList = productKeys.map((key) => {
+    const item = getProduct(key)
+    return {
+      id: item.id,
+      label: item.shortName,
+      name: item.name,
+      icon: iconMap[key] || FiLayers,
+      accentColor: item.accentColor,
+      version: 'v1.0.0 - Oficial',
+      description: item.description,
+      platforms: platformsMap[key] || ['Multiplataforma'],
+      downloadUrl: item.downloadUrl,
+    }
+  })
+
+  const [activeProduct, setActiveProduct] = useState(productsList[0])
   const ActiveIcon = activeProduct.icon
 
   return (
@@ -88,7 +64,7 @@ export const DownloadPage = () => {
           </div>
 
           <nav className="download-tabs-card" aria-label="Seleccionar producto para descargar">
-            {products.map((item) => {
+            {productsList.map((item) => {
               const Icon = item.icon
               const isActive = activeProduct.id === item.id
 
@@ -125,7 +101,7 @@ export const DownloadPage = () => {
           <div className="product-hero-content">
             <header className="product-hero-header">
               <div className="product-title-row">
-                <h2 className="product-hero-title">{activeProduct.label}</h2>
+                <h2 className="product-hero-title">{activeProduct.name}</h2>
                 <span className="product-version-badge">{activeProduct.version}</span>
               </div>
               <p className="product-hero-description">{activeProduct.description}</p>
@@ -150,7 +126,7 @@ export const DownloadPage = () => {
                 style={{ backgroundColor: activeProduct.accentColor }}
               >
                 <FiDownloadCloud className="btn-icon" />
-                <span>Descargar para esta plataforma</span>
+                <span>Descargar instalador oficial</span>
               </a>
             </div>
           </div>
