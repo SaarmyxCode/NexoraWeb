@@ -11,8 +11,8 @@
 .hero-card {
   width: 100%;
   max-width: var(--container-max-width);
-  background-color: var(--color-hero-bg);
-  border-radius: var(--hero-radius);
+  background-color: var(--color-hero-bg, var(--color-bg-surface));
+  border-radius: var(--hero-radius, var(--radius-2xl));
   padding: var(--hero-padding-y, var(--spacing-2xl)) var(--hero-padding-x, var(--spacing-xl)) 0;
   display: flex;
   flex-direction: column;
@@ -21,25 +21,17 @@
   overflow: hidden;
   text-align: center;
   box-shadow: var(--shadow-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
   box-sizing: border-box;
 }
 
-/* Transformación interactiva si la tarjeta es clickeable */
-.hero-card-link {
+/* Cabecera de Texto */
+.hero-header-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    transform var(--transition-bounce),
-    box-shadow var(--transition-bounce);
-}
-
-.hero-card-link:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  gap: var(--spacing-xs);
+  max-width: 70rem;
 }
 
 .hero-title {
@@ -50,7 +42,7 @@
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-lg);
+  margin: 0;
   transition: color var(--transition-fast);
 }
 
@@ -59,10 +51,32 @@
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-body);
-  max-width: 70rem;
-  margin-top: calc(var(--spacing-md) * -1);
-  margin-bottom: var(--spacing-xl);
+  margin: 0 0 var(--spacing-lg);
   line-height: var(--line-height-base);
+}
+
+/* Transformación interactiva si es clickeable */
+.hero-card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--transition-bounce),
+    box-shadow var(--transition-bounce),
+    border-color var(--transition-fast);
+}
+
+.hero-card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-primary-alpha-20);
+}
+
+.hero-card-link:hover .hero-image {
+  transform: scale(1.02);
 }
 
 .hero-media-container {
@@ -78,6 +92,7 @@
   height: auto;
   object-fit: contain;
   display: block;
+  transition: transform var(--transition-bounce);
 }
 
 /* RESPONSIVO */
@@ -91,11 +106,11 @@
   }
 
   .hero-title {
-    font-size: var(--font-size-hero-mobile, 2.75rem);
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-hero-mobile, 2.5rem);
   }
 
   .hero-subtitle {
     font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-md);
   }
 }

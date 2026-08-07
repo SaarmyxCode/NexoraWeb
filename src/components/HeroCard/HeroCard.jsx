@@ -16,10 +16,13 @@ export const HeroCard = ({
 
   const content = (
     <>
-      <h2 className="hero-title" style={titleColor ? { color: titleColor } : undefined}>
-        {title}
-      </h2>
-      {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+      <div className="hero-header-content">
+        <h2 className="hero-title" style={titleColor ? { color: titleColor } : undefined}>
+          {title}
+        </h2>
+        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+      </div>
+
       {imageSrc && (
         <div className="hero-media-container">
           <img src={imageSrc} alt={imageAlt || title} className="hero-image" loading="lazy" />
@@ -40,3 +43,5 @@ export const HeroCard = ({
     </section>
   )
 }
+
+export default HeroCard

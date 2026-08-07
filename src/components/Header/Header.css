@@ -23,6 +23,7 @@
   justify-content: space-between;
   padding: 0 var(--spacing-xl);
   box-shadow: var(--shadow-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
   transition:
     max-width var(--transition-normal),
     border-radius var(--transition-normal),

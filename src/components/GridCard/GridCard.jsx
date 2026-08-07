@@ -1,6 +1,6 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../../hooks/useReveal'
-import './GridCard.css'
 
 export const GridCard = ({
   title,
@@ -16,10 +16,13 @@ export const GridCard = ({
 
   const content = (
     <>
-      <h3 className="grid-card-title" style={titleColor ? { color: titleColor } : undefined}>
-        {title}
-      </h3>
-      {subtitle && <p className="grid-card-subtitle">{subtitle}</p>}
+      <div className="grid-card-header">
+        <h3 className="grid-card-title" style={titleColor ? { color: titleColor } : undefined}>
+          {title}
+        </h3>
+        {subtitle && <p className="grid-card-subtitle">{subtitle}</p>}
+      </div>
+
       {imageSrc && (
         <div className="grid-card-media">
           <img src={imageSrc} alt={imageAlt || title} className="grid-card-image" loading="lazy" />
