@@ -1,0 +1,200 @@
+{
+  "Productos": {
+    "songs": {
+      "id": "songs",
+      "name": "Nexora Songs",
+      "shortName": "SONGS",
+      "route": "/songs",
+      "accentColor": "#2563EB",
+      "description": "Explora nuestra colección curada de música y listas organizadas por atmósfera, tempo y estética.",
+      "mockup": "/MacBookMockup.png",
+      "downloadUrl": "/descargar#songs",
+      "highlights": [
+        {
+          "id": "songs-hl-1",
+          "title": "PLAYLISTS CURADAS A MEDIDA",
+          "titleColor": "#2563EB",
+          "imageSrc": "/MacBookMockup.png"
+        },
+        {
+          "id": "songs-hl-2",
+          "title": "ORGANIZACIÓN POR GÉNERO Y MOOD",
+          "titleColor": "#2563EB",
+          "imageSrc": "/MacBookMockup.png"
+        },
+        {
+          "id": "songs-hl-3",
+          "title": "SINCRONIZACIÓN MULTIPLATAFORMA",
+          "titleColor": "#2563EB",
+          "imageSrc": "/MacBookMockup.png"
+        }
+      ],
+      "stats": [
+        {
+          "id": "songs-stat-1",
+          "prefix": "Catálogo con más de",
+          "highlight": "50,000 canciones curadas",
+          "suffix": "clasificadas por atmósfera, tempo y género."
+        },
+        {
+          "id": "songs-stat-2",
+          "prefix": "Sincronización en",
+          "highlight": "menos de 1 segundo entre equipos",
+          "suffix": "manteniendo el formato original de alta fidelidad."
+        },
+        {
+          "id": "songs-stat-3",
+          "prefix": "Sesiones continuas de",
+          "highlight": "Deep Work sin pausas",
+          "suffix": "con ecualización binaural enfocada en productividad."
+        }
+      ]
+    },
+    "finance": {
+      "id": "finance",
+      "name": "Nexora Finance",
+      "shortName": "FINANCE",
+      "route": "/finance",
+      "accentColor": "#10B981",
+      "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos.",
+      "mockup": "/MacBookMockup.png",
+      "downloadUrl": "/descargar#finance",
+      "highlights": [
+        {
+          "id": "finance-hl-1",
+          "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
+          "titleColor": "#10B981",
+          "imageSrc": "/MacBookMockup.png"
+        },
+        {
+          "id": "finance-hl-2",
+          "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
+          "titleColor": "#10B981",
+          "imageSrc": "/MacBookMockup.png"
+        },
+        {
+          "id": "finance-hl-3",
+          "title": "PROYECCIONES Y METAS DE AHORRO",
+          "titleColor": "#10B981",
+          "imageSrc": "/MacBookMockup.png"
+        }
+      ],
+      "stats": [
+        {
+          "id": "finance-stat-1",
+          "prefix": "Optimización de",
+          "highlight": "hasta un 40% en tus gastos",
+          "suffix": "mensuales con nuestras herramientas de proyección."
+        },
+        {
+          "id": "finance-stat-2",
+          "prefix": "Procesamiento de",
+          "highlight": "100% de tus datos de forma local",
+          "suffix": "garantizando la máxima privacidad financiera."
+        },
+        {
+          "id": "finance-stat-3",
+          "prefix": "Arquitectura segura",
+          "highlight": "Zero-Knowledge local",
+          "suffix": "donde tus números jamás salen de tu dispositivo."
+        }
+      ]
+    }
+  },
+  "siteConfig": {
+    "header": [
+      { "id": "songs", "label": "Songs", "to": "/songs", "accentColor": "#2563EB" },
+      { "id": "finance", "label": "Finance", "to": "/finance", "accentColor": "#10B981" }
+    ],
+    "footer": {
+      "columns": [
+        {
+          "title": "Descubrir",
+          "links": [
+            { "label": "Theme", "to": "/theme" },
+            { "label": "Songs", "to": "/songs" },
+            { "label": "Rename", "to": "/rename" },
+            { "label": "Finance", "to": "/finance" },
+            { "label": "NexoraVault", "to": "/descargar" }
+          ]
+        },
+        {
+          "title": "Para la empresa",
+          "links": [
+            { "label": "Nexora y la empresa", "to": "/finance" },
+            { "label": "Nexora y la educación", "to": "/soporte" }
+          ]
+        },
+        {
+          "title": "Valores de Nexora",
+          "links": [{ "label": "Accesibilidad", "to": "/soporte" }]
+        }
+      ],
+      "legalLinks": [
+        { "label": "Política de privacidad", "to": "/privacidad" },
+        { "label": "Aviso legal", "to": "/soporte" },
+        { "label": "Mapa del sitio", "to": "/soporte" }
+      ],
+      "country": "Colombia"
+    }
+  },
+
+  "novedades": {
+    "songs": {
+      "title": "Nexora Songs",
+      "version": "v0 - Beta",
+      "date": "Actualizado el 2 de agosto de 2026",
+      "badgeColor": "#2563EB",
+      "icon": "FiMusic",
+      "text": "Integración de listas curadas para sesiones de Deep Work y concentración máxima. Se optimizó el reproductor web para minimizar el consumo de memoria en segundo plano.",
+      "subtext": "Transiciones de audio sin interrupciones y reproducción en alta fidelidad.",
+      "changes": [
+        "Añadido: Modo offline para playlists guardadas localmente.",
+        "Mejora: Ecualizador de frecuencia ajustado para trabajo enfocado.",
+        "Fix: Sincronización de metadatos de pistas en navegadores móviles."
+      ]
+    },
+    "finance": {
+      "title": "Nexora Finance",
+      "version": "v0 - Beta",
+      "date": "Actualizado el 28 de julio de 2026",
+      "badgeColor": "#10B981",
+      "icon": "FiTrendingUp",
+      "text": "Implementación del motor contable con cifrado Zero-Knowledge. Todos tus datos financieros, presupuestos y proyecciones permanecen 100% cifrados dentro de tu almacenamiento local.",
+      "subtext": "Control contable profesional con reportes exportables sin intermediarios.",
+      "changes": [
+        "Añadido: Proyecciones automáticas de ahorro mensual.",
+        "Mejora: Cálculo dinámico de presupuestos en múltiples divisas.",
+        "Fix: Corrección en el renderizado de gráficos estadísticos."
+      ]
+    },
+    "vault": {
+      "title": "NexoraVault",
+      "version": "v0 - Beta",
+      "date": "Actualizado el 20 de julio de 2026",
+      "badgeColor": "#8B5CF6",
+      "icon": "FiShield",
+      "text": "Actualización del núcleo de cifrado a estándares de nivel bancario. Bóveda local de credenciales con generación de contraseñas de alta entropía y autenticación biométrica.",
+      "subtext": "Tus claves máster jamás salen de tu dispositivo.",
+      "changes": [
+        "Añadido: Auto-relleno seguro en plataformas web integradas.",
+        "Mejora: Auditoría automática de contraseñas duplicadas o débiles.",
+        "Fix: Bloqueo automático por inactividad optimizado."
+      ]
+    },
+    "core": {
+      "title": "Core Ecosistema",
+      "version": "v0 - Beta",
+      "date": "Actualizado el 15 de julio de 2026",
+      "badgeColor": "#E11F2F",
+      "icon": "FiCpu",
+      "text": "Mejoras globales en el rendimiento del ecosistema Nexora Web. Navegación entre aplicaciones acelerada mediante prefetch inteligente y optimización de dependencias.",
+      "subtext": "Arquitectura unificada para una experiencia de usuario fluida y reactiva.",
+      "changes": [
+        "Añadido: Componente de búsqueda global interactiva (SearchModal).",
+        "Mejora: Soporte de navegación secundaria adhesiva (SecondaryNav).",
+        "Mejora: Tiempos de carga inicial reducidos en un 40%."
+      ]
+    }
+  }
+}

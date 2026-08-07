@@ -42,9 +42,9 @@ export function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/theme" element={<ThemePage />} />
-            <Route path="/songs" element={<SongsPage />} />
+            {/* <Route path="/songs" element={<SongsPage />} /> */}
             <Route path="/rename" element={<RenamePage />} />
-            <Route path="/finance" element={<FinancePage />} />
+            {/* <Route path="/finance" element={<FinancePage />} /> */}
             <Route path="/soporte" element={<SoportePage />} />
             <Route path="/changelog" element={<ChangelogPage />} />
             <Route path="/descargar" element={<DownloadPage />} />

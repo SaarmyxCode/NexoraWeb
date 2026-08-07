@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FiSearch, FiMenu, FiX } from 'react-icons/fi'
+import siteConfig from '../../data/siteConfig.json'
 import { SearchModal } from '../SearchModal/SearchModal'
 import './Header.css'
 
@@ -12,15 +13,8 @@ export const Header = ({ logoSrc }) => {
 
   const location = useLocation()
 
-  const navLinks = [
-    { label: 'Theme', to: '/theme' },
-    { label: 'Songs', to: '/songs' },
-    { label: 'Rename', to: '/rename' },
-    { label: 'Finance', to: '/finance' },
-    { label: 'Novedades', to: '/changelog' },
-    { label: 'Soporte', to: '/soporte' },
-    { label: 'Dónde descargar', to: '/descargar' },
-  ]
+  // Leemos la lista de enlaces directamente del JSON centralizado
+  const navLinks = siteConfig.header?.navLinks || []
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +36,11 @@ export const Header = ({ logoSrc }) => {
         <div className="header-navbar">
           {/* IZQUIERDA: Logo Minimalista */}
           <div className="header-left">
-            <Link to="/" className="header-logo-container" aria-label="Ir al inicio de Nexora">
+            <Link
+              to="/"
+              className="header-logo-container"
+              aria-label={`Ir al inicio de ${siteConfig.siteName || 'Nexora'}`}
+            >
               {logoSrc ? (
                 <img src={logoSrc} alt="Nexora" className="header-logo-img" draggable="false" />
               ) : (
@@ -51,16 +49,21 @@ export const Header = ({ logoSrc }) => {
             </Link>
           </div>
 
-          {/* CENTRO: Menú Desktop */}
+          {/* CENTRO: Menú Desktop Dinámico */}
           <nav className="header-nav-desktop" aria-label="Navegación principal">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.to
 
               return (
                 <Link
-                  key={link.to}
+                  key={link.id || link.to}
                   to={link.to}
                   className={`header-nav-link ${isActive ? 'is-active' : ''}`}
+                  style={
+                    isActive && link.accentColor
+                      ? { color: link.accentColor, fontWeight: 'var(--font-weight-bold)' }
+                      : undefined
+                  }
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
@@ -104,9 +107,14 @@ export const Header = ({ logoSrc }) => {
 
                 return (
                   <Link
-                    key={link.to}
+                    key={link.id || link.to}
                     to={link.to}
                     className={`header-mobile-link ${isActive ? 'is-active' : ''}`}
+                    style={
+                      isActive && link.accentColor
+                        ? { color: link.accentColor, fontWeight: 'var(--font-weight-bold)' }
+                        : undefined
+                    }
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {link.label}
@@ -128,3 +136,5 @@ export const Header = ({ logoSrc }) => {
     </>
   )
 }
+
+export default Header

@@ -1,17 +1,57 @@
 {
-  "siteName": "Nexora Labs",
-  "searchPlaceholder": "Buscar aplicaciones, características, descargas...",
-  "navLinks": [
-    { "label": "Theme", "to": "/theme" },
-    { "label": "Songs", "to": "/songs" },
-    { "label": "Rename", "to": "/rename" },
-    { "label": "Finance", "to": "/finance" },
-    { "label": "Novedades", "to": "/changelog" },
-    { "label": "Soporte", "to": "/soporte" },
-    { "label": "Dónde descargar", "to": "/descargar" }
-  ],
+  "siteName": "NEXORA",
+  "header": {
+    "navLinks": [
+      { "id": "theme", "label": "Theme", "to": "/theme", "accentColor": "#E11F2F" },
+
+      { "id": "rename", "label": "Rename", "to": "/rename", "accentColor": "#EAB308" },
+
+      { "id": "changelog", "label": "Novedades", "to": "/changelog", "accentColor": "#E11F2F" },
+      { "id": "soporte", "label": "Soporte", "to": "/soporte", "accentColor": "#8B5CF6" },
+      {
+        "id": "descargar",
+        "label": "Dónde descargar",
+        "to": "/descargar",
+        "accentColor": "#0071E3"
+      }
+    ]
+  },
   "footer": {
-    "disclaimer": "Pruebas realizadas por Nexora Labs en 2026. Algunas funcionalidades requieren licencias activas.",
+    "disclaimer": [
+      "1. Pruebas realizadas por Nexora Labs en 2026 usando entornos optimizados para aplicaciones React y servicios integrados. El rendimiento real puede variar según la configuración del dispositivo, red y entorno de ejecución.",
+      "Las funcionalidades están sujetas a cambios. Algunas características, aplicaciones y servicios podrían no estar disponibles en todas las regiones o idiomas.",
+      "Nexora Songs y NexoraVault requieren suscripción o licencias válidas."
+    ],
+    "columns": [
+      {
+        "title": "Descubrir",
+        "links": [
+          { "label": "Songs", "to": "/songs" },
+          { "label": "Rename", "to": "/rename" }
+        ]
+      },
+      {
+        "title": "Ecosistema",
+        "links": [
+          { "label": "Novedades", "to": "/changelog" },
+          { "label": "Centro de Soporte", "to": "/soporte" },
+          { "label": "Dónde descargar", "to": "/descargar" }
+        ]
+      },
+
+      {
+        "title": "Valores de Nexora",
+        "links": [
+          { "label": "Accesibilidad", "to": "/soporte" },
+          { "label": "Privacidad", "to": "/privacidad" }
+        ]
+      }
+    ],
+    "legalLinks": [
+      { "label": "Política de privacidad", "to": "/privacidad" },
+      { "label": "Aviso legal", "to": "/soporte" },
+      { "label": "Mapa del sitio", "to": "/soporte" }
+    ],
     "country": "Colombia"
   }
 }

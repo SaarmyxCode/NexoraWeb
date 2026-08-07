@@ -40,11 +40,6 @@
   margin: 0;
 }
 
-.footer-disclaimer a {
-  color: var(--color-text-body);
-  text-decoration: underline;
-}
-
 /* Grid de Navegación */
 .footer-nav-grid {
   display: grid;
@@ -89,7 +84,7 @@
 }
 
 .footer-link:hover {
-  color: var(--color-black);
+  color: var(--color-text-heading);
   text-decoration: underline;
 }
 
@@ -132,7 +127,7 @@
 }
 
 .footer-legal-links a:hover {
-  color: var(--color-black);
+  color: var(--color-text-heading);
   text-decoration: underline;
 }
 
