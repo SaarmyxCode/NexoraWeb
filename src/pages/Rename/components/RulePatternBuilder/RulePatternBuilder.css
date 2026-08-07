@@ -1,0 +1,178 @@
+/* Tarjeta Simuladora de Patrones */
+
+.builder-release-wrapper {
+  --rename-accent: var(--color-primary);
+  --rename-accent-bg: var(--color-black-05);
+
+  width: 100%;
+  padding: 0 var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.builder-release-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  padding: clamp(var(--spacing-xl), 4vw, 3.5rem) clamp(var(--spacing-lg), 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-surface);
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.builder-release-badge {
+  margin-bottom: var(--spacing-xs);
+}
+
+.builder-release-title {
+  font-family: var(--font-family-base);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-heading);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--spacing-3xs) 0;
+}
+
+.builder-release-subtitle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.builder-release-description {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
+  max-width: 46rem;
+  margin: 0 0 var(--spacing-xl) 0;
+}
+
+/* Tabs */
+.builder-pattern-tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.builder-tab-btn {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-muted);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.builder-tab-btn.is-active {
+  background-color: var(--rename-accent-bg);
+  color: var(--rename-accent);
+  border-color: var(--rename-accent);
+}
+
+/* Detalles */
+.builder-details-box {
+  width: 100%;
+  max-width: 48rem;
+  background-color: var(--color-bg-app);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.builder-details-label {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+}
+
+.builder-files-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.builder-file-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  border-radius: var(--radius-md);
+  gap: var(--spacing-sm);
+}
+
+.builder-file-col {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+}
+
+.builder-old-name {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.builder-new-name {
+  color: var(--rename-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+.builder-file-icon,
+.builder-arrow-icon {
+  color: var(--color-text-muted);
+}
+
+.builder-check-icon {
+  color: var(--rename-accent);
+}
+
+/* RESPONSIVO */
+@media (max-width: 48rem) {
+  .builder-release-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .builder-release-card {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .builder-file-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .builder-arrow-icon {
+    display: none;
+  }
+}

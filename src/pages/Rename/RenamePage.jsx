@@ -2,15 +2,23 @@ import { useState } from 'react'
 import { FiFolderPlus } from 'react-icons/fi'
 import { getProduct } from '../../utils/getProduct'
 import { usePageTheme } from '../../hooks/usePageTheme'
+import changelogData from '../../data/changelog.json'
+
+// Componentes Generales
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { HighlightSection } from '../../components/HighlightSection/HighlightSection'
 import { FeatureStatsCard } from '../../components/FeatureStatsCard/FeatureStatsCard'
 import { DetailModal } from '../../components/DetailModal/DetailModal'
+import { ChangelogCard } from '../../components/pages/ChangelogCard/ChangelogCard'
+
+// Componentes Exclusivos de Rename
+import { RulePatternBuilder } from './components/RulePatternBuilder/RulePatternBuilder'
+
 import './RenamePage.css'
 
 export const RenamePage = () => {
-  // Aplica el modo (dark/light) definido en products.json para Rename a TODA la web
+  // Aplica el tema configurado para Rename
   usePageTheme('rename')
 
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
@@ -77,6 +85,7 @@ export const RenamePage = () => {
 
   return (
     <div className="rename-page">
+      {/* 1. Hero Principal */}
       <HeroCard
         id="rename-hero"
         title={renameData.shortName}
@@ -84,6 +93,8 @@ export const RenamePage = () => {
         imageSrc={renameData.mockup}
         imageAlt={`Mockup de ${renameData.name}`}
       />
+
+      {/* 2. SubHeader Flotante */}
       <SubHeader
         targetHeroId="rename-hero"
         title={renameData.shortName}
@@ -93,21 +104,35 @@ export const RenamePage = () => {
         primaryBtnText="Descargar"
         primaryBtnHref={renameData.downloadUrl}
       />
-      <HighlightSection
+
+      {/* 3. Registro de la Última Versión */}
+      <ChangelogCard changelogData={changelogData.rename} />
+
+      {/* 4. Simulación Interactiva de Reglas (Exclusivo) */}
+      <div id="explorar">
+        <RulePatternBuilder accentColor={renameData.accentColor} />
+      </div>
+
+      {/* 5. Secciones Destacadas */}
+      {/* <HighlightSection
         title="Mira lo más destacado."
         actionText="Ver documentación >"
         actionHref="#docs"
         actionColor={renameData.accentColor}
         items={renameData.highlights}
-      />
-      <HeroCard
+      /> */}
+
+      {/* 6. Demostración de Automatización */}
+      {/* <HeroCard
         id="rename-detail"
         title="AUTOMATIZACIÓN"
         subtitle={renameData.description}
         titleColor={renameData.accentColor}
         imageSrc={renameData.mockup}
         imageAlt={`Demostración de automatización de ${renameData.name}`}
-      />
+      /> */}
+
+      {/* 7. Estadísticas e Impacto */}
       <FeatureStatsCard
         title="Rename y la eficiencia de tus archivos"
         linkText="Ver guía de patrones y reglas >"
@@ -119,6 +144,7 @@ export const RenamePage = () => {
         onCardClick={handleOpenModal}
       />
 
+      {/* Modal de Detalle */}
       <DetailModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
