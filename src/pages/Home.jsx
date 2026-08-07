@@ -13,7 +13,7 @@ export const Home = () => {
         to="/theme"
         titleColor="#E11F2F"
         isClickable={true}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
         imageAlt="Nexora Theme"
       />
 
@@ -23,7 +23,7 @@ export const Home = () => {
         to="/finance"
         titleColor="#28C864"
         isClickable={true}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
         imageAlt="Nexora Finance"
       />
 
@@ -35,7 +35,7 @@ export const Home = () => {
           to="/songs"
           titleColor="#2563EB"
           isClickable={true}
-          imageSrc="/IphonesMockup.png"
+          imageSrc="/MacBookMockup.png"
           imageAlt="Nexora Songs"
         />
 
@@ -45,7 +45,7 @@ export const Home = () => {
           to="/rename"
           titleColor="#EAB308"
           isClickable={true}
-          imageSrc="/IphonesMockup.png"
+          imageSrc="/MacBookMockup.png"
           imageAlt="Nexora Rename"
         />
 
@@ -55,7 +55,7 @@ export const Home = () => {
           to="/finance"
           titleColor="#10B981"
           isClickable={true}
-          imageSrc="/IphonesMockup.png"
+          imageSrc="/MacBookMockup.png"
           imageAlt="Nexora Finance"
         />
 
@@ -65,7 +65,7 @@ export const Home = () => {
           to="/soporte"
           titleColor="#8B5CF6"
           isClickable={true}
-          imageSrc="/IphonesMockup.png"
+          imageSrc="/MacBookMockup.png"
           imageAlt="Nexora Soporte"
         />
       </GridContainer>

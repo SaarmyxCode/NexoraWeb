@@ -15,21 +15,21 @@ export const ThemePage = () => {
       id: 'highlight-1',
       title: 'MODO OSCURO Y MODO CLARO PURO',
       titleColor: 'var(--color-primary)',
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
       imageAlt: 'Demostración de temas claros y oscuros',
     },
     {
       id: 'highlight-2',
       title: 'VARIABLES INSTITUCIONALES NEXORA',
       titleColor: 'var(--color-primary)',
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
       imageAlt: 'Tokens visuales de Nexora',
     },
     {
       id: 'highlight-3',
       title: 'GLIKER + INTER EN SINTONÍA',
       titleColor: 'var(--color-primary)',
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
       imageAlt: 'Demostración tipográfica Nexora',
     },
   ]
@@ -106,7 +106,7 @@ export const ThemePage = () => {
         id="theme-hero"
         title="THEME"
         titleColor="var(--color-primary)"
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <SubHeader
         targetHeroId="theme-hero"
@@ -128,7 +128,7 @@ export const ThemePage = () => {
         title="SISTEMA VISUAL"
         subtitle="Presentamos el lenguaje de diseño unificado de Nexora. Diseñado desde cero para ofrecer una experiencia consistente, fluida y con alto contraste en todas nuestras herramientas."
         titleColor="var(--color-primary)"
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <FeatureStatsCard
         title="Theme y la eficiencia en la interfaz"

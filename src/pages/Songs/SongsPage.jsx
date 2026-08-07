@@ -16,19 +16,19 @@ export const SongsPage = () => {
       id: 'highlight-1',
       title: 'PLAYLISTS CURADAS A MEDIDA',
       titleColor: accentBlue,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
     {
       id: 'highlight-2',
       title: 'ORGANIZACIÓN POR GÉNERO Y MOOD',
       titleColor: accentBlue,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
     {
       id: 'highlight-3',
       title: 'SINCRONIZACIÓN MULTIPLATAFORMA',
       titleColor: accentBlue,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
   ]
 
@@ -79,7 +79,7 @@ export const SongsPage = () => {
         id="songs-hero"
         title="SONGS"
         titleColor={accentBlue}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <SubHeader
         targetHeroId="songs-hero"
@@ -101,7 +101,7 @@ export const SongsPage = () => {
         title="CATÁLOGO"
         subtitle="Explora nuestra colección curada de música y listas organizadas por atmósfera, tempo y estética."
         titleColor={accentBlue}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <FeatureStatsCard
         title="Songs y nuestro impacto musical"

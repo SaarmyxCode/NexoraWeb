@@ -16,19 +16,19 @@ export const SoportePage = () => {
       id: 'highlight-1',
       title: 'CENTRO DE AYUDA Y GUÍAS RÁPIDAS',
       titleColor: accentPurple,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
     {
       id: 'highlight-2',
       title: 'ATENCIÓN DIRECTA Y TICKET DE CONSULTAS',
       titleColor: accentPurple,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
     {
       id: 'highlight-3',
       title: 'ESTADO DE SERVICIOS EN TIEMPO REAL',
       titleColor: accentPurple,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
   ]
 
@@ -79,7 +79,7 @@ export const SoportePage = () => {
         id="soporte-hero"
         title="SOPORTE"
         titleColor={accentPurple}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <SubHeader
         targetHeroId="soporte-hero"
@@ -101,7 +101,7 @@ export const SoportePage = () => {
         title="ASISTENCIA"
         subtitle="Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones."
         titleColor={accentPurple}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <FeatureStatsCard
         title="Soporte y el compromiso con nuestros usuarios"

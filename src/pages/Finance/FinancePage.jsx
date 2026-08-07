@@ -16,19 +16,19 @@ export const FinancePage = () => {
       id: 'highlight-1',
       title: 'CONTROL INTEGRAL DE INGRESOS Y GASTOS',
       titleColor: accentGreen,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
     {
       id: 'highlight-2',
       title: 'REPORTES Y GRÁFICAS EN TIEMPO REAL',
       titleColor: accentGreen,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
     {
       id: 'highlight-3',
       title: 'PROYECCIONES Y METAS DE AHORRO',
       titleColor: accentGreen,
-      imageSrc: '/IphonesMockup.png',
+      imageSrc: '/MacBookMockup.png',
     },
   ]
 
@@ -91,7 +91,7 @@ export const FinancePage = () => {
         id="finance-hero"
         title="FINANCE"
         titleColor={accentGreen}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <SubHeader
         targetHeroId="finance-hero"
@@ -113,7 +113,7 @@ export const FinancePage = () => {
         title="GESTIÓN"
         subtitle="Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos."
         titleColor={accentGreen}
-        imageSrc="/IphonesMockup.png"
+        imageSrc="/MacBookMockup.png"
       />
       <FeatureStatsCard
         title="Finance y el control de tus ingresos"
