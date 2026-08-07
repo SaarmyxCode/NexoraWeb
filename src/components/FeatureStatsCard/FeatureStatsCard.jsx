@@ -1,3 +1,4 @@
+import React from 'react'
 import { FiPlus, FiLayers } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../../hooks/useReveal'
@@ -15,6 +16,10 @@ export const FeatureStatsCard = ({
 }) => {
   const revealRef = useReveal()
 
+  const handleCardInteraction = (item, index) => {
+    onCardClick?.(item, index)
+  }
+
   return (
     <section ref={revealRef} className="stats-wrapper reveal-on-scroll">
       <div className="stats-main-card">
@@ -29,7 +34,19 @@ export const FeatureStatsCard = ({
 
         <div className="stats-grid">
           {items.map((item, index) => (
-            <div key={item.id || index} className="stat-item-card">
+            <div
+              key={item.id || index}
+              className="stat-item-card"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleCardInteraction(item, index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  handleCardInteraction(item, index)
+                }
+              }}
+            >
               <div className="stat-card-body">
                 {Icon && (
                   <div className="stat-icon-container">
@@ -52,7 +69,10 @@ export const FeatureStatsCard = ({
                 type="button"
                 className="stat-btn-add"
                 aria-label="Ver más detalles"
-                onClick={() => onCardClick?.(item, index)}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleCardInteraction(item, index)
+                }}
               >
                 <FiPlus />
               </button>
@@ -63,3 +83,5 @@ export const FeatureStatsCard = ({
     </section>
   )
 }
+
+export default FeatureStatsCard

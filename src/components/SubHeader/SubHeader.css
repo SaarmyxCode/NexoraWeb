@@ -2,19 +2,19 @@
 
 .subheader-wrapper {
   position: fixed;
-  top: calc(var(--header-height-desktop) + var(--spacing-xs));
+  top: calc(var(--header-height-desktop, 72px) + var(--spacing-xs));
   left: 0;
   right: 0;
   width: 100%;
   padding: 0 var(--spacing-lg);
   display: flex;
   justify-content: center;
-  z-index: var(--subheader-z-index);
+  z-index: var(--subheader-z-index, 990);
 
-  /* Oculto por defecto */
+  /* Oculto por defecto con animacion de entrada */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-15px);
+  transform: translateY(-12px);
   pointer-events: none;
   transition:
     opacity var(--transition-normal),
@@ -32,15 +32,18 @@
 .subheader-navbar {
   width: 100%;
   max-width: var(--container-max-width);
-  height: var(--subheader-height);
+  height: var(--subheader-height, 52px);
   background-color: var(--color-bg-surface);
   border-radius: var(--radius-lg);
+  border: var(--border-width-thin) solid var(--color-light-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--spacing-lg);
   box-shadow: var(--shadow-surface);
   box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .subheader-title {
@@ -72,6 +75,7 @@
   text-decoration: none;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  outline: none;
 }
 
 .subheader-btn.btn-outline {
@@ -80,7 +84,8 @@
   background: transparent;
 }
 
-.subheader-btn.btn-outline:hover {
+.subheader-btn.btn-outline:hover,
+.subheader-btn.btn-outline:focus-visible {
   background-color: var(--color-black-05);
 }
 
@@ -90,15 +95,16 @@
   border: var(--border-width-thin) solid var(--btn-accent-color, var(--color-primary));
 }
 
-.subheader-btn.btn-primary:hover {
-  filter: brightness(0.9);
+.subheader-btn.btn-primary:hover,
+.subheader-btn.btn-primary:focus-visible {
+  filter: brightness(0.92);
   transform: scale(1.02);
 }
 
 /* RESPONSIVO */
 @media (max-width: 48rem) {
   .subheader-wrapper {
-    top: calc(var(--header-height-mobile) + var(--spacing-xs));
+    top: calc(var(--header-height-mobile, 60px) + var(--spacing-xs));
     padding: 0 var(--spacing-md);
   }
 
@@ -113,5 +119,6 @@
   .subheader-btn {
     padding: 0 var(--spacing-sm);
     font-size: var(--font-size-2xs);
+    height: 28px;
   }
 }

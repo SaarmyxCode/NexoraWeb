@@ -20,17 +20,12 @@ export const SubHeader = ({
       const heroElement = document.getElementById(targetHeroId)
 
       if (!heroElement) {
-        setIsVisible(window.scrollY > 400)
+        setIsVisible(window.scrollY > 350)
         return
       }
 
       const heroBottom = heroElement.offsetTop + heroElement.offsetHeight
-
-      if (window.scrollY >= heroBottom - 100) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      setIsVisible(window.scrollY >= heroBottom - 100)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -38,6 +33,29 @@ export const SubHeader = ({
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [targetHeroId])
+
+  // Helper para decidir si usar <Link> o <a>
+  const renderButton = (text, href, isPrimary = false) => {
+    if (!text) return null
+
+    const isAnchor = href.startsWith('#')
+    const className = `subheader-btn ${isPrimary ? 'btn-primary' : 'btn-outline'}`
+    const style = isPrimary ? { '--btn-accent-color': activeAccentColor } : undefined
+
+    if (isAnchor) {
+      return (
+        <a href={href} className={className} style={style}>
+          {text}
+        </a>
+      )
+    }
+
+    return (
+      <Link to={href} className={className} style={style}>
+        {text}
+      </Link>
+    )
+  }
 
   return (
     <div className={`subheader-wrapper ${isVisible ? 'is-visible' : ''}`}>
@@ -47,25 +65,12 @@ export const SubHeader = ({
         </h2>
 
         <div className="subheader-actions">
-          {outlineBtnText && (
-            <Link to={outlineBtnHref} className="subheader-btn btn-outline">
-              {outlineBtnText}
-            </Link>
-          )}
-
-          {primaryBtnText && (
-            <Link
-              to={primaryBtnHref}
-              className="subheader-btn btn-primary"
-              style={{
-                '--btn-accent-color': activeAccentColor,
-              }}
-            >
-              {primaryBtnText}
-            </Link>
-          )}
+          {renderButton(outlineBtnText, outlineBtnHref, false)}
+          {renderButton(primaryBtnText, primaryBtnHref, true)}
         </div>
       </div>
     </div>
   )
 }
+
+export default SubHeader

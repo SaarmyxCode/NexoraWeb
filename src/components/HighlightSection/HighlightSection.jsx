@@ -32,7 +32,9 @@ export const HighlightSection = ({
     if (!sliderRef.current) return
     const { scrollLeft, clientWidth } = sliderRef.current
     const index = Math.round(scrollLeft / clientWidth)
-    setActiveIndex(index)
+    if (index !== activeIndex && index >= 0 && index < items.length) {
+      setActiveIndex(index)
+    }
   }
 
   const scrollToIndex = (index) => {
@@ -109,3 +111,5 @@ export const HighlightSection = ({
     </section>
   )
 }
+
+export default HighlightSection
