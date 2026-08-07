@@ -17,7 +17,7 @@ export const SupportFeatureGrid = ({
   noticeTitle = 'Ten cuidado con distribuciones no oficiales',
   noticeParagraph1 = 'Es posible que algunas versiones modificadas o descargadas fuera de nuestros canales oficiales contengan scripts maliciosos que comprometan tu privacidad o estabilidad del sistema. Para garantizar una experiencia segura, descarga siempre desde nuestro sitio web oficial.',
   noticeParagraph2 = 'Asimismo, Nexora Labs no ofrece soporte técnico para copias no autorizadas o scripts alterados por terceros. Contamos con documentación oficial y guías verificadas para garantizar el rendimiento óptimo de tu entorno.',
-  accentColor = 'var(--color-primary)',
+  accentColor = '#8B5CF6',
 }) => {
   const customStyle = {
     '--support-feature-accent': accentColor,

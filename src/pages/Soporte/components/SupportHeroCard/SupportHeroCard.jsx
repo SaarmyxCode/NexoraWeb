@@ -7,7 +7,7 @@ import './SupportHeroCard.css'
 export const SupportHeroCard = ({
   title = 'Soporte técnico de Nexora',
   subtitle = '¿Necesitas ayuda? Comienza aquí.',
-  accentColor = 'var(--color-primary)',
+  accentColor = '#8B5CF6',
 }) => {
   const customStyle = {
     '--support-accent': accentColor,
