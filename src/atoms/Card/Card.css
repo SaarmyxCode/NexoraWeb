@@ -41,7 +41,6 @@
 .card-base.is-interactive:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-surface-hover, 0 8px 30px rgba(0, 0, 0, 0.08));
-  border-color: var(--color-text-muted, rgba(0, 0, 0, 0.2));
 }
 
 .card-base.is-interactive:focus-visible {

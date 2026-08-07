@@ -28,7 +28,7 @@ export const Footer = () => {
 
   // Configuración dinámica del bloque de asistencia / soporte
   const supportText = activeProduct
-    ? `¿Necesitas ayuda con ${activeProduct.shortName || activeProduct.name}? Obten asistencia técnica o guías de instalación`
+    ? `¿Necesitas ayuda con ${activeProduct.id || activeProduct.name}? Obten asistencia técnica o guías de instalación`
     : 'Busca asistencia o servicios de instalación'
 
   const supportLink = activeProduct?.route ? `${activeProduct.route}#soporte` : '/soporte'
