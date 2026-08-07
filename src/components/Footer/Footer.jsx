@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
@@ -63,16 +64,21 @@ export const Footer = () => {
           {/* Columna 2 */}
           <div className="footer-column">
             <div className="footer-group">
-              <h4 className="footer-title">Cuenta</h4>
+              <h4 className="footer-title">Ecosistema</h4>
               <ul className="footer-list">
                 <li>
-                  <Link to="/soporte" className="footer-link">
-                    Administra tu Cuenta
+                  <Link to="/changelog" className="footer-link">
+                    Novedades
                   </Link>
                 </li>
                 <li>
                   <Link to="/soporte" className="footer-link">
-                    Nexora Cloud
+                    Centro de Soporte
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/descargar" className="footer-link">
+                    Dónde descargar
                   </Link>
                 </li>
               </ul>
@@ -141,3 +147,5 @@ export const Footer = () => {
     </footer>
   )
 }
+
+export default Footer

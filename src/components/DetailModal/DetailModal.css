@@ -3,13 +3,13 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: var(--color-black-60, rgba(0, 0, 0, 0.45));
+  background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: calc(var(--header-z-index, 1000) + 1000);
   padding: var(--spacing-lg);
   animation: modalFadeIn var(--transition-normal) ease-out forwards;
 }
@@ -18,10 +18,11 @@
   position: relative;
   width: 100%;
   max-width: 44rem;
-  background-color: var(--color-bg-surface);
+  background-color: var(--color-bg-app);
   border-radius: var(--radius-2xl);
+  border: var(--border-width-thin) solid var(--color-light-border);
   padding: clamp(var(--spacing-xl), 4vw, 3.5rem) clamp(var(--spacing-lg), 3vw, 3rem);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-surface);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
@@ -37,8 +38,8 @@
   right: var(--spacing-lg);
   width: 36px;
   height: 36px;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-black-05);
+  color: var(--color-text-heading);
   border: none;
   border-radius: var(--radius-full);
   display: flex;
@@ -54,7 +55,7 @@
 
 .modal-btn-close:hover {
   transform: scale(1.08);
-  background-color: var(--color-black-80);
+  background-color: var(--color-black-10);
 }
 
 .modal-title {
@@ -64,6 +65,7 @@
   color: var(--color-text-heading);
   line-height: var(--line-height-tight);
   margin: 0;
+  padding-right: var(--spacing-xl);
 }
 
 .modal-body {
@@ -75,13 +77,13 @@
 .modal-section {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2xs);
+  gap: var(--spacing-xs);
 }
 
 .modal-subtitle {
   font-family: var(--font-family-base);
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-extrabold);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-heading);
   margin: 0;
 }

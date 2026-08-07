@@ -68,3 +68,5 @@ export const DetailModal = ({
     </div>
   )
 }
+
+export default DetailModal
