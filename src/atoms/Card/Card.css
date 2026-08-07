@@ -1,0 +1,49 @@
+.card-base {
+  background-color: var(--color-bg-surface, #ffffff);
+  border: var(--border-width-thin, 1px) solid var(--color-light-border, rgba(0, 0, 0, 0.08));
+  box-shadow: var(--shadow-surface, 0 4px 20px rgba(0, 0, 0, 0.04));
+  box-sizing: border-box;
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.radius-md {
+  border-radius: var(--radius-md, 0.75rem);
+}
+.radius-lg {
+  border-radius: var(--radius-lg, 1rem);
+}
+.radius-xl {
+  border-radius: var(--radius-xl, 1.25rem);
+}
+.radius-2xl {
+  border-radius: var(--radius-2xl, 1.75rem);
+}
+
+.variant-outline {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.variant-flat {
+  box-shadow: none;
+  background-color: var(--color-bg-app, #f5f5f7);
+  border: none;
+}
+
+.card-base.is-interactive {
+  cursor: pointer;
+  outline: none;
+}
+
+.card-base.is-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-surface-hover, 0 8px 30px rgba(0, 0, 0, 0.08));
+  border-color: var(--color-text-muted, rgba(0, 0, 0, 0.2));
+}
+
+.card-base.is-interactive:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.35);
+}
