@@ -3,9 +3,9 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,11 +18,8 @@
   position: relative;
   width: 100%;
   max-width: 44rem;
-  background-color: var(--color-bg-app);
-  border-radius: var(--radius-2xl);
-  border: var(--border-width-thin) solid var(--color-light-border);
+  background-color: var(--color-bg-surface);
   padding: clamp(var(--spacing-xl), 4vw, 3.5rem) clamp(var(--spacing-lg), 3vw, 3rem);
-  box-shadow: var(--shadow-surface);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
@@ -36,36 +33,17 @@
   position: absolute;
   top: var(--spacing-lg);
   right: var(--spacing-lg);
-  width: 36px;
-  height: 36px;
-  background-color: var(--color-black-05);
-  color: var(--color-text-heading);
-  border: none;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-lg);
-  cursor: pointer;
-  transition:
-    transform var(--transition-fast),
-    background-color var(--transition-fast);
   z-index: 10;
-}
-
-.modal-btn-close:hover {
-  transform: scale(1.08);
-  background-color: var(--color-black-10);
 }
 
 .modal-title {
   font-family: var(--font-family-base);
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading);
   line-height: var(--line-height-tight);
   margin: 0;
-  padding-right: var(--spacing-xl);
+  padding-right: var(--spacing-2xl);
 }
 
 .modal-body {
@@ -108,7 +86,7 @@
 }
 
 .modal-link:hover {
-  opacity: 0.75;
+  opacity: 0.8;
   text-decoration: underline;
 }
 
@@ -135,7 +113,6 @@
 @media (max-width: 42rem) {
   .modal-card {
     padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--radius-xl);
   }
 
   .modal-btn-close {

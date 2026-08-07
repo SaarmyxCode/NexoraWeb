@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from '../../atoms/Button/Button'
 import { getProduct } from '../../utils/getProduct'
 import './SubHeader.css'
 
 export const SubHeader = ({
-  productId, // Permite cargar datos automáticamente si se pasa el ID (p. ej., "theme", "songs", "rename")
+  productId,
   title,
   titleColor,
   accentColor,
@@ -16,7 +17,6 @@ export const SubHeader = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Carga automática desde JSON si existe productId
   const product = productId ? getProduct(productId) : null
 
   const displayTitle = title || product?.shortName || 'NEXORA'
@@ -44,35 +44,39 @@ export const SubHeader = ({
     return () => window.removeEventListener('scroll', handleScroll)
   }, [heroId])
 
-  // Helper dinámico para renderizar <a> (anclas) o <Link> (rutas)
-  const renderButton = (text, href, isPrimary = false) => {
+  const renderActionButton = (text, href, isPrimary = false) => {
     if (!text || !href) return null
 
     const isAnchor = href.startsWith('#')
-    const className = `subheader-btn ${isPrimary ? 'btn-primary' : 'btn-outline'}`
-    const style = isPrimary
-      ? {
-          backgroundColor: displayAccentColor,
-          borderColor: displayAccentColor,
-          color: 'var(--color-white)',
-        }
-      : {
-          color: displayAccentColor,
-          borderColor: `${displayAccentColor}40`,
-        }
 
-    if (isAnchor) {
+    if (isPrimary) {
       return (
-        <a href={href} className={className} style={style}>
-          {text}
-        </a>
+        <Button variant="primary" size="sm" accentColor={displayAccentColor}>
+          {isAnchor ? (
+            <a href={href} className="subheader-btn-link">
+              {text}
+            </a>
+          ) : (
+            <Link to={href} className="subheader-btn-link">
+              {text}
+            </Link>
+          )}
+        </Button>
       )
     }
 
     return (
-      <Link to={href} className={className} style={style}>
-        {text}
-      </Link>
+      <Button variant="secondary" size="sm" accentColor={displayAccentColor}>
+        {isAnchor ? (
+          <a href={href} className="subheader-btn-link">
+            {text}
+          </a>
+        ) : (
+          <Link to={href} className="subheader-btn-link">
+            {text}
+          </Link>
+        )}
+      </Button>
     )
   }
 
@@ -84,8 +88,8 @@ export const SubHeader = ({
         </h2>
 
         <div className="subheader-actions">
-          {renderButton(outlineBtnText, outlineBtnHref, false)}
-          {renderButton(primaryBtnText, displayPrimaryHref, true)}
+          {renderActionButton(outlineBtnText, outlineBtnHref, false)}
+          {renderActionButton(primaryBtnText, displayPrimaryHref, true)}
         </div>
       </div>
     </div>

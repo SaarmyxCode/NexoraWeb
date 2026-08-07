@@ -1,5 +1,7 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { FiX } from 'react-icons/fi'
+import { Card } from '../../atoms/Card/Card'
+import { Button } from '../../atoms/Button/Button'
 import './DetailModal.css'
 
 export const DetailModal = ({
@@ -35,15 +37,16 @@ export const DetailModal = ({
       aria-modal="true"
       aria-labelledby={title ? 'modal-title-id' : undefined}
     >
-      <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-        <button
-          type="button"
+      <Card radius="2xl" className="modal-card" onClick={(e) => e.stopPropagation()}>
+        <Button
+          variant="icon"
+          size="sm"
           className="modal-btn-close"
           onClick={onClose}
           aria-label="Cerrar ventana"
         >
           <FiX />
-        </button>
+        </Button>
 
         {title && (
           <h2 id="modal-title-id" className="modal-title">
@@ -64,7 +67,7 @@ export const DetailModal = ({
             </div>
           ))}
         </div>
-      </div>
+      </Card>
     </div>
   )
 }

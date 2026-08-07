@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FiSearch, FiX, FiArrowRight } from 'react-icons/fi'
+import { Card } from '../../atoms/Card/Card'
+import { Button } from '../../atoms/Button/Button'
+import { Input } from '../../atoms/Input/Input'
 import './SearchModal.css'
 
 export const SearchModal = ({ isOpen, onClose, searchQuery, setSearchQuery }) => {
@@ -86,25 +89,20 @@ export const SearchModal = ({ isOpen, onClose, searchQuery, setSearchQuery }) =>
 
   return (
     <div className="search-overlay" onClick={onClose}>
-      <div className="search-modal" onClick={(e) => e.stopPropagation()}>
+      <Card radius="2xl" className="search-modal" onClick={(e) => e.stopPropagation()}>
         <div className="search-input-wrapper">
-          <FiSearch className="search-input-icon" />
-          <input
+          <Input
             ref={inputRef}
             type="text"
-            className="search-input"
+            icon={FiSearch}
             placeholder="Buscar en Nexora..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-custom-input"
           />
-          <button
-            type="button"
-            className="search-close-btn"
-            onClick={onClose}
-            aria-label="Cerrar búsqueda"
-          >
+          <Button variant="icon" size="sm" onClick={onClose} aria-label="Cerrar búsqueda">
             <FiX />
-          </button>
+          </Button>
         </div>
 
         <div className="search-results-container">
@@ -136,7 +134,9 @@ export const SearchModal = ({ isOpen, onClose, searchQuery, setSearchQuery }) =>
             </div>
           )}
         </div>
-      </div>
+      </Card>
     </div>
   )
 }
+
+export default SearchModal
