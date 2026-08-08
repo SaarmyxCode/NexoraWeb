@@ -1,0 +1,28 @@
+{
+  "id": "share",
+  "enabled": false,
+  "name": "Nexora Share",
+  "shortName": "SHARE",
+  "route": "/share",
+  "accentColor": "#A855F7",
+  "mode": "dark",
+  "description": "Transferencia directa de archivos punto a punto (P2P) cifrada de dispositivo a dispositivo dentro de red local o global.",
+  "mockup": "/mockups/NexoraShare.png",
+  "downloadUrl": "/descargar#share",
+  "highlights": [
+    {
+      "id": "share-hl-1",
+      "title": "TRANSFERENCIA P2P SIN INTERMEDIARIOS",
+      "titleColor": "#A855F7",
+      "imageSrc": "/mockups/NexoraShare.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "share-stat-1",
+      "prefix": "Velocidades de envío de",
+      "highlight": "máximo ancho de banda local",
+      "suffix": "sin límites artificiales de tamaño de archivo."
+    }
+  ]
+}

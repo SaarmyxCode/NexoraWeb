@@ -1,0 +1,28 @@
+{
+  "id": "calendar",
+  "enabled": false,
+  "name": "Nexora Calendar",
+  "shortName": "CALENDAR",
+  "route": "/calendar",
+  "accentColor": "#EF4444",
+  "mode": "dark",
+  "description": "Planificador de eventos y tareas enfocado en la productividad personal y el control de tiempos de enfoque.",
+  "mockup": "/mockups/NexoraCalendar.png",
+  "downloadUrl": "/descargar#calendar",
+  "highlights": [
+    {
+      "id": "calendar-hl-1",
+      "title": "GESTIÓN DE TIEMPO Y BLOQUES DE TRABAJO",
+      "titleColor": "#EF4444",
+      "imageSrc": "/mockups/NexoraCalendar.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "calendar-stat-1",
+      "prefix": "Sincronización fluida con",
+      "highlight": "estándares iCal y CalDAV",
+      "suffix": "para la gestión multiplataforma de tu agenda."
+    }
+  ]
+}

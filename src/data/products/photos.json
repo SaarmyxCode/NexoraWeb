@@ -1,0 +1,28 @@
+{
+  "id": "photos",
+  "enabled": false,
+  "name": "Nexora Photos",
+  "shortName": "PHOTOS",
+  "route": "/photos",
+  "accentColor": "#F43F5E",
+  "mode": "dark",
+  "description": "Galería y visor de imágenes de alta fidelidad con indexación local por metadatos, limpieza EXIF y procesamiento sin pérdida.",
+  "mockup": "/mockups/NexoraPhotos.png",
+  "downloadUrl": "/descargar#photos",
+  "highlights": [
+    {
+      "id": "photos-hl-1",
+      "title": "ORGANIZACIÓN FOTOGRÁFICA LOCAL",
+      "titleColor": "#F43F5E",
+      "imageSrc": "/mockups/NexoraPhotos.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "photos-stat-1",
+      "prefix": "Indexación rápida de",
+      "highlight": "miles de fotografías",
+      "suffix": "sin depender de servidores en la nube."
+    }
+  ]
+}

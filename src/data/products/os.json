@@ -1,0 +1,28 @@
+{
+  "id": "os",
+  "enabled": false,
+  "name": "Nexora OS",
+  "shortName": "OS",
+  "route": "/os",
+  "accentColor": "#111827",
+  "mode": "dark",
+  "description": "Sistema operativo central y entorno de escritorio distribuido que integra de forma nativa la suite de aplicaciones Nexora.",
+  "mockup": "/mockups/NexoraOS.png",
+  "downloadUrl": "/descargar#os",
+  "highlights": [
+    {
+      "id": "os-hl-1",
+      "title": "BASE UNIFICADA DEL ECOSISTEMA",
+      "titleColor": "#111827",
+      "imageSrc": "/mockups/NexoraOS.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "os-stat-1",
+      "prefix": "Arquitectura optimizada con",
+      "highlight": "mínimo consumo de kernel",
+      "suffix": "diseñada para máxima respuesta y estabilidad."
+    }
+  ]
+}

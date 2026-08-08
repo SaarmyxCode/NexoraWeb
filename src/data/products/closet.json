@@ -1,0 +1,28 @@
+{
+  "id": "closet",
+  "enabled": false,
+  "name": "Nexora Closet",
+  "shortName": "CLOSET",
+  "route": "/closet",
+  "accentColor": "#8B5CF6",
+  "mode": "dark",
+  "description": "Organizador digital de vestuario y armario cápsula, estructuración de prendas por paleta cromática y visagismo personal.",
+  "mockup": "/mockups/NexoraCloset.png",
+  "downloadUrl": "/descargar#closet",
+  "highlights": [
+    {
+      "id": "closet-hl-1",
+      "title": "GESTIÓN DE ARMARIO CÁPSULA E INDUMENTARIA",
+      "titleColor": "#8B5CF6",
+      "imageSrc": "/mockups/NexoraCloset.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "closet-stat-1",
+      "prefix": "Catálogo estructurado con",
+      "highlight": "clasificación cromática",
+      "suffix": "para la combinación eficiente de prendas."
+    }
+  ]
+}

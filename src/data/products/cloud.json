@@ -1,0 +1,28 @@
+{
+  "id": "cloud",
+  "enabled": false,
+  "name": "Nexora Cloud",
+  "shortName": "CLOUD",
+  "route": "/cloud",
+  "accentColor": "#14B8A6",
+  "mode": "dark",
+  "description": "Almacenamiento y sincronización de archivos cifrados en reposo, con acceso multiplataforma y control granular de respaldos.",
+  "mockup": "/mockups/NexoraCloud.png",
+  "downloadUrl": "/descargar#cloud",
+  "highlights": [
+    {
+      "id": "cloud-hl-1",
+      "title": "RESPALDOS CIFRADOS EN TIEMPO REAL",
+      "titleColor": "#14B8A6",
+      "imageSrc": "/mockups/NexoraCloud.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "cloud-stat-1",
+      "prefix": "Sincronización con",
+      "highlight": "protocolo de latencia mínima",
+      "suffix": "para la transferencia eficiente de archivos pesados."
+    }
+  ]
+}

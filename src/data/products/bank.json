@@ -1,0 +1,28 @@
+{
+  "id": "bank",
+  "enabled": false,
+  "name": "Nexora Bank",
+  "shortName": "BANK",
+  "route": "/bank",
+  "accentColor": "#047857",
+  "mode": "dark",
+  "description": "Infraestructura de tesorería y cuentas corporativas institucionales con cifrado de grado bancario y auditoría estricta.",
+  "mockup": "/mockups/NexoraBank.png",
+  "downloadUrl": "/descargar#bank",
+  "highlights": [
+    {
+      "id": "bank-hl-1",
+      "title": "GESTIÓN DE TESORERÍA CORPORATIVA",
+      "titleColor": "#047857",
+      "imageSrc": "/mockups/NexoraBank.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "bank-stat-1",
+      "prefix": "Nivel de seguridad de",
+      "highlight": "cifrado grado bancario",
+      "suffix": "para registros de capital e inversiones."
+    }
+  ]
+}
