@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from '../../atoms/Card/Card'
-import { getProduct } from '../../utils/getProduct'
+import { getProduct } from '../../data'
 import { useReveal } from '../../hooks/useReveal'
 import './HeroCard.css'
 
 export const HeroCard = ({
+  product: productProp,
   productId,
   title,
   subtitle,
@@ -20,11 +21,11 @@ export const HeroCard = ({
 }) => {
   const revealRef = useReveal()
 
-  // Carga automática si viene productId
-  const product = productId ? getProduct(productId) : null
+  // Resuelve el producto ya sea recibido por objeto `product` o por string `productId`
+  const product = productProp || (productId ? getProduct(productId) : null)
 
   const displayTitle = title || product?.shortName || product?.name || ''
-  const displaySubtitle = subtitle || (productId ? product?.description : undefined)
+  const displaySubtitle = subtitle || product?.description
   const displayImage = imageSrc || product?.mockup
   const displayTitleColor = titleColor || accentColor || product?.accentColor
   const destination = to || (product ? product.route : '/')
@@ -32,12 +33,14 @@ export const HeroCard = ({
   const cardContent = (
     <>
       <div className="hero-header-content">
-        <h2
-          className="hero-title"
-          style={displayTitleColor ? { color: displayTitleColor } : undefined}
-        >
-          {displayTitle}
-        </h2>
+        {displayTitle && (
+          <h2
+            className="hero-title"
+            style={displayTitleColor ? { color: displayTitleColor } : undefined}
+          >
+            {displayTitle}
+          </h2>
+        )}
         {displaySubtitle && <p className="hero-subtitle">{displaySubtitle}</p>}
       </div>
 

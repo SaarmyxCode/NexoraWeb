@@ -1,40 +1,57 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import siteConfig from '../../data/siteConfig.json'
-import products from '../../data/products.json'
+import { activeProducts } from '../../data'
 import './Footer.css'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
   const location = useLocation()
 
-  // Extraemos la sección del footer de siteConfig con fallback seguro
+  // 1. Identificamos el producto activo según la ruta actual
+  const activeProduct = activeProducts.find((p) => p.route === location.pathname)
+  const currentProductKey = activeProduct?.id || 'default'
+
+  // 2. Extraemos el disclaimer dinámico según el objeto disclaimer de siteConfig o la prop del producto
   const footerData = siteConfig?.footer || {}
-  const disclaimers = footerData.disclaimer || [
-    `Pruebas realizadas por ${siteConfig?.siteName || 'Nexora Labs'} en 2026.`,
-  ]
-  const columns = footerData.columns || []
+  const disclaimerObject = footerData.disclaimer || {}
+
+  const disclaimers = activeProduct?.disclaimer ||
+    disclaimerObject[currentProductKey] ||
+    disclaimerObject.default || [
+      `Pruebas realizadas por ${siteConfig?.siteName || 'Nexora Labs'} en ${currentYear}.`,
+    ]
+
+  // 3. Filtrado de columnas del Footer
+  const rawColumns = footerData.columns || []
+  const columns = rawColumns.map((col) => {
+    // Si la columna es "Explorar Productos" o similar, mostramos solo los activos
+    if (
+      col.title.toLowerCase().includes('producto') ||
+      col.title.toLowerCase().includes('descubrir')
+    ) {
+      return {
+        ...col,
+        links: activeProducts.map((p) => ({ label: p.name, to: p.route })),
+      }
+    }
+    return col
+  })
+
   const legalLinks = footerData.legalLinks || [
     { label: 'Política de privacidad', to: '/privacidad' },
     { label: 'Aviso legal', to: '/soporte' },
   ]
   const country = footerData.country || 'Colombia'
 
-  // Identificamos el producto activo según la ruta (ej: /theme, /rename, /songs)
-  const currentProductKey = Object.keys(products).find(
-    (key) => products[key]?.route === location.pathname,
-  )
-  const activeProduct = currentProductKey ? products[currentProductKey] : null
-
-  // Configuración dinámica del bloque de asistencia / soporte
+  // Configuración del bloque dinámico de soporte
   const supportText = activeProduct
-    ? `¿Necesitas ayuda con ${activeProduct.id || activeProduct.name}? Obten asistencia técnica o guías de instalación`
+    ? `¿Necesitas ayuda con ${activeProduct.name}? Obtén asistencia técnica o guías de instalación`
     : 'Busca asistencia o servicios de instalación'
 
   const supportLink = activeProduct?.route ? `${activeProduct.route}#soporte` : '/soporte'
   const supportColor = activeProduct?.accentColor || 'var(--color-primary)'
 
-  // Helper para renderizar enlaces externos o de React Router
   const renderLink = (linkItem, className) => {
     const isExternal = linkItem.to?.startsWith('http') || linkItem.href?.startsWith('http')
     const href = linkItem.to || linkItem.href || '#'
@@ -57,7 +74,7 @@ export const Footer = () => {
   return (
     <footer className="footer-wrapper">
       <div className="footer-container">
-        {/* Notaciones y aclaraciones iniciales */}
+        {/* Disclaimer Dinámico */}
         {disclaimers.length > 0 && (
           <section className="footer-disclaimer">
             {disclaimers.map((paragraph, idx) => (
@@ -66,7 +83,7 @@ export const Footer = () => {
           </section>
         )}
 
-        {/* Grid de enlaces agrupados por columnas dinámicas */}
+        {/* Grid de Enlaces */}
         {columns.length > 0 && (
           <div className="footer-nav-grid">
             {columns.map((col, idx) => (
@@ -84,7 +101,7 @@ export const Footer = () => {
           </div>
         )}
 
-        {/* Localizador / Enlace a soporte Dinámico */}
+        {/* Enlace a Soporte Dinámico */}
         <div className="footer-store-locator">
           <Link to={supportLink} className="footer-locator-link" style={{ color: supportColor }}>
             {supportText}

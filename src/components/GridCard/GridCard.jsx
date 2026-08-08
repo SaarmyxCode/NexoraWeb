@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from '../../atoms/Card/Card'
-import { getProduct } from '../../utils/getProduct'
+import { getProduct } from '../../data'
 import { useReveal } from '../../hooks/useReveal'
 import './GridCard.css'
 
 export const GridCard = ({
+  product: productProp,
   productId,
   title,
   subtitle,
@@ -20,11 +21,11 @@ export const GridCard = ({
 }) => {
   const revealRef = useReveal()
 
-  // Carga automática si viene productId
-  const product = productId ? getProduct(productId) : null
+  // Resuelve el producto ya sea recibido por objeto `product` o por string `productId`
+  const product = productProp || (productId ? getProduct(productId) : null)
 
   const displayTitle = title || product?.shortName || product?.name || ''
-  const displaySubtitle = subtitle || (productId ? product?.description : undefined)
+  const displaySubtitle = subtitle || product?.description
   const displayImage = imageSrc || product?.mockup
   const displayTitleColor = titleColor || accentColor || product?.accentColor
   const destination = to || (product ? product.route : '/')
@@ -32,12 +33,14 @@ export const GridCard = ({
   const cardContent = (
     <>
       <div className="grid-card-header">
-        <h3
-          className="grid-card-title"
-          style={displayTitleColor ? { color: displayTitleColor } : undefined}
-        >
-          {displayTitle}
-        </h3>
+        {displayTitle && (
+          <h3
+            className="grid-card-title"
+            style={displayTitleColor ? { color: displayTitleColor } : undefined}
+          >
+            {displayTitle}
+          </h3>
+        )}
         {displaySubtitle && <p className="grid-card-subtitle">{displaySubtitle}</p>}
       </div>
 

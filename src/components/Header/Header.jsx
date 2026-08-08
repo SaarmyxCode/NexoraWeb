@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FiSearch, FiMenu, FiX } from 'react-icons/fi'
 import siteConfig from '../../data/siteConfig.json'
+import { activeProducts } from '../../data'
 import { Button } from '../../atoms/Button/Button'
 import { SearchModal } from '../SearchModal/SearchModal'
 import './Header.css'
@@ -14,8 +15,19 @@ export const Header = ({ logoSrc }) => {
 
   const location = useLocation()
 
-  const navLinks = siteConfig.header?.navLinks || []
-  const activeLogo = logoSrc || siteConfig.logoSrc
+  // 1. Productos activos con enabled: true
+  const productNavLinks = activeProducts.map((p) => ({
+    id: p.id,
+    label: p.shortName || p.name,
+    to: p.route,
+    accentColor: p.accentColor,
+  }))
+
+  // 2. Links fijos institucionales desde siteConfig
+  const staticNavLinks = siteConfig.header?.navLinks || []
+
+  // 3. Unión completa para la navegación
+  const navLinks = [...productNavLinks, ...staticNavLinks]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +43,7 @@ export const Header = ({ logoSrc }) => {
     setIsSearchOpen(false)
   }, [location.pathname])
 
-  // Buscamos si la ruta actual tiene un color de acento asignado en siteConfig
+  // Identifica el color de acento del producto activo en la ruta actual
   const activeNavLink = navLinks.find((link) => link.to === location.pathname)
   const logoAccentColor = activeNavLink?.accentColor
 
@@ -39,7 +51,7 @@ export const Header = ({ logoSrc }) => {
     <>
       <header className={`header-wrapper ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-navbar">
-          {/* IZQUIERDA: Logo Principal en Texto con Color Dinámico */}
+          {/* IZQUIERDA: Logo Principal */}
           <div className="header-left">
             <Link
               to="/"
@@ -59,18 +71,12 @@ export const Header = ({ logoSrc }) => {
           <nav className="header-nav-desktop" aria-label="Navegación principal">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.to
-
               return (
                 <Link
                   key={link.id || link.to}
                   to={link.to}
                   className={`header-nav-link ${isActive ? 'is-active' : ''}`}
-                  style={
-                    isActive && link.accentColor
-                      ? { color: link.accentColor, fontWeight: 'var(--font-weight-bold)' }
-                      : undefined
-                  }
-                  aria-current={isActive ? 'page' : undefined}
+                  style={isActive && link.accentColor ? { color: link.accentColor } : undefined}
                 >
                   {link.label}
                 </Link>
@@ -78,7 +84,7 @@ export const Header = ({ logoSrc }) => {
             })}
           </nav>
 
-          {/* DERECHA: Buscador + Menú Hamburguesa usando Átomo Button */}
+          {/* DERECHA: Acciones (Buscador & Menú Móvil) */}
           <div className="header-right">
             <Button
               variant="icon"
@@ -105,24 +111,18 @@ export const Header = ({ logoSrc }) => {
           </div>
         </div>
 
-        {/* MENÚ MÓVIL (Tarjeta Flotante Separada) */}
+        {/* MENÚ MÓVIL */}
         {isMobileMenuOpen && (
           <div className="header-mobile-card-wrapper">
             <nav className="header-mobile-nav" aria-label="Navegación móvil">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.to
-
                 return (
                   <Link
                     key={link.id || link.to}
                     to={link.to}
                     className={`header-mobile-link ${isActive ? 'is-active' : ''}`}
-                    style={
-                      isActive && link.accentColor
-                        ? { color: link.accentColor, fontWeight: 'var(--font-weight-bold)' }
-                        : undefined
-                    }
-                    aria-current={isActive ? 'page' : undefined}
+                    style={isActive && link.accentColor ? { color: link.accentColor } : undefined}
                   >
                     {link.label}
                   </Link>

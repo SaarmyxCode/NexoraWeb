@@ -1,0 +1,28 @@
+{
+  "id": "mail",
+  "enabled": false,
+  "name": "Nexora Mail",
+  "shortName": "MAIL",
+  "route": "/mail",
+  "accentColor": "#F97316",
+  "mode": "dark",
+  "description": "Cliente de correo electrónico minimalista con cifrado de extremo a extremo, bandeja de entrada limpia y gestión inteligente de boletines.",
+  "mockup": "/mockups/NexoraMail.png",
+  "downloadUrl": "/descargar#mail",
+  "highlights": [
+    {
+      "id": "mail-hl-1",
+      "title": "BANDEJA DE ENTRADA SIN DISTRACCIONES",
+      "titleColor": "#F97316",
+      "imageSrc": "/mockups/NexoraMail.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "mail-stat-1",
+      "prefix": "Cifrado instantáneo con",
+      "highlight": "0 lectura de datos",
+      "suffix": "por parte de algoritmos o terceros."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "browser",
+  "enabled": false,
+  "name": "Nexora Browser",
+  "shortName": "BROWSER",
+  "route": "/browser",
+  "accentColor": "#0EA5E9",
+  "mode": "dark",
+  "description": "Navegador web ultralápido centrado en la privacidad, con aislamiento de rastreadores y bloqueador de anuncios integrado a nivel de kernel.",
+  "mockup": "/mockups/NexoraBrowser.png",
+  "downloadUrl": "/descargar#browser",
+  "highlights": [
+    {
+      "id": "browser-hl-1",
+      "title": "MOTOR DE RENDIMIENTO Y PRIVACIDAD",
+      "titleColor": "#0EA5E9",
+      "imageSrc": "/mockups/NexoraBrowser.png"
+    },
+    {
+      "id": "browser-hl-2",
+      "title": "BLOQUEO NATIVO DE RASTREADORES",
+      "titleColor": "#0EA5E9",
+      "imageSrc": "/mockups/NexoraBrowser.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "browser-stat-1",
+      "prefix": "Carga de páginas un",
+      "highlight": "60% más rápida",
+      "suffix": "al eliminar scripts publicitarios invasivos."
+    }
+  ]
+}

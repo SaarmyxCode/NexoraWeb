@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { MainLayout } from './layout/MainLayout'
 import { ScrollToTop } from './components/ScrollToTop'
+import { getProduct } from './data'
 
 import { Home } from './pages/Home'
 import { ThemePage } from './pages/Theme/ThemePage'
@@ -12,7 +13,17 @@ import { SoportePage } from './pages/Soporte/SoportePage'
 import { ChangelogPage } from './pages/Changelog/ChangelogPage'
 import { DownloadPage } from './pages/Download/DownloadPage'
 import { PrivacyPage } from './pages/Privacy/PrivacyPage'
+import { CodePage } from './pages/Code/CodePage'
 import { NotFound } from './pages/NotFound/NotFound'
+
+// Guardián para proteger las rutas de productos según el flag "enabled"
+const ProtectedProductRoute = ({ productId, children }) => {
+  const product = getProduct(productId)
+  if (!product) {
+    return <Navigate to="/404" replace />
+  }
+  return children
+}
 
 export function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -27,7 +38,6 @@ export function App() {
 
   return (
     <>
-      {/* Loader General con soporte para accesibilidad */}
       <div
         className={`app-loader ${!isLoading ? 'is-hidden' : ''}`}
         aria-hidden={!isLoading}
@@ -41,16 +51,57 @@ export function App() {
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/theme" element={<ThemePage />} />
-            <Route path="/songs" element={<SongsPage />} />
-            <Route path="/rename" element={<RenamePage />} />
-            <Route path="/finance" element={<FinancePage />} />
+
+            {/* Rutas Protegidas por "enabled: true/false" */}
+            <Route
+              path="/theme"
+              element={
+                <ProtectedProductRoute productId="theme">
+                  <ThemePage />
+                </ProtectedProductRoute>
+              }
+            />
+            <Route
+              path="/songs"
+              element={
+                <ProtectedProductRoute productId="songs">
+                  <SongsPage />
+                </ProtectedProductRoute>
+              }
+            />
+            <Route
+              path="/rename"
+              element={
+                <ProtectedProductRoute productId="rename">
+                  <RenamePage />
+                </ProtectedProductRoute>
+              }
+            />
+            <Route
+              path="/finance"
+              element={
+                <ProtectedProductRoute productId="finance">
+                  <FinancePage />
+                </ProtectedProductRoute>
+              }
+            />
+
+            <Route
+              path="/code"
+              element={
+                <ProtectedProductRoute productId="code">
+                  <CodePage />
+                </ProtectedProductRoute>
+              }
+            />
+
+            {/* Rutas Institucionales y de Servicio */}
             <Route path="/soporte" element={<SoportePage />} />
             <Route path="/changelog" element={<ChangelogPage />} />
             <Route path="/descargar" element={<DownloadPage />} />
             <Route path="/privacidad" element={<PrivacyPage />} />
 
-            {/* Captura de rutas no encontradas (404) */}
+            {/* 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
