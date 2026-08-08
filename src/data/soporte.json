@@ -1,0 +1,51 @@
+{
+  "id": "soporte",
+  "name": "Nexora Soporte",
+  "shortName": "SOPORTE",
+  "route": "/soporte",
+  "accentColor": "#8B5CF6",
+  "mode": "light",
+  "description": "Estamos para resolver tus dudas y asistirte en la instalación o configuración de cada una de nuestras aplicaciones.",
+  "mockup": "/mockups/NexoraSoporte.png",
+  "contactUrl": "/soporte#contactar",
+  "highlights": [
+    {
+      "id": "soporte-hl-1",
+      "title": "CENTRO DE AYUDA Y GUÍAS RÁPIDAS",
+      "titleColor": "#8B5CF6",
+      "imageSrc": "/mockups/NexoraSoporte.png"
+    },
+    {
+      "id": "soporte-hl-2",
+      "title": "ATENCIÓN DIRECTA Y TICKET DE CONSULTAS",
+      "titleColor": "#8B5CF6",
+      "imageSrc": "/mockups/NexoraSoporte.png"
+    },
+    {
+      "id": "soporte-hl-3",
+      "title": "ESTADO DE SERVICIOS EN TIEMPO REAL",
+      "titleColor": "#8B5CF6",
+      "imageSrc": "/mockups/NexoraSoporte.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "soporte-stat-1",
+      "prefix": "Respuesta en",
+      "highlight": "menos de 15 minutos",
+      "suffix": "para tickets prioritarios de soporte técnico."
+    },
+    {
+      "id": "soporte-stat-2",
+      "prefix": "Disponibilidad del",
+      "highlight": "99.9% de los servicios",
+      "suffix": "con monitoreo continuo en tiempo real."
+    },
+    {
+      "id": "soporte-stat-3",
+      "prefix": "Atención especializada",
+      "highlight": "24/7 en español e inglés",
+      "suffix": "asistida por nuestro equipo de ingenieros."
+    }
+  ]
+}

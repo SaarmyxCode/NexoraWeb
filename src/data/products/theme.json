@@ -1,0 +1,52 @@
+{
+  "id": "theme",
+  "enabled": false,
+  "name": "Nexora Theme",
+  "shortName": "Theme",
+  "route": "/theme",
+  "accentColor": "#E11F2F",
+  "mode": "dark",
+  "description": "Sistema visual completo, tokens CSS dinámicos y componentes de UI para un diseño unificado y de alto contraste.",
+  "mockup": "/mockups/NexoraTheme.png",
+  "downloadUrl": "/descargar#theme",
+  "highlights": [
+    {
+      "id": "theme-hl-1",
+      "title": "MODO OSCURO Y MODO CLARO PURO",
+      "titleColor": "#E11F2F",
+      "imageSrc": "/mockups/NexoraTheme.png"
+    },
+    {
+      "id": "theme-hl-2",
+      "title": "VARIABLES INSTITUCIONALES NEXORA",
+      "titleColor": "#E11F2F",
+      "imageSrc": "/mockups/NexoraTheme.png"
+    },
+    {
+      "id": "theme-hl-3",
+      "title": "GLIKER + INTER EN SINTONÍA",
+      "titleColor": "#E11F2F",
+      "imageSrc": "/mockups/NexoraTheme.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "theme-stat-1",
+      "prefix": "Construido con un",
+      "highlight": "100% de contraste optimizado",
+      "suffix": "para lectura continua y descanso visual."
+    },
+    {
+      "id": "theme-stat-2",
+      "prefix": "Sincronización de",
+      "highlight": "tokens CSS dinámicos",
+      "suffix": "aplicables al instante en todo el ecosistema."
+    },
+    {
+      "id": "theme-stat-3",
+      "prefix": "Reducción de",
+      "highlight": "0ms de latencia en render",
+      "suffix": "al cambiar entre modo claro y oscuro."
+    }
+  ]
+}

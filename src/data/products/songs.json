@@ -1,0 +1,52 @@
+{
+  "id": "songs",
+  "enabled": false,
+  "name": "Nexora Songs",
+  "shortName": "Songs",
+  "route": "/songs",
+  "accentColor": "#EC4899",
+  "mode": "light",
+  "description": "Gestión, etiquetado ID3 y organización avanzada de librerías de audio y listas de reproducción.",
+  "mockup": "/mockups/NexoraSongs.png",
+  "downloadUrl": "/descargar#songs",
+  "highlights": [
+    {
+      "id": "songs-hl-1",
+      "title": "REPRODUCCIÓN Y MOTOR AUDIO LOSSLESS",
+      "titleColor": "#EC4899",
+      "imageSrc": "/mockups/NexoraSongs.png"
+    },
+    {
+      "id": "songs-hl-2",
+      "title": "ORGANIZACIÓN DE METADATOS ID3 V2.4",
+      "titleColor": "#EC4899",
+      "imageSrc": "/mockups/NexoraSongs.png"
+    },
+    {
+      "id": "songs-hl-3",
+      "title": "CATÁLOGOS Y PLAYLISTS DINÁMICAS",
+      "titleColor": "#EC4899",
+      "imageSrc": "/mockups/NexoraSongs.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "songs-stat-1",
+      "prefix": "Soporte completo para",
+      "highlight": "formatos FLAC, WAV y MP3 320kbps",
+      "suffix": "garantizando máxima fidelidad auditiva."
+    },
+    {
+      "id": "songs-stat-2",
+      "prefix": "Análisis y normalización de",
+      "highlight": "decibeles en lote",
+      "suffix": "para un volumen uniforme entre todas tus canciones."
+    },
+    {
+      "id": "songs-stat-3",
+      "prefix": "Edición instantánea de",
+      "highlight": "portadas y metadatos",
+      "suffix": "directamente sobre el archivo físico."
+    }
+  ]
+}

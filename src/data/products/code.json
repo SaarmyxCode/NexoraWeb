@@ -1,0 +1,56 @@
+{
+  "id": "code",
+  "enabled": true,
+  "name": "Nexora Code",
+  "shortName": "Code",
+  "route": "/code",
+  "accentColor": "#0071E3",
+  "mode": "dark",
+  "description": "Entorno de edición y ejecución ligera de código con integración nativa para Design Tokens, autocompletado inteligente y preview instantáneo.",
+  "mockup": "/mockups/NexoraCode.png",
+  "downloadUrl": "/descargar#code",
+  "highlights": [
+    {
+      "id": "code-hl-1",
+      "title": "EDITOR ULTRA LIGERO Y ZERO-LATENCY",
+      "titleColor": "#0071E3",
+      "imageSrc": "/mockups/NexoraCode.png"
+    },
+    {
+      "id": "code-hl-2",
+      "title": "INTEGRACIÓN DIRECTA CON DESIGN TOKENS",
+      "titleColor": "#0071E3",
+      "imageSrc": "/mockups/NexoraCode.png"
+    },
+    {
+      "id": "code-hl-3",
+      "title": "PREVISUALIZACIÓN Y COMPILACIÓN LOCAL",
+      "titleColor": "#0071E3",
+      "imageSrc": "/mockups/NexoraCode.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "code-stat-1",
+      "prefix": "Tiempo de arranque de",
+      "highlight": "menos de 50ms",
+      "suffix": "para la apertura instantánea de proyectos y archivos."
+    },
+    {
+      "id": "code-stat-2",
+      "prefix": "Consumo optimizado de",
+      "highlight": "hasta un 70% menos de RAM",
+      "suffix": "en comparación con editores tradicionales basados en la nube."
+    },
+    {
+      "id": "code-stat-3",
+      "prefix": "Procesamiento de código",
+      "highlight": "100% aislado y privado",
+      "suffix": "sin telemetría ni envío de datos a servidores remotos."
+    }
+  ],
+  "disclaimer": [
+    "1. Las pruebas de consumo de memoria de Nexora Code fueron realizadas sobre proyectos web de mediana y gran escala en entornos aislados.",
+    "2. El motor de autocompletado y sintaxis funciona mediante análisis léxico local sin requerir conexión continua a internet."
+  ]
+}

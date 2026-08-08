@@ -1,0 +1,52 @@
+{
+  "id": "rename",
+  "enabled": false,
+  "name": "Nexora Rename",
+  "shortName": "Rename",
+  "route": "/rename",
+  "accentColor": "#EAB308",
+  "mode": "dark",
+  "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas y motor multihilo.",
+  "mockup": "/mockups/NexoraRename.png",
+  "downloadUrl": "/descargar#rename",
+  "highlights": [
+    {
+      "id": "rename-hl-1",
+      "title": "RENOMBRADO MASIVO EN SEGUNDOS",
+      "titleColor": "#EAB308",
+      "imageSrc": "/mockups/NexoraRename.png"
+    },
+    {
+      "id": "rename-hl-2",
+      "title": "REGLAS Y PATRONES PERSONALIZADOS",
+      "titleColor": "#EAB308",
+      "imageSrc": "/mockups/NexoraRename.png"
+    },
+    {
+      "id": "rename-hl-3",
+      "title": "PREVISUALIZACIÓN EN TIEMPO REAL",
+      "titleColor": "#EAB308",
+      "imageSrc": "/mockups/NexoraRename.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "rename-stat-1",
+      "prefix": "Procesamiento de",
+      "highlight": "1,000 archivos por segundo",
+      "suffix": "en lotes masivos sin consumir recursos de más."
+    },
+    {
+      "id": "rename-stat-2",
+      "prefix": "Reducción de un",
+      "highlight": "95% del tiempo",
+      "suffix": "invertido en la organización manual de carpetas."
+    },
+    {
+      "id": "rename-stat-3",
+      "prefix": "Soporte para",
+      "highlight": "metadatos EXIF e ID3",
+      "suffix": "para renombrar fotografías y audio automáticamente."
+    }
+  ]
+}

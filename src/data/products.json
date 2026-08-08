@@ -105,7 +105,7 @@
     "id": "songs",
     "name": "Nexora Songs",
     "shortName": "SONGS",
-    "route": "/theme#songs",
+    "route": "/songs",
     "accentColor": "#EC4899",
     "mode": "light",
     "description": "Gestión, etiquetado ID3 y organización avanzada de librerías de audio y listas de reproducción.",

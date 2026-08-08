@@ -2,11 +2,6 @@
   "siteName": "NEXORA",
   "header": {
     "navLinks": [
-      { "id": "theme", "label": "Theme", "to": "/theme", "accentColor": "#E11F2F" },
-      { "id": "rename", "label": "Rename", "to": "/rename", "accentColor": "#EAB308" },
-      { "id": "songs", "label": "Songs", "to": "/songs", "accentColor": "#EC4899" },
-      { "id": "finance", "label": "Finance", "to": "/finance", "accentColor": "#10B981" },
-
       { "id": "changelog", "label": "Novedades", "to": "/changelog", "accentColor": "#E11F2F" },
       { "id": "soporte", "label": "Soporte", "to": "/soporte", "accentColor": "#8B5CF6" },
       {
@@ -59,8 +54,8 @@
         "links": [
           { "label": "Nexora Theme", "to": "/theme" },
           { "label": "Nexora Rename", "to": "/rename" },
-          { "label": "Nexora Songs", "to": "/theme#songs" },
-          { "label": "Nexora Vault", "to": "/theme#vault" }
+          { "label": "Nexora Songs", "to": "/songs" },
+          { "label": "Nexora Vault", "to": "/descargar" }
         ]
       },
       {
