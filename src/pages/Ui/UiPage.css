@@ -1,13 +1,19 @@
-/* Pagina Theme - Vista Principal */
+/* Página Nexora UI - Vista Principal */
 
-.theme-page {
+.ui-page {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-body);
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
 }
 
-.theme-section-header {
+.ui-section-header {
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
@@ -16,27 +22,34 @@
   box-sizing: border-box;
 }
 
-.theme-section-title {
+.ui-section-title {
   font-family: var(--font-family-heading);
   font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading);
   letter-spacing: -0.02em;
   margin: 0;
   transition: color var(--transition-normal);
 }
 
+.ui-page-changelog {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* RESPONSIVO */
 @media (max-width: 48rem) {
-  .theme-page {
+  .ui-page {
     gap: var(--spacing-lg);
     padding-bottom: var(--spacing-xl);
   }
 
-  .theme-section-header {
+  .ui-section-header {
     padding: var(--spacing-xs) var(--spacing-md) 0;
   }
 
-  .theme-section-title {
+  .ui-section-title {
     font-size: var(--font-size-xl);
   }
 }
