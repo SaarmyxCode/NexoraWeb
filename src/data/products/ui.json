@@ -1,0 +1,57 @@
+{
+  "id": "ui",
+  "enabled": true,
+  "name": "Nexora UI",
+  "shortName": "Ui",
+  "icon": "/icons/NexoraUiWhite.png",
+  "route": "/ui",
+  "accentColor": "#E11F2F",
+  "mode": "dark",
+  "description": "El lenguaje de diseño y sistema de componentes oficiales de Nexora Labs. Define la tipografía, tokens CSS, guías de estilo y patrones de interfaz para todo el ecosistema.",
+  "mockup": "/mockups/NexoraUI.png",
+  "downloadUrl": "https://github.com/SaarmyxCode/NexoraUi/releases",
+  "highlights": [
+    {
+      "id": "ui-hl-1",
+      "title": "DESIGN TOKENS & VARIABLES CSS",
+      "titleColor": "#E11F2F",
+      "imageSrc": "/mockups/NexoraUI.png"
+    },
+    {
+      "id": "ui-hl-2",
+      "title": "GUÍA DE ESTILO & GUÍAS VISUALES",
+      "titleColor": "#E11F2F",
+      "imageSrc": "/mockups/NexoraUI.png"
+    },
+    {
+      "id": "ui-hl-3",
+      "title": "TIPOGRAFÍAS INSTITUCIONALES",
+      "titleColor": "#E11F2F",
+      "imageSrc": "/mockups/NexoraUI.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "ui-stat-1",
+      "prefix": "Diseñado bajo un",
+      "highlight": "100% de cumplimiento WCAG AAA",
+      "suffix": "para máxima legibilidad y descanso visual."
+    },
+    {
+      "id": "ui-stat-2",
+      "prefix": "Sincronización instantánea de",
+      "highlight": "atributos data-theme",
+      "suffix": "con latencia de renderizado igual a 0ms."
+    },
+    {
+      "id": "ui-stat-3",
+      "prefix": "Estructura modular de",
+      "highlight": "Átomos, Moléculas y Organismos",
+      "suffix": "construida bajo arquitectura Atomic Design."
+    }
+  ],
+  "disclaimer": [
+    "1. Las especificaciones de Nexora UI aplican como estándar visual obligatorio para todos los módulos y productos de Nexora Labs.",
+    "2. El motor de Design Tokens procesa variables CSS nativas sin dependencias externas ni sobrecarga en el DOM."
+  ]
+}

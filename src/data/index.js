@@ -1,18 +1,20 @@
-import theme from './products/theme.json'
+import ui from './products/ui.json'
 import rename from './products/rename.json'
 import songs from './products/songs.json'
 import finance from './products/finance.json'
 import code from './products/code.json'
+import soporteData from './soporte.json'
 
-const allProducts = [theme, rename, songs, finance, code]
+// Todos los productos cargados
+const allProducts = [ui, code, rename, songs, finance]
 
-// Lista de productos activos (enabled: true)
-export const activeProducts = allProducts.filter((p) => p.enabled)
+// Exporta únicamente los activos
+export const activeProducts = allProducts.filter((product) => product.enabled)
 
-// Mapa indexado por ID
 export const productsMap = activeProducts.reduce((acc, product) => {
   acc[product.id] = product
   return acc
 }, {})
 
 export const getProduct = (id) => productsMap[id] || null
+export const soporte = soporteData

@@ -1,14 +1,14 @@
 {
-  "theme": {
-    "title": "Nexora Theme",
+  "ui": {
+    "title": "Nexora UI",
     "version": "v1.0.1",
-    "date": "Actualizado el 6 de agosto de 2026",
-    "badgeColor": "var(--color-theme-accent)",
-    "icon": "FiLayers",
-    "text": "Lanzamiento de la nueva paleta de Design Tokens unificada. Se redujo a cero la latencia de renderizado en componentes con alto contraste y se añadió integración directa con fuentes tipográficas Gliker e Inter.",
-    "subtext": "Soporte completo para temas oscuros adaptativos y microinteracciones fluidas.",
+    "date": "6 de agosto de 2026",
+    "accentColor": "#E11F2F",
+    "badgeColor": "#E11F2F",
+    "text": "Lanzamiento del lenguaje de diseño y arquitectura de Design Tokens unificada. Se redujo a cero la latencia de renderizado en componentes con alto contraste y se añadió integración directa con las fuentes institucionales Gliker e Inter.",
+    "subtext": "Soporte completo para temas oscuros adaptativos, accesibilidad WCAG AAA y microinteracciones fluidas.",
     "changes": [
-      "Añadido: Motor dinámico de CSS Custom Properties con cero latencia.",
+      "Añadido: Motor dinámico de CSS Custom Properties con cero latencia de render.",
       "Mejora: Optimización de accesibilidad en tarjetas Bento Grid.",
       "Fix: Corrección de contraste en modales flotantes con glassmorphic blur."
     ]
@@ -16,15 +16,57 @@
   "rename": {
     "title": "Nexora Rename",
     "version": "v1.0.0",
-    "date": "Actualizado el 6 de agosto de 2026",
-    "badgeColor": "var(--color-rename-accent)",
-    "icon": "FiFolderPlus",
+    "date": "6 de agosto de 2026",
+    "accentColor": "#EAB308",
+    "badgeColor": "#EAB308",
     "text": "Lanzamiento oficial del motor multihilo local para procesamiento y renombrado masivo de archivos. Diseñado para organizar miles de documentos en lote sin sobrecargar el procesador.",
     "subtext": "Lectura instantánea de metadatos EXIF e ID3 para creación de reglas avanzadas.",
     "changes": [
       "Añadido: Generador de reglas compuestas con variables dinámicas.",
       "Añadido: Previsualización en tiempo real del lote antes de confirmar.",
       "Mejora: Soporte Drag & Drop para carpetas completas."
+    ]
+  },
+  "songs": {
+    "title": "Nexora Songs",
+    "version": "v1.0.0",
+    "date": "6 de agosto de 2026",
+    "accentColor": "#EC4899",
+    "badgeColor": "#EC4899",
+    "text": "Lanzamiento oficial del gestor y reproductor de audio local con soporte Lossless. Edición rápida de etiquetas ID3 v2.4 y normalización de volumen entre pistas.",
+    "subtext": "Motor de audio alimentado por Web Audio API sin procesamiento en servidores remotos.",
+    "changes": [
+      "Añadido: Lector y editor interactivo de portadas y etiquetas ID3.",
+      "Añadido: Analizador de forma de onda (waveform) en tiempo real.",
+      "Mejora: Normalización de decibeles por lotes de canciones."
+    ]
+  },
+  "finance": {
+    "title": "Nexora Finance",
+    "version": "v1.0.0",
+    "date": "6 de agosto de 2026",
+    "accentColor": "#10B981",
+    "badgeColor": "#10B981",
+    "text": "Panel de control financiero y proyecciones presupuestarias locales. Visualización clara de ingresos, gastos y metas de ahorro con cifrado de nivel Zero-Knowledge.",
+    "subtext": "Tus datos financieros procesados 100% en tu dispositivo sin sincronización en la nube.",
+    "changes": [
+      "Añadido: Dashboard interactivo de desglose presupuestario.",
+      "Añadido: Algoritmo local de estimación y proyección de capacidad de ahorro.",
+      "Mejora: Exportación de reportes en formatos JSON y CSV cifrados."
+    ]
+  },
+  "code": {
+    "title": "Nexora Code",
+    "version": "v1.0.0",
+    "date": "8 de agosto de 2026",
+    "accentColor": "#2563EB",
+    "badgeColor": "#2563EB",
+    "text": "Entorno ligero de desarrollo y compilación rápida de componentes. Diseñado para ofrecer inicio instantáneo, autocompletado inteligente y preview de Design Tokens sin consumir recursos excesivos.",
+    "subtext": "Compilación e inspección de código aislada y local sin envío de telemetría.",
+    "changes": [
+      "Añadido: Editor liviano con resaltado de sintaxis y pestañas de proyecto.",
+      "Añadido: Consola de ejecución y parser de Design Tokens en tiempo real.",
+      "Mejora: Tiempo de arranque reducido a menos de 50ms."
     ]
   }
 }

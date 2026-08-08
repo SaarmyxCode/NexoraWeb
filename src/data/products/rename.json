@@ -3,12 +3,13 @@
   "enabled": true,
   "name": "Nexora Rename",
   "shortName": "Rename",
+  "icon": "/icons/NexoraRenameWhite.png",
   "route": "/rename",
   "accentColor": "var(--color-rename-accent)",
   "mode": "dark",
   "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas y motor multihilo.",
   "mockup": "/mockups/NexoraRename.png",
-  "downloadUrl": "/descargar#rename",
+  "downloadUrl": "https://github.com/SaarmyxCode/NexoraRename/releases",
   "highlights": [
     {
       "id": "rename-hl-1",
