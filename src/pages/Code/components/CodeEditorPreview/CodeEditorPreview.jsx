@@ -5,7 +5,7 @@ import { Card } from '../../../../atoms/Card/Card'
 import { Badge } from '../../../../atoms/Badge/Badge'
 import './CodeEditorPreview.css'
 
-export const CodeEditorPreview = ({ accentColor = '#0071E3' }) => {
+export const CodeEditorPreview = ({ accentColor = 'var(--color-code-accent)' }) => {
   const [activeFile, setActiveFile] = useState('styles.css')
   const [copied, setCopied] = useState(false)
   const [output, setOutput] = useState(

@@ -24,7 +24,7 @@ export const SongsPage = () => {
   const songsData = getProduct('songs') || {
     name: 'Nexora Songs',
     shortName: 'SONGS',
-    accentColor: '#EC4899',
+    accentColor: 'var(--color-songs-accent)',
     description: 'Gestor y organizador inteligente de colecciones musicales.',
     mockup: '/mockups/NexoraSongs.png',
     downloadUrl: '/descargar#songs',

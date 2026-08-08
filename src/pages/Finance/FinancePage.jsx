@@ -24,7 +24,7 @@ export const FinancePage = () => {
   const financeData = getProduct('finance') || {
     name: 'Nexora Finance',
     shortName: 'FINANCE',
-    accentColor: '#10B981',
+    accentColor: 'var(--color-finance-accent)',
     description: 'Visualiza el estado de tus finanzas en una sola pantalla.',
     mockup: '/mockups/NexoraFinance.png',
     downloadUrl: '/descargar#finance',

@@ -5,7 +5,7 @@ import { ScrollToTop } from './components/ScrollToTop'
 import { getProduct } from './data'
 
 import { Home } from './pages/Home'
-import { ThemePage } from './pages/Theme/ThemePage'
+import { UiPage } from './pages/Ui/UiPage'
 import { SongsPage } from './pages/Songs/SongsPage'
 import { RenamePage } from './pages/Rename/RenamePage'
 import { FinancePage } from './pages/Finance/FinancePage'
@@ -54,10 +54,10 @@ export function App() {
 
             {/* Rutas Protegidas por "enabled: true/false" */}
             <Route
-              path="/theme"
+              path="/ui"
               element={
-                <ProtectedProductRoute productId="theme">
-                  <ThemePage />
+                <ProtectedProductRoute productId="ui">
+                  <UiPage />
                 </ProtectedProductRoute>
               }
             />

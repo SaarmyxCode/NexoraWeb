@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { getChangelogSections } from '../../utils/getChangelog'
+import { activeProducts } from '../../data'
+import changelogData from '../../data/changelog.json'
 import { usePageTheme } from '../../hooks/usePageTheme'
 import { SecondaryNav } from '../../components/SecondaryNav/SecondaryNav'
 import { ChangelogCard } from './components/ChangelogCard'
@@ -9,12 +10,29 @@ import './ChangelogPage.css'
 export const ChangelogPage = () => {
   usePageTheme('changelog')
 
-  const changelogSections = getChangelogSections()
-  const [activeTab, setActiveTab] = useState(changelogSections[0]?.id || 'theme')
+  // 1. Obtenemos únicamente las secciones del changelog para productos ACTIVOS (enabled: true)
+  const availableSections = activeProducts
+    .map((product) => {
+      const data = changelogData[product.id]
+      if (!data) return null
 
-  const currentSection = changelogSections.find((s) => s.id === activeTab) || changelogSections[0]
+      return {
+        id: product.id,
+        title: product.shortName || product.name,
+        accentColor: product.accentColor,
+        ...data,
+      }
+    })
+    .filter(Boolean)
 
-  const changelogNavLinks = changelogSections.map((section) => ({
+  // Fallback seguro en caso de que activeProducts esté vacío o no coincida ninguna clave
+  const [activeTab, setActiveTab] = useState(availableSections[0]?.id || 'ui')
+
+  // Sección seleccionada actualmente
+  const currentSection = availableSections.find((s) => s.id === activeTab) || availableSections[0]
+
+  // 2. Construcción dinámica de los enlaces para el SecondaryNav
+  const changelogNavLinks = availableSections.map((section) => ({
     id: section.id,
     label: section.title,
     isActive: activeTab === section.id,
@@ -24,13 +42,19 @@ export const ChangelogPage = () => {
     },
   }))
 
+  if (availableSections.length === 0) return null
+
   return (
     <div className="changelog-page">
+      {/* Navegación secundaria dinámicamente filtrada por productos habilitados */}
       <SecondaryNav title="Novedades" links={changelogNavLinks} isSticky={true} />
 
-      <AnimatedTabContent activeKey={currentSection.id}>
-        <ChangelogCard section={currentSection} />
-      </AnimatedTabContent>
+      {/* Contenido animado al cambiar de pestaña */}
+      {currentSection && (
+        <AnimatedTabContent activeKey={currentSection.id}>
+          <ChangelogCard section={currentSection} changelogData={currentSection} />
+        </AnimatedTabContent>
+      )}
     </div>
   )
 }

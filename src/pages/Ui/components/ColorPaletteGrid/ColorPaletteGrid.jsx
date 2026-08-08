@@ -4,7 +4,7 @@ import { Card } from '../../../../atoms/Card/Card'
 import { Badge } from '../../../../atoms/Badge/Badge'
 import './ColorPaletteGrid.css'
 
-export const ColorPaletteGrid = ({ accentColor = '#E11F2F' }) => {
+export const ColorPaletteGrid = ({ accentColor = 'var(--color-theme-accent)' }) => {
   const [copiedToken, setCopiedToken] = useState(null)
 
   const tokensList = [

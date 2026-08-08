@@ -4,7 +4,7 @@ import { Card } from '../../../../atoms/Card/Card'
 import { Badge } from '../../../../atoms/Badge/Badge'
 import './RulePatternBuilder.css'
 
-export const RulePatternBuilder = ({ accentColor = '#EAB308' }) => {
+export const RulePatternBuilder = ({ accentColor = 'var(--color-rename-accent)' }) => {
   const [activePattern, setActivePattern] = useState('date_index')
 
   const patterns = [

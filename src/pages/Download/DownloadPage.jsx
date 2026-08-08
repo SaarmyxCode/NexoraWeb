@@ -1,55 +1,56 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import {
   FiLayers,
   FiMusic,
   FiFolderPlus,
   FiTrendingUp,
-  FiShield,
-  FiDownloadCloud,
+  FiCode,
+  FiGithub,
   FiCheckCircle,
 } from 'react-icons/fi'
-import { getProduct } from '../../utils/getProduct'
+import { activeProducts } from '../../data'
 import { useReveal } from '../../hooks/useReveal'
 import './DownloadPage.css'
 
 export const DownloadPage = () => {
   const heroRevealRef = useReveal()
 
-  const productKeys = ['theme', 'songs', 'rename', 'finance', 'soporte']
-
+  // Mapa de iconos por ID de producto
   const iconMap = {
-    theme: FiLayers,
+    ui: FiLayers,
     songs: FiMusic,
     rename: FiFolderPlus,
     finance: FiTrendingUp,
-    soporte: FiShield,
+    code: FiCode,
   }
 
+  // Mapa de plataformas/compatibilidad por ID de producto
   const platformsMap = {
-    theme: ['React / Vite', 'CSS Tokens', 'Tailwind Config'],
-    songs: ['Web App', 'Desktop Client', 'Mobile App'],
-    rename: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.AppImage)'],
+    ui: ['React / Vite', 'CSS Tokens', 'Design System'],
+    songs: ['Windows', 'macOS', 'Linux'],
+    rename: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.deb / .AppImage)'],
     finance: ['Windows (.exe)', 'macOS (.dmg)', 'Web Version'],
-    soporte: ['Windows', 'macOS', 'Linux', 'Web'],
+    code: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.AppImage)'],
   }
 
-  const productsList = productKeys.map((key) => {
-    const item = getProduct(key)
-    return {
-      id: item.id,
-      label: item.shortName,
-      name: item.name,
-      icon: iconMap[key] || FiLayers,
-      accentColor: item.accentColor,
-      version: 'v1.0.0 - Oficial',
-      description: item.description,
-      platforms: platformsMap[key] || ['Multiplataforma'],
-      downloadUrl: item.downloadUrl,
-    }
-  })
+  // Mapeamos ÚNICAMENTE las aplicaciones activas (sin Soporte)
+  const productsList = activeProducts.map((item) => ({
+    id: item.id,
+    label: item.shortName || item.name,
+    name: item.name,
+    icon: iconMap[item.id] || FiLayers,
+    accentColor: item.accentColor || 'var(--color-primary)',
+    version: 'Última Release en GitHub',
+    description: item.description,
+    platforms: platformsMap[item.id] || ['Multiplataforma'],
+    // URL fallback apuntando a GitHub Releases del repositorio correspondiente
+    githubReleaseUrl: item.downloadUrl || `https://github.com/nexora-labs/${item.id}/releases`,
+  }))
 
   const [activeProduct, setActiveProduct] = useState(productsList[0])
-  const ActiveIcon = activeProduct.icon
+  const ActiveIcon = activeProduct?.icon || FiLayers
+
+  if (productsList.length === 0) return null
 
   return (
     <div className="download-page">
@@ -59,11 +60,12 @@ export const DownloadPage = () => {
           <div className="download-hero-header">
             <h1 className="download-title">Dónde descargar</h1>
             <p className="download-subtitle">
-              Obtén las versiones oficiales de nuestras herramientas para todos tus dispositivos.
+              Obtén los binarios e instaladores oficiales directamente desde las versiones
+              publicadas en GitHub.
             </p>
           </div>
 
-          <nav className="download-tabs-card" aria-label="Seleccionar producto para descargar">
+          <nav className="download-tabs-card" aria-label="Seleccionar aplicación para descargar">
             {productsList.map((item) => {
               const Icon = item.icon
               const isActive = activeProduct.id === item.id
@@ -86,7 +88,7 @@ export const DownloadPage = () => {
         </div>
       </section>
 
-      {/* 2. PRODUCT HERO CARD CON ANIMACIÓN DE CAMBIO */}
+      {/* 2. PRODUCT HERO CARD CON ENLACE DIRECTO A GITHUB RELEASES */}
       <section className="download-wrapper">
         <div key={activeProduct.id} className="download-product-hero-card animate-tab-change">
           <div
@@ -108,7 +110,7 @@ export const DownloadPage = () => {
             </header>
 
             <div className="product-platforms-container">
-              <span className="platforms-label">Disponible para:</span>
+              <span className="platforms-label">Soporte oficial para:</span>
               <ul className="platforms-badge-list">
                 {activeProduct.platforms.map((platform, idx) => (
                   <li key={idx} className="platform-badge">
@@ -121,12 +123,14 @@ export const DownloadPage = () => {
 
             <div className="product-hero-actions">
               <a
-                href={activeProduct.downloadUrl}
+                href={activeProduct.githubReleaseUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="product-download-btn"
                 style={{ backgroundColor: activeProduct.accentColor }}
               >
-                <FiDownloadCloud className="btn-icon" />
-                <span>Descargar instalador oficial</span>
+                <FiGithub className="btn-icon" />
+                <span>Ir a Releases en GitHub</span>
               </a>
             </div>
           </div>

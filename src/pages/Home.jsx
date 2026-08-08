@@ -9,25 +9,27 @@ export const Home = () => {
   usePageTheme('home')
 
   const codeProduct = getProduct('code')
-  const themeProduct = getProduct('theme')
+  const uiProduct = getProduct('ui')
   const financeProduct = getProduct('finance')
   const renameProduct = getProduct('rename')
   const songsProduct = getProduct('songs')
 
   return (
     <div className="home-container">
+      {/* Banner Principal Ui */}
+      {uiProduct && <HeroCard product={uiProduct} isClickable />}
+
+      {/* Banner Secundario Code */}
       {codeProduct && <HeroCard product={codeProduct} isClickable />}
 
-      {/* Banner Principal Theme */}
-      {themeProduct && <HeroCard product={themeProduct} isClickable />}
-
-      {/* Banner Secundario FINANCE */}
-      {financeProduct && <HeroCard product={financeProduct} isClickable />}
+      {/* Banner Terceario Rename */}
+      {renameProduct && <HeroCard product={renameProduct} isClickable />}
 
       {/* Cuadrícula Bento */}
       <GridContainer>
-        {renameProduct && <GridCard product={renameProduct} isClickable />}
-        {songsProduct && <GridCard product={songsProduct} isClickable />}
+        {/* {renameProduct && <GridCard product={renameProduct} isClickable />}
+        {songsProduct && <GridCard product={songsProduct} isClickable />} */}
+        {/* {uiProduct && <GridCard product={uiProduct} isClickable />} */}
       </GridContainer>
     </div>
   )

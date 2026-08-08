@@ -24,7 +24,7 @@ export const CodePage = () => {
   const codeData = getProduct('code') || {
     name: 'Nexora Code',
     shortName: 'Code',
-    accentColor: '#0071E3',
+    accentColor: 'var(--color-code-accent)',
     description: 'Entorno de edición y ejecución ligera de código.',
     mockup: '/mockups/NexoraCode.png',
     downloadUrl: '/descargar#code',

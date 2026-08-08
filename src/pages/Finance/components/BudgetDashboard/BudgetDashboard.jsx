@@ -5,7 +5,7 @@ import { Card } from '../../../../atoms/Card/Card'
 import { Badge } from '../../../../atoms/Badge/Badge'
 import './BudgetDashboard.css'
 
-export const BudgetDashboard = ({ accentColor = '#10B981' }) => {
+export const BudgetDashboard = ({ accentColor = 'var(--color-finance-accent)' }) => {
   const [activeTab, setActiveTab] = useState('mensual')
 
   const metrics = [
@@ -15,7 +15,12 @@ export const BudgetDashboard = ({ accentColor = '#10B981' }) => {
   ]
 
   const categories = [
-    { name: 'Desarrollo & Infraestructura', spent: 650, total: 1000, color: '#10B981' },
+    {
+      name: 'Desarrollo & Infraestructura',
+      spent: 650,
+      total: 1000,
+      color: 'var(--color-finance-accent)',
+    },
     { name: 'Suscripciones & Licencias', spent: 320, total: 400, color: '#3B82F6' },
     { name: 'Fondo de Emergencia', spent: 850, total: 1000, color: '#8B5CF6' },
   ]

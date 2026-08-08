@@ -23,7 +23,7 @@ export const RenamePage = () => {
   const renameData = getProduct('rename') || {
     name: 'Nexora Rename',
     shortName: 'RENAME',
-    accentColor: '#EAB308',
+    accentColor: 'var(--color-rename-accent)',
     description: 'Organiza grandes volúmenes de archivos.',
     mockup: '/mockups/NexoraRename.png',
     downloadUrl: '/descargar#rename',

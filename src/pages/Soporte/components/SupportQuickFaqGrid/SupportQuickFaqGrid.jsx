@@ -17,14 +17,14 @@ export const SupportQuickFaqGrid = ({ onSelectFaq }) => {
       id: 'subscriptions',
       title: 'Gestionar suscripción y facturación',
       icon: FiCreditCard,
-      iconColor: '#E11F2F',
+      iconColor: 'var(--color-theme-accent)',
       linkText: 'Cambiar o cancelar suscripción',
     },
     {
       id: 'installers',
       title: 'Descargas y licencias de software',
       icon: FiDownload,
-      iconColor: '#10B981',
+      iconColor: 'var(--color-finance-accent)',
       linkText: 'Obtener instaladores oficiales',
     },
   ]

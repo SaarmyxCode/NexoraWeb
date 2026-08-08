@@ -55,7 +55,7 @@ export const SupportProductsGrid = ({ onSelectProduct }) => {
               >
                 <div className="support-product-media">
                   <img
-                    src={product.mockup}
+                    src={product.icon}
                     alt={product.name}
                     className="support-product-img"
                     loading="lazy"

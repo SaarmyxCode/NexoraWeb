@@ -3,23 +3,28 @@ import { Card } from '../../../atoms/Card/Card'
 import { Badge } from '../../../atoms/Badge/Badge'
 import './ChangelogCard.css'
 
-export const ChangelogCard = ({ section }) => {
-  if (!section) return null
+export const ChangelogCard = ({ section, changelogData }) => {
+  // Acepta la data ya sea desde la prop "section" o "changelogData"
+  const data = section || changelogData
+  if (!data) return null
 
   const {
-    version,
-    title,
+    version = 'v1.0.0',
+    title = 'Actualización de producto',
     date,
     text,
     subtext,
+    accentColor,
     badgeColor,
     icon: ActiveIcon,
     changes = [],
-  } = section
+  } = data
+
+  const activeColor = accentColor || badgeColor || 'var(--color-primary)'
 
   const customStyle = {
-    '--changelog-accent': badgeColor || 'var(--color-primary)',
-    '--changelog-accent-bg': `${badgeColor || 'var(--color-primary)'}15`,
+    '--changelog-accent': activeColor,
+    '--changelog-accent-bg': `${activeColor}15`,
   }
 
   return (
@@ -27,14 +32,14 @@ export const ChangelogCard = ({ section }) => {
       <Card radius="2xl" className="changelog-release-card animate-tab-change">
         {/* Badge Versión */}
         <div className="changelog-release-badge">
-          <Badge variant="version" color={badgeColor}>
+          <Badge variant="version" color={activeColor}>
             {version}
           </Badge>
         </div>
 
         {/* Encabezado Centrado */}
         <h1 className="changelog-release-title">{title}</h1>
-        {date && <span className="changelog-release-date">{date}</span>}
+        {date && <span className="changelog-release-date">Actualizado el {date}</span>}
 
         {/* Cuerpo Principal */}
         <div className="changelog-release-body">
@@ -67,7 +72,7 @@ export const ChangelogCard = ({ section }) => {
 
           {/* Enlace Inferior de Soporte */}
           <div className="changelog-release-actions">
-            <a href="/soporte" className="changelog-support-link">
+            <a href="/soporte" className="changelog-support-link" style={{ color: activeColor }}>
               ¿Encontraste un problema? Reporta un error en el centro de soporte &gt;
             </a>
           </div>

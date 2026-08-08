@@ -5,7 +5,7 @@ import { Card } from '../../../../atoms/Card/Card'
 import { Badge } from '../../../../atoms/Badge/Badge'
 import './InteractiveAudioPlayer.css'
 
-export const InteractiveAudioPlayer = ({ accentColor = '#EC4899' }) => {
+export const InteractiveAudioPlayer = ({ accentColor = 'var(--color-songs-accent)' }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [activeTrack, setActiveTrack] = useState(0)
 
