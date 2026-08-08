@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FiTrendingUp } from 'react-icons/fi'
-import { getProduct } from '../../utils/getProduct'
+import { getProduct } from '../../data'
 import { usePageTheme } from '../../hooks/usePageTheme'
 import changelogData from '../../data/changelog.json'
 
@@ -21,25 +21,20 @@ export const FinancePage = () => {
   usePageTheme('finance')
 
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
-  const financeData = getProduct('finance')
-
-  const financeModalsData = [
-    {
-      title: 'Optimización de Gastos',
-      sections: [
-        {
-          subtitle: 'Análisis presupuestario local.',
-          description:
-            'Categorización automática de transacciones y cálculo de capacidad de ahorro mensual.',
-          linkText: 'Guía de finanzas personales',
-          linkHref: '#',
-        },
-      ],
-    },
-  ]
+  const financeData = getProduct('finance') || {
+    name: 'Nexora Finance',
+    shortName: 'FINANCE',
+    accentColor: '#10B981',
+    description: 'Visualiza el estado de tus finanzas en una sola pantalla.',
+    mockup: '/mockups/NexoraFinance.png',
+    downloadUrl: '/descargar#finance',
+    highlights: [],
+    stats: [],
+  }
 
   const handleOpenModal = (item, index) => {
-    const selectedModal = financeModalsData[index] || {
+    setModalState({
+      isOpen: true,
       title: item.highlight || 'Detalles de la característica',
       sections: [
         {
@@ -49,25 +44,13 @@ export const FinancePage = () => {
           linkHref: '#',
         },
       ],
-    }
-
-    setModalState({
-      isOpen: true,
-      title: selectedModal.title,
-      sections: selectedModal.sections,
     })
   }
 
   return (
     <div className="finance-page">
       {/* 1. Hero Principal */}
-      <HeroCard
-        id="finance-hero"
-        title={financeData.shortName}
-        titleColor={financeData.accentColor}
-        imageSrc={financeData.mockup}
-        imageAlt={`Mockup de ${financeData.name}`}
-      />
+      <HeroCard id="finance-hero" product={financeData} />
 
       {/* 2. SubHeader Flotante */}
       <SubHeader
@@ -89,13 +72,15 @@ export const FinancePage = () => {
       </div>
 
       {/* 5. Secciones Destacadas */}
-      <HighlightSection
-        title="Mira lo más destacado."
-        actionText="Ver documentación >"
-        actionHref="#docs"
-        actionColor={financeData.accentColor}
-        items={financeData.highlights}
-      />
+      {financeData.highlights?.length > 0 && (
+        <HighlightSection
+          title="Mira lo más destacado."
+          actionText="Ver documentación >"
+          actionHref="#docs"
+          actionColor={financeData.accentColor}
+          items={financeData.highlights}
+        />
+      )}
 
       {/* 6. Detalle del Producto */}
       <HeroCard
@@ -108,18 +93,19 @@ export const FinancePage = () => {
       />
 
       {/* 7. Estadísticas e Impacto */}
-      <FeatureStatsCard
-        title="Finance y la claridad de tu economía"
-        linkText="Ver reporte de privacidad Zero-Knowledge >"
-        linkHref="/privacidad#seguridad"
-        linkColor={financeData.accentColor}
-        accentColor={financeData.accentColor}
-        icon={FiTrendingUp}
-        items={financeData.stats}
-        onCardClick={handleOpenModal}
-      />
+      {financeData.stats?.length > 0 && (
+        <FeatureStatsCard
+          title="Finance y la claridad de tu economía"
+          linkText="Ver reporte de privacidad Zero-Knowledge >"
+          linkHref="/privacidad#seguridad"
+          linkColor={financeData.accentColor}
+          accentColor={financeData.accentColor}
+          icon={FiTrendingUp}
+          items={financeData.stats}
+          onCardClick={handleOpenModal}
+        />
+      )}
 
-      {/* Modal de Detalle */}
       <DetailModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}

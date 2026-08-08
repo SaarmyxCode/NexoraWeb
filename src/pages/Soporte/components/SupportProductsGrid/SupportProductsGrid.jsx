@@ -2,14 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Card } from '../../../../atoms/Card/Card'
-import productsData from '../../../../data/products.json'
+import { activeProducts } from '../../../../data'
 import './SupportProductsGrid.css'
 
 export const SupportProductsGrid = ({ onSelectProduct }) => {
-  const productList = Object.keys(productsData).map((key) => ({
-    id: key,
-    ...productsData[key],
-  }))
+  const productList = activeProducts
 
   const containerVariants = {
     hidden: { opacity: 0 },

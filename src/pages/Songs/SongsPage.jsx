@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FiMusic } from 'react-icons/fi'
-import { getProduct } from '../../utils/getProduct'
+import { getProduct } from '../../data'
 import { usePageTheme } from '../../hooks/usePageTheme'
 import changelogData from '../../data/changelog.json'
 
@@ -23,30 +23,18 @@ export const SongsPage = () => {
   const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
   const songsData = getProduct('songs') || {
     name: 'Nexora Songs',
-    shortName: 'Songs',
+    shortName: 'SONGS',
     accentColor: '#EC4899',
     description: 'Gestor y organizador inteligente de colecciones musicales.',
-    mockup: '/assets/mockups/songs-mockup.png',
+    mockup: '/mockups/NexoraSongs.png',
+    downloadUrl: '/descargar#songs',
     highlights: [],
     stats: [],
   }
 
-  const songsModalsData = [
-    {
-      title: 'Organización Inteligente',
-      sections: [
-        {
-          subtitle: 'Etiquetado ID3 automático.',
-          description: 'Sincroniza y completa metadatos de artistas, álbumes y géneros en un clic.',
-          linkText: 'Guía de metadatos',
-          linkHref: '#',
-        },
-      ],
-    },
-  ]
-
   const handleOpenModal = (item, index) => {
-    const selectedModal = songsModalsData[index] || {
+    setModalState({
+      isOpen: true,
       title: item.highlight || 'Detalles de la característica',
       sections: [
         {
@@ -56,25 +44,13 @@ export const SongsPage = () => {
           linkHref: '#',
         },
       ],
-    }
-
-    setModalState({
-      isOpen: true,
-      title: selectedModal.title,
-      sections: selectedModal.sections,
     })
   }
 
   return (
     <div className="songs-page">
       {/* 1. Hero Principal */}
-      <HeroCard
-        id="songs-hero"
-        title={songsData.shortName}
-        titleColor={songsData.accentColor}
-        imageSrc={songsData.mockup}
-        imageAlt={`Mockup de ${songsData.name}`}
-      />
+      <HeroCard id="songs-hero" product={songsData} />
 
       {/* 2. SubHeader Flotante */}
       <SubHeader
@@ -90,13 +66,13 @@ export const SongsPage = () => {
       {/* 3. Registro de la Última Versión */}
       {changelogData.songs && <ChangelogCard changelogData={changelogData.songs} />}
 
-      {/* 4. Reproductor y Simulador Interactivo (Exclusivo) */}
+      {/* 4. Reproductor Interactivo (Exclusivo) */}
       <div id="explorar">
         <InteractiveAudioPlayer accentColor={songsData.accentColor} />
       </div>
 
       {/* 5. Secciones Destacadas */}
-      {songsData.highlights && songsData.highlights.length > 0 && (
+      {songsData.highlights?.length > 0 && (
         <HighlightSection
           title="Mira lo más destacado."
           actionText="Ver documentación >"
@@ -117,7 +93,7 @@ export const SongsPage = () => {
       />
 
       {/* 7. Estadísticas e Impacto */}
-      {songsData.stats && songsData.stats.length > 0 && (
+      {songsData.stats?.length > 0 && (
         <FeatureStatsCard
           title="Songs y la experiencia auditiva"
           linkText="Ver guía de ecualización y formatos >"
@@ -130,7 +106,6 @@ export const SongsPage = () => {
         />
       )}
 
-      {/* Modal de Detalle */}
       <DetailModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}

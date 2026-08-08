@@ -14,7 +14,7 @@ export const SoportePage = () => {
       {/* 1. Hero Central */}
       <SupportHeroCard />
 
-      {/* 2. Grilla de Productos */}
+      {/* 2. Grilla de Productos (Automáticamente filtra los habilitados) */}
       <SupportProductsGrid />
 
       {/* 3. Accesos Rápidos a FAQ */}

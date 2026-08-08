@@ -1,30 +1,33 @@
 import React from 'react'
-import productsData from '../data/products.json'
+import { activeProducts, getProduct } from '../data'
 import { usePageTheme } from '../hooks/usePageTheme'
 import { HeroCard } from '../components/HeroCard/HeroCard'
 import { GridContainer, GridCard } from '../components/GridCard/GridCard'
 import './Home.css'
 
 export const Home = () => {
-  // Garantiza el tema por defecto/claro en el inicio
   usePageTheme('home')
 
-  const { theme, rename, songs, finance, soporte } = productsData
+  const codeProduct = getProduct('code')
+  const themeProduct = getProduct('theme')
+  const financeProduct = getProduct('finance')
+  const renameProduct = getProduct('rename')
+  const songsProduct = getProduct('songs')
 
   return (
     <div className="home-container">
-      {/* Banner Principal THEME */}
-      {theme && <HeroCard productId="theme" isClickable />}
+      {codeProduct && <HeroCard product={codeProduct} isClickable />}
 
-      {/* Banner Secundario FINANCE (Opcional) */}
-      {finance && <HeroCard productId="finance" isClickable />}
+      {/* Banner Principal Theme */}
+      {themeProduct && <HeroCard product={themeProduct} isClickable />}
+
+      {/* Banner Secundario FINANCE */}
+      {financeProduct && <HeroCard product={financeProduct} isClickable />}
 
       {/* Cuadrícula Bento */}
       <GridContainer>
-        {rename && <GridCard productId="rename" isClickable />}
-        {songs && <GridCard productId="songs" isClickable />}
-
-        {/* {finance && <GridCard productId="finance" isClickable />} */}
+        {renameProduct && <GridCard product={renameProduct} isClickable />}
+        {songsProduct && <GridCard product={songsProduct} isClickable />}
       </GridContainer>
     </div>
   )
