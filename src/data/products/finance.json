@@ -1,6 +1,6 @@
 {
   "id": "finance",
-  "enabled": false,
+  "enabled": true,
   "name": "Nexora Finance",
   "shortName": "Finance",
   "route": "/finance",

@@ -2,7 +2,7 @@
   "theme": {
     "id": "theme",
     "name": "Nexora Theme",
-    "shortName": "THEME",
+    "shortName": "Theme",
     "route": "/theme",
     "accentColor": "#E11F2F",
     "mode": "dark",

@@ -1,6 +1,6 @@
 {
   "id": "songs",
-  "enabled": false,
+  "enabled": true,
   "name": "Nexora Songs",
   "shortName": "Songs",
   "route": "/songs",

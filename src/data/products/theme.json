@@ -1,6 +1,6 @@
 {
   "id": "theme",
-  "enabled": false,
+  "enabled": true,
   "name": "Nexora Theme",
   "shortName": "Theme",
   "route": "/theme",

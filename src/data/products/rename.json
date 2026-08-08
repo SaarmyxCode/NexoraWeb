@@ -1,6 +1,6 @@
 {
   "id": "rename",
-  "enabled": false,
+  "enabled": true,
   "name": "Nexora Rename",
   "shortName": "Rename",
   "route": "/rename",
