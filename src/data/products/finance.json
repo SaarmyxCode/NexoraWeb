@@ -1,10 +1,10 @@
 {
   "id": "finance",
-  "enabled": true,
+  "enabled": false,
   "name": "Nexora Finance",
   "shortName": "Finance",
   "route": "/finance",
-  "accentColor": "#10B981",
+  "accentColor": "var(--color-finance-accent)",
   "mode": "dark",
   "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos y proyecciones.",
   "mockup": "/mockups/NexoraFinance.png",
@@ -13,19 +13,19 @@
     {
       "id": "finance-hl-1",
       "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
-      "titleColor": "#10B981",
+      "titleColor": "var(--color-finance-accent)",
       "imageSrc": "/mockups/NexoraFinance.png"
     },
     {
       "id": "finance-hl-2",
       "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
-      "titleColor": "#10B981",
+      "titleColor": "var(--color-finance-accent)",
       "imageSrc": "/mockups/NexoraFinance.png"
     },
     {
       "id": "finance-hl-3",
       "title": "PROYECCIONES Y METAS DE AHORRO",
-      "titleColor": "#10B981",
+      "titleColor": "var(--color-finance-accent)",
       "imageSrc": "/mockups/NexoraFinance.png"
     }
   ],

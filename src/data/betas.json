@@ -54,7 +54,12 @@
   "siteConfig": {
     "header": [
       { "id": "songs", "label": "Songs", "to": "/songs", "accentColor": "#2563EB" },
-      { "id": "finance", "label": "Finance", "to": "/finance", "accentColor": "#10B981" }
+      {
+        "id": "finance",
+        "label": "Finance",
+        "to": "/finance",
+        "accentColor": "var(--color-finance-accent)"
+      }
     ],
     "footer": {
       "columns": [
@@ -108,7 +113,7 @@
       "title": "Nexora Finance",
       "version": "v0 - Beta",
       "date": "Actualizado el 28 de julio de 2026",
-      "badgeColor": "#10B981",
+      "badgeColor": "var(--color-finance-accent)",
       "icon": "FiTrendingUp",
       "text": "Implementación del motor contable con cifrado Zero-Knowledge. Todos tus datos financieros, presupuestos y proyecciones permanecen 100% cifrados dentro de tu almacenamiento local.",
       "subtext": "Control contable profesional con reportes exportables sin intermediarios.",
@@ -136,7 +141,7 @@
       "title": "Core Ecosistema",
       "version": "v0 - Beta",
       "date": "Actualizado el 15 de julio de 2026",
-      "badgeColor": "#E11F2F",
+      "badgeColor": "var(--color-theme-accent)",
       "icon": "FiCpu",
       "text": "Mejoras globales en el rendimiento del ecosistema Nexora Web. Navegación entre aplicaciones acelerada mediante prefetch inteligente y optimización de dependencias.",
       "subtext": "Arquitectura unificada para una experiencia de usuario fluida y reactiva.",

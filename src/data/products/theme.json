@@ -1,10 +1,10 @@
 {
   "id": "theme",
-  "enabled": true,
+  "enabled": false,
   "name": "Nexora Theme",
   "shortName": "Theme",
   "route": "/theme",
-  "accentColor": "#E11F2F",
+  "accentColor": "var(--color-theme-accent)",
   "mode": "dark",
   "description": "Sistema visual completo, tokens CSS dinámicos y componentes de UI para un diseño unificado y de alto contraste.",
   "mockup": "/mockups/NexoraTheme.png",
@@ -13,19 +13,19 @@
     {
       "id": "theme-hl-1",
       "title": "MODO OSCURO Y MODO CLARO PURO",
-      "titleColor": "#E11F2F",
+      "titleColor": "var(--color-theme-accent)",
       "imageSrc": "/mockups/NexoraTheme.png"
     },
     {
       "id": "theme-hl-2",
       "title": "VARIABLES INSTITUCIONALES NEXORA",
-      "titleColor": "#E11F2F",
+      "titleColor": "var(--color-theme-accent)",
       "imageSrc": "/mockups/NexoraTheme.png"
     },
     {
       "id": "theme-hl-3",
       "title": "GLIKER + INTER EN SINTONÍA",
-      "titleColor": "#E11F2F",
+      "titleColor": "var(--color-theme-accent)",
       "imageSrc": "/mockups/NexoraTheme.png"
     }
   ],

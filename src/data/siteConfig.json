@@ -2,13 +2,18 @@
   "siteName": "NEXORA",
   "header": {
     "navLinks": [
-      { "id": "changelog", "label": "Novedades", "to": "/changelog", "accentColor": "#E11F2F" },
+      {
+        "id": "changelog",
+        "label": "Novedades",
+        "to": "/changelog",
+        "accentColor": "var(--color-theme-accent)"
+      },
       { "id": "soporte", "label": "Soporte", "to": "/soporte", "accentColor": "#8B5CF6" },
       {
         "id": "descargar",
         "label": "Dónde descargar",
         "to": "/descargar",
-        "accentColor": "#0071E3"
+        "accentColor": "var(--color-code-accent)"
       }
     ]
   },

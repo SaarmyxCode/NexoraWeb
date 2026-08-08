@@ -2,9 +2,7 @@
    NEXORA LABS - DESIGN SYSTEM TOKENS
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. TOKENS ESTÁTICOS (Constantes que no cambian con el tema)
-   -------------------------------------------------------------------------- */
+/* TOKENS ESTÁTICOS (Constantes que no cambian con el tema) */
 :root {
   /* Marca e Identidad Base */
   --color-primary: #e11f2f;
@@ -32,6 +30,22 @@
   --color-black-20: rgba(0, 0, 0, 0.2);
   --color-black-10: rgba(0, 0, 0, 0.1);
   --color-black-05: rgba(0, 0, 0, 0.05);
+
+  /* Acentos */
+  --color-theme-accent: var(--color-primary);
+  --color-rename-accent: #eab308;
+  --color-songs-accent: #db2777;
+  --color-finance-accent: #10b981;
+  --color-code-accent: #2563eb;
+  --color-browser-accent: #0ea5e9;
+  --color-share-accent: #a855f7;
+  --color-cloud-accent: #14b8a6;
+  --color-mail-accent: #f97316;
+  --color-photos-accent: #f43f5e;
+  --color-calendar-accent: #ef4444;
+  --color-closet-accent: #8b5cf6;
+  --color-bank-accent: #047857;
+  --color-os-accent: #111827;
 
   /* Tipografía */
   --font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -101,9 +115,7 @@
   --app-icon-size-mobile: 4.2rem;
 }
 
-/* --------------------------------------------------------------------------
-   2. TOKENS SEMÁNTICOS (Modo Claro / Default)
-   -------------------------------------------------------------------------- */
+/* TOKENS SEMÁNTICOS (Modo Claro / Default) */
 :root,
 body,
 body[data-theme='light'] {
@@ -132,9 +144,7 @@ body[data-theme='light'] {
   --shadow-surface: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-/* --------------------------------------------------------------------------
-   3. TOKENS SEMÁNTICOS (Modo Oscuro)
-   -------------------------------------------------------------------------- */
+/* TOKENS SEMÁNTICOS (Modo Oscuro) */
 body[data-theme='dark'] {
   /* Fondos y Superficies */
   --color-bg-app: #0a0a0c;

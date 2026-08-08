@@ -1,10 +1,10 @@
 {
   "id": "songs",
-  "enabled": true,
+  "enabled": false,
   "name": "Nexora Songs",
   "shortName": "Songs",
   "route": "/songs",
-  "accentColor": "#EC4899",
+  "accentColor": "var(--color-songs-accent)",
   "mode": "light",
   "description": "Gestión, etiquetado ID3 y organización avanzada de librerías de audio y listas de reproducción.",
   "mockup": "/mockups/NexoraSongs.png",
@@ -13,19 +13,19 @@
     {
       "id": "songs-hl-1",
       "title": "REPRODUCCIÓN Y MOTOR AUDIO LOSSLESS",
-      "titleColor": "#EC4899",
+      "titleColor": "var(--color-songs-accent)",
       "imageSrc": "/mockups/NexoraSongs.png"
     },
     {
       "id": "songs-hl-2",
       "title": "ORGANIZACIÓN DE METADATOS ID3 V2.4",
-      "titleColor": "#EC4899",
+      "titleColor": "var(--color-songs-accent)",
       "imageSrc": "/mockups/NexoraSongs.png"
     },
     {
       "id": "songs-hl-3",
       "title": "CATÁLOGOS Y PLAYLISTS DINÁMICAS",
-      "titleColor": "#EC4899",
+      "titleColor": "var(--color-songs-accent)",
       "imageSrc": "/mockups/NexoraSongs.png"
     }
   ],

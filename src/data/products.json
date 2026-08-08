@@ -4,7 +4,7 @@
     "name": "Nexora Theme",
     "shortName": "Theme",
     "route": "/theme",
-    "accentColor": "#E11F2F",
+    "accentColor": "var(--color-theme-accent)",
     "mode": "dark",
     "description": "Sistema visual completo, tokens CSS dinámicos y componentes de UI para un diseño unificado y de alto contraste.",
     "mockup": "/mockups/NexoraTheme.png",
@@ -13,19 +13,19 @@
       {
         "id": "theme-hl-1",
         "title": "MODO OSCURO Y MODO CLARO PURO",
-        "titleColor": "#E11F2F",
+        "titleColor": "var(--color-theme-accent)",
         "imageSrc": "/mockups/NexoraTheme.png"
       },
       {
         "id": "theme-hl-2",
         "title": "VARIABLES INSTITUCIONALES NEXORA",
-        "titleColor": "#E11F2F",
+        "titleColor": "var(--color-theme-accent)",
         "imageSrc": "/mockups/NexoraTheme.png"
       },
       {
         "id": "theme-hl-3",
         "title": "GLIKER + INTER EN SINTONÍA",
-        "titleColor": "#E11F2F",
+        "titleColor": "var(--color-theme-accent)",
         "imageSrc": "/mockups/NexoraTheme.png"
       }
     ],
@@ -55,7 +55,7 @@
     "name": "Nexora Rename",
     "shortName": "RENAME",
     "route": "/rename",
-    "accentColor": "#EAB308",
+    "accentColor": "var(--color-rename-accent)",
     "mode": "dark",
     "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas y motor multihilo.",
     "mockup": "/mockups/NexoraRename.png",
@@ -64,19 +64,19 @@
       {
         "id": "rename-hl-1",
         "title": "RENOMBRADO MASIVO EN SEGUNDOS",
-        "titleColor": "#EAB308",
+        "titleColor": "var(--color-rename-accent)",
         "imageSrc": "/mockups/NexoraRename.png"
       },
       {
         "id": "rename-hl-2",
         "title": "REGLAS Y PATRONES PERSONALIZADOS",
-        "titleColor": "#EAB308",
+        "titleColor": "var(--color-rename-accent)",
         "imageSrc": "/mockups/NexoraRename.png"
       },
       {
         "id": "rename-hl-3",
         "title": "PREVISUALIZACIÓN EN TIEMPO REAL",
-        "titleColor": "#EAB308",
+        "titleColor": "var(--color-rename-accent)",
         "imageSrc": "/mockups/NexoraRename.png"
       }
     ],
@@ -106,7 +106,7 @@
     "name": "Nexora Songs",
     "shortName": "SONGS",
     "route": "/songs",
-    "accentColor": "#EC4899",
+    "accentColor": "var(--color-songs-accent)",
     "mode": "light",
     "description": "Gestión, etiquetado ID3 y organización avanzada de librerías de audio y listas de reproducción.",
     "mockup": "/mockups/NexoraSongs.png",
@@ -115,19 +115,19 @@
       {
         "id": "songs-hl-1",
         "title": "REPRODUCCIÓN Y MOTOR AUDIO LOSSLESS",
-        "titleColor": "#EC4899",
+        "titleColor": "var(--color-songs-accent)",
         "imageSrc": "/mockups/NexoraSongs.png"
       },
       {
         "id": "songs-hl-2",
         "title": "ORGANIZACIÓN DE METADATOS ID3 V2.4",
-        "titleColor": "#EC4899",
+        "titleColor": "var(--color-songs-accent)",
         "imageSrc": "/mockups/NexoraSongs.png"
       },
       {
         "id": "songs-hl-3",
         "title": "CATÁLOGOS Y PLAYLISTS DINÁMICAS",
-        "titleColor": "#EC4899",
+        "titleColor": "var(--color-songs-accent)",
         "imageSrc": "/mockups/NexoraSongs.png"
       }
     ],
@@ -157,7 +157,7 @@
     "name": "Nexora Finance",
     "shortName": "FINANCE",
     "route": "/finance",
-    "accentColor": "#10B981",
+    "accentColor": "var(--color-finance-accent)",
     "mode": "dark",
     "description": "Visualiza el estado de tus finanzas en una sola pantalla. Diseñado para simplificar presupuestos y proyecciones.",
     "mockup": "/mockups/NexoraFinance.png",
@@ -166,19 +166,19 @@
       {
         "id": "finance-hl-1",
         "title": "CONTROL INTEGRAL DE INGRESOS Y GASTOS",
-        "titleColor": "#10B981",
+        "titleColor": "var(--color-finance-accent)",
         "imageSrc": "/mockups/NexoraFinance.png"
       },
       {
         "id": "finance-hl-2",
         "title": "REPORTES Y GRÁFICAS EN TIEMPO REAL",
-        "titleColor": "#10B981",
+        "titleColor": "var(--color-finance-accent)",
         "imageSrc": "/mockups/NexoraFinance.png"
       },
       {
         "id": "finance-hl-3",
         "title": "PROYECCIONES Y METAS DE AHORRO",
-        "titleColor": "#10B981",
+        "titleColor": "var(--color-finance-accent)",
         "imageSrc": "/mockups/NexoraFinance.png"
       }
     ],
