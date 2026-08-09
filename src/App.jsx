@@ -14,6 +14,7 @@ import { ChangelogPage } from './pages/Changelog/ChangelogPage'
 import { DownloadPage } from './pages/Download/DownloadPage'
 import { PrivacyPage } from './pages/Privacy/PrivacyPage'
 import { CodePage } from './pages/Code/CodePage'
+import { CalculatorPage } from './pages/Calculator/CalculatorPage'
 import { NotFound } from './pages/NotFound/NotFound'
 
 // Guardián para proteger las rutas de productos según el flag "enabled"
@@ -91,6 +92,15 @@ export function App() {
               element={
                 <ProtectedProductRoute productId="code">
                   <CodePage />
+                </ProtectedProductRoute>
+              }
+            />
+
+            <Route
+              path="/calculator"
+              element={
+                <ProtectedProductRoute productId="calculator">
+                  <CalculatorPage />
                 </ProtectedProductRoute>
               }
             />
