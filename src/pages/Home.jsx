@@ -17,7 +17,7 @@ export const Home = () => {
   return (
     <div className="home-container">
       {/* Banner Principal Ui */}
-      {uiProduct && <HeroCard product={uiProduct} isClickable />}
+      {/* {uiProduct && <HeroCard product={uiProduct} isClickable />} */}
 
       {/* Banner Secundario Code */}
       {codeProduct && <HeroCard product={codeProduct} isClickable />}
