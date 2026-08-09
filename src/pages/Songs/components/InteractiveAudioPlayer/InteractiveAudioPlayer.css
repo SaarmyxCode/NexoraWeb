@@ -33,7 +33,7 @@
 }
 
 .player-release-title {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-heading);
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading);
@@ -144,7 +144,7 @@
 }
 
 .player-track-title {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-heading);

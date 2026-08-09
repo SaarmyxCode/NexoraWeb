@@ -1,8 +1,8 @@
 /* Tarjeta Simulador de Editor de Código */
 
 .code-editor-wrapper {
-  --code-accent: #0071e3;
-  --code-accent-bg: var(--color-black-05);
+  --code-accent: #2563eb;
+  --code-accent-bg: rgba(37, 99, 235, 0.1);
 
   width: 100%;
   padding: 0 var(--spacing-lg) var(--spacing-xl);
@@ -33,7 +33,7 @@
 }
 
 .code-editor-title {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-heading), 'Gliker', 'Inter', sans-serif;
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading);
@@ -43,7 +43,7 @@
 }
 
 .code-editor-subtitle {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-base), 'Inter', sans-serif;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
@@ -51,7 +51,7 @@
 }
 
 .code-editor-description {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-base), 'Inter', sans-serif;
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-body);
@@ -65,7 +65,7 @@
   height: 48px;
   border-radius: var(--radius-full);
   background-color: var(--code-accent-bg);
-  color: var(--code-accent);
+  color: var(--color-code-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +78,7 @@
 }
 
 .code-editor-subnote {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-base), 'Inter', sans-serif;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-body);
@@ -86,7 +86,7 @@
   max-width: 36rem;
 }
 
-/* Tarjeta del Editor */
+/* Tarjeta del Editor estilo IDE */
 .code-details-box {
   width: 100%;
   max-width: 52rem;
@@ -136,7 +136,7 @@
   background: none;
   border: none;
   color: #8b949e;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-mono), 'Fira Code', monospace;
   font-size: var(--font-size-2xs);
   padding: 4px 12px;
   border-radius: var(--radius-sm);
@@ -148,7 +148,7 @@
 
 .code-tab.is-active {
   background-color: #0d1117;
-  color: #58a6ff;
+  color: var(--color-code-accent);
   font-weight: bold;
 }
 
@@ -168,7 +168,7 @@
 .code-body {
   padding: var(--spacing-md) var(--spacing-lg);
   color: #e6edf3;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-mono), 'Fira Code', monospace;
   font-size: var(--font-size-xs);
   line-height: 1.6;
   overflow-x: auto;
@@ -194,7 +194,7 @@
 
 .console-title {
   color: #8b949e;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-mono), 'Fira Code', monospace;
   font-size: var(--font-size-2xs);
   display: flex;
   align-items: center;
@@ -207,7 +207,7 @@
   gap: 4px;
   color: #ffffff;
   border: none;
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-base), 'Inter', sans-serif;
   font-size: var(--font-size-2xs);
   font-weight: bold;
   padding: 4px 10px;
@@ -222,7 +222,7 @@
 
 .console-output {
   margin: 0;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-mono), 'Fira Code', monospace;
   font-size: var(--font-size-2xs);
   color: #7ee787;
   white-space: pre-wrap;

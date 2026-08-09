@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { getProduct } from '../../data'
 import { usePageTheme } from '../../hooks/usePageTheme'
 
@@ -6,6 +6,7 @@ import { usePageTheme } from '../../hooks/usePageTheme'
 import { HeroCard } from '../../components/HeroCard/HeroCard'
 import { SubHeader } from '../../components/SubHeader/SubHeader'
 import { FeatureStatsCard } from '../../components/FeatureStatsCard/FeatureStatsCard'
+import { DetailModal } from '../../components/DetailModal/DetailModal'
 import { ChangelogCard } from '../../components/pages/ChangelogCard/ChangelogCard'
 import changelogData from '../../data/changelog.json'
 
@@ -17,6 +18,8 @@ import './UiPage.css'
 export const UiPage = () => {
   usePageTheme('ui')
 
+  const [modalState, setModalState] = useState({ isOpen: false, title: '', sections: [] })
+
   const uiData = getProduct('ui') || {
     name: 'Nexora UI',
     shortName: 'UI',
@@ -25,6 +28,21 @@ export const UiPage = () => {
     mockup: '/mockups/NexoraUI.png',
     downloadUrl: '/descargar#ui',
     stats: [],
+  }
+
+  const handleOpenModal = (item) => {
+    setModalState({
+      isOpen: true,
+      title: item.highlight || 'Detalles de la especificación',
+      sections: [
+        {
+          subtitle: `${item.prefix || ''} ${item.highlight || ''}`,
+          description: `${item.prefix || ''} ${item.highlight || ''} ${item.suffix || ''}`,
+          linkText: 'Ver documentación de tokens',
+          linkHref: '#explorar',
+        },
+      ],
+    })
   }
 
   return (
@@ -57,8 +75,18 @@ export const UiPage = () => {
           title="Nexora UI y la consistencia de interfaz"
           accentColor={uiData.accentColor}
           items={uiData.stats}
+          onCardClick={handleOpenModal}
         />
       )}
+
+      {/* Modal Interactivo de Detalle */}
+      <DetailModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
+        title={modalState.title}
+        sections={modalState.sections}
+        linkColor={uiData.accentColor}
+      />
     </div>
   )
 }
