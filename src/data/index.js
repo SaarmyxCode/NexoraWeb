@@ -4,9 +4,10 @@ import songs from './products/songs.json'
 import finance from './products/finance.json'
 import code from './products/code.json'
 import soporteData from './soporte.json'
+import calculator from './products/calculator.json'
 
 // Todos los productos cargados
-const allProducts = [ui, code, rename, songs, finance]
+const allProducts = [ui, code, rename, songs, finance, calculator]
 
 // Exporta únicamente los activos
 export const activeProducts = allProducts.filter((product) => product.enabled)

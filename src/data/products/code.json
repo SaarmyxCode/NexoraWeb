@@ -8,26 +8,26 @@
   "accentColor": "var(--color-code-accent)",
   "mode": "dark",
   "description": "Entorno de edición y ejecución ligera de código con integración nativa para Design Tokens, autocompletado inteligente y preview instantáneo.",
-  "mockup": "/mockups/NexoraCode.png",
+  "mockup": "/mockups/NexoraCodeMockup.png",
   "downloadUrl": "https://github.com/SaarmyxCode/NexoraCode/releases",
   "highlights": [
     {
       "id": "code-hl-1",
       "title": "EDITOR ULTRA LIGERO Y ZERO-LATENCY",
       "titleColor": "var(--color-code-accent)",
-      "imageSrc": "/mockups/NexoraCode.png"
+      "imageSrc": "/mockups/NexoraCodeMockup.png"
     },
     {
       "id": "code-hl-2",
       "title": "INTEGRACIÓN DIRECTA CON DESIGN TOKENS",
       "titleColor": "var(--color-code-accent)",
-      "imageSrc": "/mockups/NexoraCode.png"
+      "imageSrc": "/mockups/NexoraCodeMockup.png"
     },
     {
       "id": "code-hl-3",
       "title": "PREVISUALIZACIÓN Y COMPILACIÓN LOCAL",
       "titleColor": "var(--color-code-accent)",
-      "imageSrc": "/mockups/NexoraCode.png"
+      "imageSrc": "/mockups/NexoraCodeMockup.png"
     }
   ],
   "stats": [

@@ -8,26 +8,26 @@
   "accentColor": "var(--color-rename-accent)",
   "mode": "dark",
   "description": "Organiza grandes volúmenes de archivos, fotos y documentos al instante con reglas compuestas y motor multihilo.",
-  "mockup": "/mockups/NexoraRename.png",
+  "mockup": "/mockups/NexoraRenameMockup.png",
   "downloadUrl": "https://github.com/SaarmyxCode/NexoraRename/releases",
   "highlights": [
     {
       "id": "rename-hl-1",
       "title": "RENOMBRADO MASIVO EN SEGUNDOS",
       "titleColor": "var(--color-rename-accent)",
-      "imageSrc": "/mockups/NexoraRename.png"
+      "imageSrc": "/mockups/NexoraRenameMockup.png"
     },
     {
       "id": "rename-hl-2",
       "title": "REGLAS Y PATRONES PERSONALIZADOS",
       "titleColor": "var(--color-rename-accent)",
-      "imageSrc": "/mockups/NexoraRename.png"
+      "imageSrc": "/mockups/NexoraRenameMockup.png"
     },
     {
       "id": "rename-hl-3",
       "title": "PREVISUALIZACIÓN EN TIEMPO REAL",
       "titleColor": "var(--color-rename-accent)",
-      "imageSrc": "/mockups/NexoraRename.png"
+      "imageSrc": "/mockups/NexoraRenameMockup.png"
     }
   ],
   "stats": [

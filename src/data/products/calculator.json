@@ -1,0 +1,56 @@
+{
+  "id": "calculator",
+  "enabled": true,
+  "name": "Nexora Calculator",
+  "shortName": "Calculator",
+  "route": "/calculator",
+  "accentColor": "#64748B",
+  "mode": "dark",
+  "description": "Calculadora científica, financiera y conversor de unidades de alta precisión con historial de cinta continuo y soporte para expresiones complejas.",
+  "mockup": "/mockups/NexoraCalculator.png",
+  "downloadUrl": "/descargar#calculator",
+  "highlights": [
+    {
+      "id": "calculator-hl-1",
+      "title": "MOTOR DE CÓMPUTO DE ALTA PRECISIÓN",
+      "titleColor": "#64748B",
+      "imageSrc": "/mockups/NexoraCalculator.png"
+    },
+    {
+      "id": "calculator-hl-2",
+      "title": "HISTORIAL Y CINTA DE REGISTRO CONTINUO",
+      "titleColor": "#64748B",
+      "imageSrc": "/mockups/NexoraCalculator.png"
+    },
+    {
+      "id": "calculator-hl-3",
+      "title": "CONVERSOR MULTI-UNIDADES INTEGRADO",
+      "titleColor": "#64748B",
+      "imageSrc": "/mockups/NexoraCalculator.png"
+    }
+  ],
+  "stats": [
+    {
+      "id": "calculator-stat-1",
+      "prefix": "Precisión decimal de hasta",
+      "highlight": "64 dígitos flotantes",
+      "suffix": "para cálculos científicos y financieros sin redondeos prematuros."
+    },
+    {
+      "id": "calculator-stat-2",
+      "prefix": "Soporte completo para",
+      "highlight": "más de 100 unidades y divisas",
+      "suffix": "con conversión instantánea en tiempo real."
+    },
+    {
+      "id": "calculator-stat-3",
+      "prefix": "Evaluación de expresiones",
+      "highlight": "0ms de latencia",
+      "suffix": "mediante parser matemático optimizado en WebAssembly."
+    }
+  ],
+  "disclaimer": [
+    "1. Las conversiones de divisas e indicadores económicos se basan en tasas de cambio locales o de referencia almacenadas en el dispositivo.",
+    "2. El motor de precisión matemática de Nexora Calculator opera de forma 100% aislada en el entorno local del usuario."
+  ]
+}
