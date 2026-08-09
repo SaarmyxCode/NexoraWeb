@@ -1,0 +1,295 @@
+/* Componente Simulador de Calculadora */
+
+.calc-simulator-wrapper {
+  --calc-accent: #64748b;
+  --calc-accent-bg: var(--color-black-05);
+
+  width: 100%;
+  padding: 0 var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.calc-simulator-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-light-border);
+  padding: clamp(var(--spacing-xl), 4vw, 3.5rem) clamp(var(--spacing-lg), 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-surface);
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.calc-simulator-badge {
+  margin-bottom: var(--spacing-xs);
+}
+
+.calc-simulator-title {
+  font-family: var(--font-family-heading);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-heading);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--spacing-3xs) 0;
+}
+
+.calc-simulator-subtitle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.calc-simulator-description {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
+  max-width: 46rem;
+  margin: 0 0 var(--spacing-xl) 0;
+}
+
+.calc-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--calc-accent-bg);
+  color: var(--calc-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.calc-circle-icon {
+  font-size: 1.25rem;
+}
+
+.calc-simulator-subnote {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 36rem;
+}
+
+/* Tarjeta Interior del Simulador */
+.calc-details-box {
+  width: 100%;
+  max-width: 48rem;
+  background-color: #0f172a;
+  border: var(--border-width-thin) solid #1e293b;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Pantalla */
+.calc-screen-container {
+  background-color: #020617;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid #1e293b;
+}
+
+.calc-equation-display {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  color: #64748b;
+  min-height: 1.2rem;
+  text-align: right;
+}
+
+.calc-main-display-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.calc-main-display {
+  font-family: var(--font-family-mono);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: bold;
+  color: #f8fafc;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.calc-copy-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.calc-copy-btn:hover {
+  color: #f8fafc;
+}
+
+/* Layout Teclado + Historial */
+.calc-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 1px;
+  background-color: #1e293b;
+}
+
+/* Teclado */
+.calc-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: var(--spacing-md);
+  background-color: #0f172a;
+}
+
+.calc-btn {
+  background-color: #1e293b;
+  border: none;
+  border-radius: var(--radius-md);
+  color: #f8fafc;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-md);
+  font-weight: bold;
+  padding: 14px 0;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    transform 0.1s;
+}
+
+.calc-btn:hover {
+  background-color: #334155;
+}
+
+.calc-btn:active {
+  transform: scale(0.96);
+}
+
+.btn-op {
+  background-color: #334155;
+  color: #38bdf8;
+}
+
+.btn-action {
+  background-color: #ef444420;
+  color: #ef4444;
+}
+
+.btn-equal {
+  grid-row: span 2;
+  height: 100%;
+  color: #ffffff;
+}
+
+.btn-zero {
+  grid-column: span 2;
+}
+
+/* Historial */
+.calc-history-panel {
+  background-color: #020617;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #64748b;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-2xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.history-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-clear-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.history-clear-btn:hover {
+  color: #ef4444;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  overflow-y: auto;
+  max-height: 220px;
+}
+
+.history-empty {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-2xs);
+  color: #334155;
+}
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #0f172a;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.history-item:hover {
+  background-color: #1e293b;
+}
+
+.history-eq {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-2xs);
+  color: #64748b;
+}
+
+.history-res {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+/* RESPONSIVO */
+@media (max-width: 48rem) {
+  .calc-simulator-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .calc-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-history-panel {
+    border-top: 1px solid #1e293b;
+  }
+}
