@@ -7,7 +7,8 @@ import soporteData from './soporte.json'
 import calculator from './products/calculator.json'
 
 // Todos los productos cargados
-const allProducts = [ui, code, rename, songs, finance, calculator]
+const productsNull = [songs, finance, calculator]
+const allProducts = [ui, code, rename]
 
 // Exporta únicamente los activos
 export const activeProducts = allProducts.filter((product) => product.enabled)

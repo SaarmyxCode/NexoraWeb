@@ -5,53 +5,126 @@
   "shortName": "Code",
   "icon": "/icons/NexoraCodeWhite.png",
   "route": "/code",
-  "accentColor": "var(--color-code-accent)",
+  "accentColor": "#2563EB",
   "mode": "dark",
-  "description": "Entorno de edición y ejecución ligera de código con integración nativa para Design Tokens, autocompletado inteligente y preview instantáneo.",
+  "description": "Entorno ligero de desarrollo y edición de código impulsado por un motor nativo en Rust y una interfaz fluida en Flutter. Diseñado para ofrecer inicio instantáneo, autocompletado inteligente y preview de Design Tokens sin sobrecargar el procesador.",
   "mockup": "/mockups/NexoraCodeMockup.png",
   "downloadUrl": "https://github.com/SaarmyxCode/NexoraCode/releases",
   "highlights": [
     {
       "id": "code-hl-1",
-      "title": "EDITOR ULTRA LIGERO Y ZERO-LATENCY",
-      "titleColor": "var(--color-code-accent)",
+      "title": "CORE EN RUST & CERO LATENCIA",
+      "titleColor": "#2563EB",
       "imageSrc": "/mockups/NexoraCodeMockup.png"
     },
     {
       "id": "code-hl-2",
-      "title": "INTEGRACIÓN DIRECTA CON DESIGN TOKENS",
-      "titleColor": "var(--color-code-accent)",
+      "title": "INSPECTOR DE DESIGN TOKENS INTEGRADO",
+      "titleColor": "#2563EB",
       "imageSrc": "/mockups/NexoraCodeMockup.png"
     },
     {
       "id": "code-hl-3",
-      "title": "PREVISUALIZACIÓN Y COMPILACIÓN LOCAL",
-      "titleColor": "var(--color-code-accent)",
+      "title": "EJECUTION SEGURA Y PRIVACIDAD TOTAL",
+      "titleColor": "#2563EB",
       "imageSrc": "/mockups/NexoraCodeMockup.png"
     }
   ],
   "stats": [
     {
       "id": "code-stat-1",
-      "prefix": "Tiempo de arranque de",
-      "highlight": "menos de 50ms",
-      "suffix": "para la apertura instantánea de proyectos y archivos."
+      "prefix": "Consumo de memoria reducido a",
+      "highlight": "< 65 MB de RAM",
+      "suffix": "gracias al motor de renderizado directo en Rust sin entornos Electron pesados.",
+      "modalDetails": {
+        "title": "Eficiencia Extrema de Memoria (Core en Rust)",
+        "sections": [
+          {
+            "subtitle": "1. Arquitectura Nativa sin Navegador Embebido",
+            "paragraphs": [
+              "A diferencia de editores tradicionales basados en Electron que ejecutan instancias completas de Chromium y el motor V8, Nexora Code se renderiza directamente sobre la GPU usando Impeller/Skia en Flutter.",
+              "Esto elimina la recolección de basura invasiva y reduce drásticamente el consumo de memoria RAM en reposo a menos de 65 MB."
+            ]
+          },
+          {
+            "subtitle": "2. Gestión del Árbol Sintáctico (AST) en Rust",
+            "paragraphs": [
+              "El procesamiento de código fuente, la indexación de archivos y el tokenizado se delegan a un proceso nativo en Rust.",
+              "La comunicación vía FFI (Foreign Function Interface) garantiza que el hilo de la interfaz de usuario nunca se bloquee, ni siquiera al cargar repositorios masivos."
+            ],
+            "linkText": "Ver arquitectura del core en GitHub",
+            "linkHref": "https://github.com/nexora-labs/code"
+          }
+        ]
+      }
     },
     {
       "id": "code-stat-2",
-      "prefix": "Consumo optimizado de",
-      "highlight": "hasta un 70% menos de RAM",
-      "suffix": "en comparación con editores tradicionales basados en la nube."
+      "prefix": "Arranque ultrarrápido en solo",
+      "highlight": "45 milisegundos",
+      "suffix": "permitiendo abrir proyectos grandes e interactuar con el AST de forma inmediata.",
+      "modalDetails": {
+        "title": "Arranque e Inicialización Ultrarrápida",
+        "sections": [
+          {
+            "subtitle": "1. Tiempo de Inicio < 45ms",
+            "paragraphs": [
+              "Al no depender del arranque de un entorno web pesado, la aplicación está lista para editar texto en cuestión de milisegundos desde el momento de ejecución.",
+              "Los buffers de texto se leen directamente mediante mapeo de memoria (mmap) en Rust."
+            ]
+          },
+          {
+            "subtitle": "2. Carga Instantánea de Proyectos",
+            "paragraphs": [
+              "El árbol de directorios y la detección de tipos de archivo se resuelven en paralelo aprovechando todos los núcleos de tu procesador."
+            ],
+            "linkText": "Ver benchmarks de tiempo de inicio",
+            "linkHref": "https://github.com/NexoraCode/releases"
+          }
+        ]
+      }
     },
     {
       "id": "code-stat-3",
-      "prefix": "Procesamiento de código",
-      "highlight": "100% aislado y privado",
-      "suffix": "sin telemetría ni envío de datos a servidores remotos."
+      "prefix": "Procesamiento de sintaxis a",
+      "highlight": "120 FPS constantes",
+      "suffix": "impulsado por la renderización multihilo nativa de Flutter CanvasKit.",
+      "modalDetails": {
+        "title": "Renderizado Acelerado por Hardware",
+        "sections": [
+          {
+            "subtitle": "1. Tasa de Refresco de 120 FPS",
+            "paragraphs": [
+              "El canvas de Flutter dibuja los glifos y el resaltado de sintaxis directamente en la tarjeta gráfica, manteniendo animaciones fluidas al hacer scroll o seleccionar bloques de código.",
+              "Se elimina por completo el desgarro de pantalla (screen tearing) y la latencia entre la pulsación del teclado y la aparición de la letra."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "code-stat-4",
+      "prefix": "Aislamiento de ejecución y",
+      "highlight": "0% de Telemetría",
+      "suffix": "garantizando que tu código fuente nunca abandone la memoria local del equipo.",
+      "modalDetails": {
+        "title": "Aislamiento Local y Privacidad Garantizada",
+        "sections": [
+          {
+            "subtitle": "1. Cero Telemetría y Análisis Local",
+            "paragraphs": [
+              "Todo el motor de autocompletado, las sugerencias de código y la compilación operan strictly en tu máquina local.",
+              "Ninguna línea de tu proyecto o datos de uso se envían a servidores externos. Tu código fuente permanece 100% privado."
+            ],
+            "linkText": "Ver política de privacidad local",
+            "linkHref": "/soporte"
+          }
+        ]
+      }
     }
   ],
   "disclaimer": [
-    "1. Las pruebas de consumo de memoria de Nexora Code fueron realizadas sobre proyectos web de mediana y gran escala en entornos aislados.",
-    "2. El motor de autocompletado y sintaxis funciona mediante análisis léxico local sin requerir conexión continua a internet."
+    "1. El motor de análisis sintáctico y el parser de tokens se ejecutan directamente en un proceso nativo en Rust compilado a código máquina.",
+    "2. Nexora Code no utiliza WebView ni instancias de Chromium; la interfaz está renderizada directamente en la GPU mediante Flutter."
   ]
 }

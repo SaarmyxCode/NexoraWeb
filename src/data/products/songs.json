@@ -1,31 +1,32 @@
 {
   "id": "songs",
-  "enabled": false,
+  "enabled": true,
   "name": "Nexora Songs",
   "shortName": "Songs",
+  "icon": "/icons/NexoraSongsWhite.png",
   "route": "/songs",
-  "accentColor": "var(--color-songs-accent)",
-  "mode": "light",
-  "description": "Gestión, etiquetado ID3 y organización avanzada de librerías de audio y listas de reproducción.",
+  "accentColor": "#EC4899",
+  "mode": "dark",
+  "description": "Reproductor y gestor de biblioteca musical Lossless con motor de decodificación en Rust y visualización de waveform por hardware en Flutter.",
   "mockup": "/mockups/NexoraSongs.png",
   "downloadUrl": "/descargar#songs",
   "highlights": [
     {
       "id": "songs-hl-1",
       "title": "REPRODUCCIÓN Y MOTOR AUDIO LOSSLESS",
-      "titleColor": "var(--color-songs-accent)",
+      "titleColor": "#EC4899",
       "imageSrc": "/mockups/NexoraSongs.png"
     },
     {
       "id": "songs-hl-2",
       "title": "ORGANIZACIÓN DE METADATOS ID3 V2.4",
-      "titleColor": "var(--color-songs-accent)",
+      "titleColor": "#EC4899",
       "imageSrc": "/mockups/NexoraSongs.png"
     },
     {
       "id": "songs-hl-3",
       "title": "CATÁLOGOS Y PLAYLISTS DINÁMICAS",
-      "titleColor": "var(--color-songs-accent)",
+      "titleColor": "#EC4899",
       "imageSrc": "/mockups/NexoraSongs.png"
     }
   ],
@@ -34,19 +35,67 @@
       "id": "songs-stat-1",
       "prefix": "Soporte completo para",
       "highlight": "formatos FLAC, WAV y MP3 320kbps",
-      "suffix": "garantizando máxima fidelidad auditiva."
+      "suffix": "garantizando máxima fidelidad auditiva.",
+      "modalDetails": {
+        "title": "Decodificación Directa Lossless",
+        "sections": [
+          {
+            "subtitle": "1. Pipeline Audio Bit-Perfect en Rust",
+            "paragraphs": [
+              "El motor de audio decodifica archivos FLAC, WAV y ALAC de 24-bit/192kHz directamente a un buffer PCM en memoria.",
+              "Esto evita el resampleo no deseado del sistema operativo, entregando el audio sin alteraciones al DAC o salida física."
+            ]
+          },
+          {
+            "subtitle": "2. Integración Nativa con Audio HAL",
+            "paragraphs": [
+              "Se conecta directamente con las APIs de bajo nivel WASAPI (Windows), CoreAudio (macOS) y ALSA/PulseAudio (Linux)."
+            ],
+            "linkText": "Ver repositorios oficiales en GitHub",
+            "linkHref": "https://github.com/nexora-labs/songs"
+          }
+        ]
+      }
     },
     {
       "id": "songs-stat-2",
       "prefix": "Análisis y normalización de",
       "highlight": "decibeles en lote",
-      "suffix": "para un volumen uniforme entre todas tus canciones."
+      "suffix": "para un volumen uniforme entre todas tus canciones.",
+      "modalDetails": {
+        "title": "Normalización de Volumen ReplayGain 2.0",
+        "sections": [
+          {
+            "subtitle": "1. Análisis de Sonoridad EBU R128",
+            "paragraphs": [
+              "Mide el volumen percibido por el oído humano en lugar de los picos digitales simples.",
+              "Calcula los valores de ganancia en subprocesos en segundo plano en Rust para que nunca tengas que ajustar manualmente el volumen al cambiar de canción."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "songs-stat-3",
       "prefix": "Edición instantánea de",
       "highlight": "portadas y metadatos",
-      "suffix": "directamente sobre el archivo físico."
+      "suffix": "directamente sobre el archivo físico.",
+      "modalDetails": {
+        "title": "Escritura de Etiquetas ID3 v2.4 Ultrarrápida",
+        "sections": [
+          {
+            "subtitle": "1. Modificación de Encabezados sin Re-compresión",
+            "paragraphs": [
+              "Modifica títulos, artistas, álbumes y portadas incrustadas reescribiendo únicamente la cabecera del archivo sin alterar ni un solo byte de la pista de audio comprimida.",
+              "Permite procesar carpetas completas con miles de archivos en menos de un segundo."
+            ]
+          }
+        ]
+      }
     }
+  ],
+  "disclaimer": [
+    "1. El motor de audio utiliza APIs nativas del sistema operativo (WASAPI en Windows, CoreAudio en macOS, ALSA/PulseAudio en Linux).",
+    "2. Nexora Songs es un reproductor local sin anuncios, rastreadores ni restricciones de DRM."
   ]
 }

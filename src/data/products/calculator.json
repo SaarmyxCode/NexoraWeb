@@ -3,6 +3,7 @@
   "enabled": true,
   "name": "Nexora Calculator",
   "shortName": "Calculator",
+  "icon": "/icons/NexoraCalculatorWhite.png",
   "route": "/calculator",
   "accentColor": "#64748B",
   "mode": "dark",
@@ -34,19 +35,63 @@
       "id": "calculator-stat-1",
       "prefix": "Precisión decimal de hasta",
       "highlight": "64 dígitos flotantes",
-      "suffix": "para cálculos científicos y financieros sin redondeos prematuros."
+      "suffix": "para cálculos científicos y financieros sin redondeos prematuros.",
+      "modalDetails": {
+        "title": "Cómputo Matemático de Alta Precisión en Rust",
+        "sections": [
+          {
+            "subtitle": "1. Eliminación del Error de Coma Flotante IEEE-754",
+            "paragraphs": [
+              "Las calculadoras basadas en Javascript o lenguajes tradicionales sufren imprecisiones comunes en aritmética decimal (como 0.1 + 0.2 = 0.30000000000000004).",
+              "Nexora Calculator utiliza un tipo de dato personalizado arbitrario en Rust que gestiona cada cifra como una estructura exacta en memoria, manteniendo hasta 64 decimales de precisión sin redondeos hasta el resultado final."
+            ]
+          },
+          {
+            "subtitle": "2. Aislado para Cálculos Financieros Críticos",
+            "paragraphs": [
+              "Ideal para simulaciones de interés compuesto, depreciaciones y tablas de amortización donde cada fracción decimal cuenta."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "calculator-stat-2",
       "prefix": "Soporte completo para",
       "highlight": "más de 100 unidades y divisas",
-      "suffix": "con conversión instantánea en tiempo real."
+      "suffix": "con conversión instantánea en tiempo real.",
+      "modalDetails": {
+        "title": "Conversión Multi-Ecosistema Local",
+        "sections": [
+          {
+            "subtitle": "1. Conversor Físico y Monetario Unificado",
+            "paragraphs": [
+              "Permite transformar de forma inmediata unidades de longitud, masa, volumen, temperatura, almacenamiento digital y monedas globales.",
+              "Las tasas de cambio y los factores de conversión se almacenan cifrados en tu disco local para funcionar sin conexión a internet."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "calculator-stat-3",
       "prefix": "Evaluación de expresiones",
       "highlight": "0ms de latencia",
-      "suffix": "mediante parser matemático optimizado en WebAssembly."
+      "suffix": "mediante parser matemático optimizado en WebAssembly / Rust.",
+      "modalDetails": {
+        "title": "Evaluación Sintáctica Ultrarrápida",
+        "sections": [
+          {
+            "subtitle": "1. Parsing Directo de Cadenas Complejas",
+            "paragraphs": [
+              "Puedes ingresar ecuaciones largas utilizando paréntesis, constantes ($ \npi $, $ e $) y funciones trigonométricas.",
+              "El tokenizador compila el árbol sintáctico en milisegundos mediante binarios nativos ejecutados de forma paralela."
+            ],
+            "linkText": "Probar simulador en vivo",
+            "linkHref": "/calculator#explorar"
+          }
+        ]
+      }
     }
   ],
   "disclaimer": [

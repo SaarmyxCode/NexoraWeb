@@ -1,8 +1,9 @@
 {
   "id": "ui",
-  "enabled": true,
+  "enabled": false,
   "name": "Nexora UI",
   "shortName": "Ui",
+  "icon": "/icons/NexoraUiWhite.png",
   "route": "/ui",
   "accentColor": "#E11F2F",
   "mode": "dark",
@@ -34,19 +35,69 @@
       "id": "ui-stat-1",
       "prefix": "Cumplimiento estricto de",
       "highlight": "Contraste WCAG AAA",
-      "suffix": "en combinaciones de texto y color de acento."
+      "suffix": "en combinaciones de texto y color de acento.",
+      "modalDetails": {
+        "title": "Accesibilidad Estricta y Legibilidad Visual",
+        "sections": [
+          {
+            "subtitle": "1. Ratios de Contraste AAA Garantizados",
+            "paragraphs": [
+              "Cada token cromatico de Nexora UI se evalúa dinámicamente para cumplir con una relación de contraste mínima de 7:1 en textos principales sobre fondo oscuro y claro.",
+              "Esto asegura la máxima legibilidad sin causar fatiga visual en sesiones de trabajo prolongadas."
+            ]
+          },
+          {
+            "subtitle": "2. Inversión Lumínica Adaptativa",
+            "paragraphs": [
+              "El motor de tokens ajusta automáticamente la opacidad y los tonos de las capas de elevación al alternar entre temas Light y Dark."
+            ],
+            "linkText": "Ver guía de tokens en la documentación",
+            "linkHref": "/ui#explorar"
+          }
+        ]
+      }
     },
     {
       "id": "ui-stat-2",
       "prefix": "Inyección de variables en",
       "highlight": "0ms sin Javascript extra",
-      "suffix": "utilizando data-theme nativo en el elemento raíz HTML."
+      "suffix": "utilizando data-theme nativo en el elemento raíz HTML.",
+      "modalDetails": {
+        "title": "Motor Declarativo CSS Puro",
+        "sections": [
+          {
+            "subtitle": "1. Latencia Cero de Renderizado (Zero Flicker)",
+            "paragraphs": [
+              "Los temas de color y acentos se inyectan como CSS Custom Properties globales directamente desde el estado raíz HTML.",
+              "Al prescindir de scripts pesados de re-calculo para la paleta, se eliminan los destellos indeseados durante el arranque de la aplicación."
+            ]
+          },
+          {
+            "subtitle": "2. Integración Directa con Flutter CanvasKit",
+            "paragraphs": [
+              "Los mismos valores de tokens CSS alimentan el motor gráfico de Flutter en escritorio y web, asegurando consistencia matemática exacta entre componentes React y apps nativas."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "ui-stat-3",
       "prefix": "Escala de espaciado basada en",
       "highlight": "unidades relativas clamp()",
-      "suffix": "para adaptación fluida entre pantallas móvil y retina."
+      "suffix": "para adaptación fluida entre pantallas móvil y retina.",
+      "modalDetails": {
+        "title": "Layouts Editoriales Adaptativos",
+        "sections": [
+          {
+            "subtitle": "1. Espaciado Proporcional Fluido",
+            "paragraphs": [
+              "La escala tipográfica y los paddings de tarjetas Bento utilizan funciones matemáticas clamp() en CSS para escalar progresivamente.",
+              "Los elementos se ajustan con precisión píxel-perfect tanto en monitores Ultra-Wide 4K como en pantallas compactas."
+            ]
+          }
+        ]
+      }
     }
   ],
   "disclaimer": [
