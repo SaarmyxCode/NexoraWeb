@@ -27,7 +27,6 @@
 @media (max-width: 48rem) {
   .rename-page {
     gap: var(--spacing-lg);
-    padding-bottom: var(--spacing-xl);
   }
 
   .rename-section-header {

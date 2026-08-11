@@ -27,15 +27,6 @@
     padding: var(--spacing-xl) var(--spacing-md) 0;
   }
 
-  .hero-title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .hero-subtitle {
-    font-size: var(--font-size-sm);
-    max-width: 90%;
-  }
-
   .grid-container-wrapper {
     padding: 0 var(--spacing-md) var(--spacing-lg);
   }

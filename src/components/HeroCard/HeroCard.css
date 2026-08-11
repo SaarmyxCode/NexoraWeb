@@ -2,6 +2,7 @@
 
 .hero-wrapper {
   width: 100%;
+  padding: 0 var(--spacing-xl);
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -42,20 +43,19 @@
 
 .hero-title {
   font-family: var(--font-family-heading);
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-size: var(--font-size-7xl);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-heading); /* Fallback si no viene acento explícito */
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: var(--line-height-tight);
-  margin: 0;
   transition: color var(--transition-fast);
 }
 
 .hero-subtitle {
   font-family: var(--font-family-base);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
   color: var(--color-text-body);
   line-height: var(--line-height-base);
 }
@@ -89,14 +89,5 @@
 
   .hero-card {
     padding: var(--spacing-xl) var(--spacing-md) 0;
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .hero-subtitle {
-    font-size: var(--font-size-md);
-    margin-bottom: var(--spacing-md);
   }
 }

@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
-  padding-bottom: var(--spacing-2xl);
   background-color: var(--color-bg-app);
   color: var(--color-text-body);
   transition:
@@ -42,7 +41,6 @@
 @media (max-width: 48rem) {
   .ui-page {
     gap: var(--spacing-lg);
-    padding-bottom: var(--spacing-xl);
   }
 
   .ui-section-header {

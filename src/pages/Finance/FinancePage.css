@@ -27,7 +27,6 @@
 @media (max-width: 48rem) {
   .finance-page {
     gap: var(--spacing-lg);
-    padding-bottom: var(--spacing-xl);
   }
 
   .finance-section-header {

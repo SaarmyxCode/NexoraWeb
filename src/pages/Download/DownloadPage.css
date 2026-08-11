@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
-  padding-bottom: var(--spacing-2xl);
 }
 
 .download-wrapper {
@@ -229,6 +228,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-body);
   text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
   letter-spacing: 0.03em;
 }
 
@@ -280,6 +280,7 @@
 
 .btn-icon {
   font-size: var(--font-size-lg);
+  color: var(--color-black);
 }
 
 /* RESPONSIVO */
@@ -306,6 +307,12 @@
 
   .product-hero-content {
     align-items: center;
+  }
+
+  .product-title-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-sm);
   }
 
   .product-title-row,

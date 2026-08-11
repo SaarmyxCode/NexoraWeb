@@ -2,7 +2,7 @@
 
 .footer-wrapper {
   width: 100%;
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   display: flex;
   justify-content: center;
   margin-top: auto;
