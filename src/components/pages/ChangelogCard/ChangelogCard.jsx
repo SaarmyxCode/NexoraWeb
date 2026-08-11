@@ -85,9 +85,9 @@ export const ChangelogCard = ({
         {displayText && <p className="changelog-release-description">{displayText}</p>}
 
         {/* Icono Circular Central Dinámico */}
-        <div className="changelog-icon-circle">
+        {/* <div className="changelog-icon-circle">
           <IconComponent className="changelog-circle-icon" />
-        </div>
+        </div> */}
 
         {/* Subnota */}
         {displaySubtext && <p className="changelog-release-subnote">{displaySubtext}</p>}

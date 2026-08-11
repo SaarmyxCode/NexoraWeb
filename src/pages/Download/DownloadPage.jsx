@@ -27,10 +27,12 @@ export const DownloadPage = () => {
   // Mapa de plataformas/compatibilidad por ID de producto
   const platformsMap = {
     ui: ['React / Vite', 'CSS Tokens', 'Design System'],
-    songs: ['Windows', 'macOS', 'Linux'],
-    rename: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.deb / .AppImage)'],
-    finance: ['Windows (.exe)', 'macOS (.dmg)', 'Web Version'],
-    code: ['Windows (.exe)', 'macOS (.dmg)', 'Linux (.AppImage)'],
+    songs: ['Linux (.deb)'],
+    rename: ['Linux (.deb)'],
+    finance: ['Linux (.deb)', 'Web Version'],
+    code: ['Linux (.deb)'],
+
+    // 'Windows (.exe)', 'macOS (.dmg)',
   }
 
   // Mapeamos ÚNICAMENTE las aplicaciones activas (sin Soporte)

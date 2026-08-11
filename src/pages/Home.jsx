@@ -26,11 +26,10 @@ export const Home = () => {
       {renameProduct && <HeroCard product={renameProduct} isClickable />}
 
       {/* Cuadrícula Bento */}
-      <GridContainer>
-        {/* {renameProduct && <GridCard product={renameProduct} isClickable />}
-        {songsProduct && <GridCard product={songsProduct} isClickable />} */}
-        {/* {uiProduct && <GridCard product={uiProduct} isClickable />} */}
-      </GridContainer>
+      {/* <GridContainer>
+        {renameProduct && <GridCard product={renameProduct} isClickable />}
+        {songsProduct && <GridCard product={songsProduct} isClickable />}          {uiProduct && <GridCard product={uiProduct} isClickable />}
+      </GridContainer> */}
     </div>
   )
 }

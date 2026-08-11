@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FiX } from 'react-icons/fi'
+import { FiX, FiExternalLink } from 'react-icons/fi'
 import { Card } from '../../atoms/Card/Card'
 import { Button } from '../../atoms/Button/Button'
 import './DetailModal.css'
@@ -57,11 +57,29 @@ export const DetailModal = ({
         <div className="modal-body">
           {sections.map((sec, idx) => (
             <div key={idx} className="modal-section">
+              {/* Subtítulo / Encabezado de la Sección */}
               {sec.subtitle && <h3 className="modal-subtitle">{sec.subtitle}</h3>}
-              {sec.description && <p className="modal-description">{sec.description}</p>}
+
+              {/* Opción A: Arreglo de Párrafos Múltiples */}
+              {Array.isArray(sec.paragraphs)
+                ? sec.paragraphs.map((para, pIdx) => (
+                    <p key={pIdx} className="modal-description">
+                      {para}
+                    </p>
+                  ))
+                : /* Opción B: Párrafo Único */
+                  sec.description && <p className="modal-description">{sec.description}</p>}
+
+              {/* Enlace o Botón Opcional */}
               {sec.linkText && (
-                <a href={sec.linkHref || '#'} className="modal-link" style={{ color: linkColor }}>
-                  {sec.linkText}
+                <a
+                  href={sec.linkHref || '#'}
+                  target={sec.linkHref?.startsWith('http') ? '_blank' : '_self'}
+                  rel="noopener noreferrer"
+                  className="modal-link"
+                  style={{ color: linkColor }}
+                >
+                  <span>{sec.linkText}</span>
                 </a>
               )}
             </div>

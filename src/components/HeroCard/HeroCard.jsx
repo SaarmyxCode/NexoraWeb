@@ -25,7 +25,8 @@ export const HeroCard = ({
   const product = productProp || (productId ? getProduct(productId) : null)
 
   const displayTitle = title || product?.shortName || product?.name || ''
-  const displaySubtitle = subtitle || product?.description
+  // Si isClickable es true, no muestra el subtítulo; de lo contrario asigna el valor correspondiente
+  const displaySubtitle = isClickable ? undefined : subtitle || product?.description
   const displayImage = imageSrc || product?.mockup
   const displayTitleColor = titleColor || accentColor || product?.accentColor
   const destination = to || (product ? product.route : '/')
